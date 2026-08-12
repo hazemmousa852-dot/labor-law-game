@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مغامرة قانون العمل المصري | قانون 14 لسنة 2025</title>
+  <title>لعبة قانون العمل مع حازم موسى | قانون 14 لسنة 2025</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237c3aed'/%3E%3Ctext x='50' y='68' font-size='64' text-anchor='middle'%3E⚖️%3C/text%3E%3C/svg%3E" />
   <style>
     :root{
@@ -232,6 +232,7 @@
     .mode-option span{display:block;color:#64748b;line-height:1.6;font-size:13px}
     .mode-option .mark{position:absolute;left:14px;top:14px;font-size:20px;opacity:.4}
     .mode-option.selected .mark{opacity:1}
+    .level-grid{grid-template-columns:repeat(2,1fr)}
 
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     button,.btn{
@@ -693,7 +694,7 @@
       <div class="brand">
         <div class="logo" aria-hidden="true">🧾</div>
         <div>
-          <h1>مغامرة قانون العمل المصري</h1>
+          <h1>لعبة قانون العمل مع حازم موسى</h1>
           <small>اختبار مستوى مرح في قانون العمل المصري رقم 14 لسنة 2025</small>
         </div>
       </div>
@@ -731,8 +732,9 @@
               </select>
             </div>
             <div class="field" style="grid-column:1/-1">
-              <label for="questionCount">فلترة المواضيع (اختياري)</label>
-              <div class="topic-filter" id="topicFilter" role="group" aria-label="فلترة المواضيع (اختياري)" style="margin-bottom:10px"></div>
+              <label id="filterLabel">فلترة المواضيع (اختياري)</label>
+              <div class="topic-filter" id="topicFilter" role="group" aria-label="فلترة المواضيع (اختياري)"></div>
+              <span id="countHint" style="display:block;font-size:12px;color:#64748b;margin-top:4px">— سؤال متاح</span>
             </div>
             <div class="mode-grid" role="radiogroup" aria-label="نمط اللعب">
               <div class="mode-option selected" data-mode="training" role="radio" aria-checked="true" tabindex="0">
@@ -744,6 +746,31 @@
                 <span class="mark">⏱️</span>
                 <b>وضع التحدي السريع</b>
                 <span>25 ثانية لكل سؤال. مناسب لاختبار المستوى الحقيقي.</span>
+              </div>
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label>مستوى اللاعب</label>
+            </div>
+            <div class="mode-grid level-grid" role="radiogroup" aria-label="مستوى اللاعب">
+              <div class="mode-option level-option selected" data-level="beginner" role="radio" aria-checked="true" tabindex="0">
+                <span class="mark">🌱</span>
+                <b>مبتدئ</b>
+                <span>أسئلة تمهيدية وتعريفية عن القانون وأحكامه العامة. لو بتبدأي في شئون العاملين.</span>
+              </div>
+              <div class="mode-option level-option" data-level="experienced" role="radio" aria-checked="false" tabindex="0">
+                <span class="mark">💼</span>
+                <b>متوسط الخبرة</b>
+                <span>أسئلة العقود والإجازات والساعات وتشغيل النساء والأطفال والأجور. لو شغالك اليومي في الموارد البشرية.</span>
+              </div>
+              <div class="mode-option level-option" data-level="expert" role="radio" aria-checked="false" tabindex="0">
+                <span class="mark">🎓</span>
+                <b>خبير شئون عاملين</b>
+                <span>أسئلة الجزاءات والمنازعات وإنهاء الخدمة والسلامة والتفتيش. لو عايزا اختبار حقيقي لعمق الخبرة.</span>
+              </div>
+              <div class="mode-option level-option" data-level="mixed" role="radio" aria-checked="false" tabindex="0">
+                <span class="mark">🎲</span>
+                <b>متنوع</b>
+                <span>أسئلة من كل المستويات الثلاثة بالتدريج من السهل للصعب.</span>
               </div>
             </div>
           </div>
@@ -2807,6 +2834,22 @@
     const letters = ['أ','ب','ج','د'];
     let state = {};
     let selectedMode = 'training';
+    let selectedLevel = 'mixed'; // مبتدئ beginner | متوسط experienced | خبير expert | مختلط mixed
+
+    /* ===== المستويات الثلاثة للخبرة ===== */
+    const LEVEL_GROUPS = {
+      beginner: ['تمهيدي','تواريخ','نطاق التطبيق','تعريفات','أرقام','حقوق'],
+      experienced: ['عقود','أنماط عمل','تشغيل','ساعات','نساء','أطفال','أجانب','عمالة غير منتظمة','تدريب','أجور'],
+      expert: ['إجازات','جزاءات','منازعات','إنهاء','سلامة','خدمات','تفتيش','محاكم']
+    };
+    function levelPool(level){
+      const topics = LEVEL_GROUPS[level];
+      if(!topics) return questionBank; // mixed
+      return questionBank.filter(q=>topics.includes(q.diff));
+    }
+    function levelName(l){
+      return {beginner:'مبتدئ', experienced:'متوسط الخبرة', expert:'خبير شئون عاملين', mixed:'متنوع (كل المستويات)'}[l] || 'متنوع';
+    }
     let soundOn = true;
     let timer = null;
     let audioCtx = null;
@@ -2814,7 +2857,7 @@
     function safeNumber(n){ return Number(n || 0).toLocaleString('ar-EG'); }
 
     /* ===== عنوان التاب الديناميكي أثناء اللعب ===== */
-    const BASE_TITLE = 'مغامرة قانون العمل المصري | قانون 14 لسنة 2025';
+    const BASE_TITLE = 'لعبة قانون العمل مع حازم موسى | قانون 14 لسنة 2025';
     function updateDocTitle(){
       if(!state || !state.questions) return;
       document.title = state.locked
@@ -2879,18 +2922,20 @@
       });
     }
     function updateTopicHint(){
-      const count = selectedTopics.size ? questionBank.filter(q=>selectedTopics.has(q.diff)).length : questionBank.length;
-      // نحدّث الوصف في select لو ممكن
+      const count = topicsToUse().length;
+      $('countHint').textContent = count ? `${safeNumber(count)} سؤال متاح` : '—';
     }
     function topicsToUse(){
-      return selectedTopics.size ? questionBank.filter(q=>selectedTopics.has(q.diff)) : questionBank;
+      let pool = levelPool(selectedLevel);
+      if(selectedTopics.size) pool = pool.filter(q=>selectedTopics.has(q.diff));
+      return pool;
     }
 
-    /* ===== تقدير مستوى صعوبة السؤال (لترتيب متدرج) ===== */
+    /* ===== تقدير مستوى صعوبة السؤال (لترتيب متدرج داخل المستوى المختار) ===== */
     function estimateLevel(q){
-      // سهل: تعريفات ونطاق التطبيق والتعديلات | متوسط: الأحكام العامة والمعاملات | صعب: الجزاءات والمحاكم والمواد المتعددة
-      const low = /تمهيدي|تعريفات|نطاق التطبيق|عقود|تعديلات/.test(q.diff);
-      const high = /منازعات|إنهاء|جزاءات|تفتيش|محاكم|خدمات|تدريب|إنهاء|سلامة/.test(q.diff);
+      // سهل: تعريفات ونطاق التطبيق | متوسط: المعاملات اليومية | صعب: الجزاءات والإنهاء والمنازعات
+      const low = /تمهيدي|تواريخ|نطاق التطبيق|تعريفات|أرقام|حقوق/.test(q.diff);
+      const high = /منازعات|إنهاء|جزاءات|تفتيش|محاكم|خدمات|سلامة/.test(q.diff);
       if(/المادتان|المواد\s+\d/.test(q.ref)) return high ? 3 : 2;
       const m = q.ref.match(/المادة\s+(\d+)/);
       if(m){
@@ -2929,7 +2974,7 @@
     function saveProgress(){
       try{
         const snap = {
-          name:state.name, mode:state.mode, selectedTopics:[...selectedTopics],
+          name:state.name, mode:state.mode, level:selectedLevel, selectedTopics:[...selectedTopics],
           countMode:$('questionCount').value,
           index:state.index, score:state.score, correct:state.correct, wrong:state.wrong,
           streak:state.streak, bestStreak:state.bestStreak, hints:state.hints, fifty:state.fifty,
@@ -3019,9 +3064,16 @@
 
     document.querySelectorAll('.mode-option').forEach(el=>{
       const choose = ()=>{
-        document.querySelectorAll('.mode-option').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-checked','false')});
-        el.classList.add('selected'); el.setAttribute('aria-checked','true');
-        selectedMode = el.dataset.mode;
+        if(el.dataset.level){
+          document.querySelectorAll('.level-option').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-checked','false')});
+          el.classList.add('selected'); el.setAttribute('aria-checked','true');
+          selectedLevel = el.dataset.level;
+          updateTopicHint();
+        }else{
+          document.querySelectorAll('.mode-option:not(.level-option)').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-checked','false')});
+          el.classList.add('selected'); el.setAttribute('aria-checked','true');
+          selectedMode = el.dataset.mode;
+        }
       };
       el.addEventListener('click', choose);
       el.addEventListener('keydown', e=>{if(e.key==='Enter' || e.key===' '){e.preventDefault();choose();}});
@@ -3067,7 +3119,7 @@
       const total = state.questions.length || 1;
       const percent = Math.round((state.correct/total)*100);
       const emoji = percent>=90 ? '👑' : percent>=75 ? '🏆' : percent>=55 ? '🌟' : '🌱';
-      const text = `${emoji} حصلت على ${safeNumber(percent)}% في اختبار قانون العمل المصري رقم 14 لسنة 2025!\n${safeNumber(state.correct)} من ${total} إجابة صحيحة — ${safeNumber(state.score)} نقطة\nجرب اللعبة دي: مغامرة قانون العمل 🧾`;
+      const text = `${emoji} حصلت على ${safeNumber(percent)}% في اختبار قانون العمل المصري رقم 14 لسنة 2025!\n${safeNumber(state.correct)} من ${total} إجابة صحيحة — ${safeNumber(state.score)} نقطة\nجرب لعبة قانون العمل مع حازم موسى 🧾 لعبة قانون العمل مع حازم موسى
       try{
         if(navigator.share){
           await navigator.share({title:'نتيجتي في اختبار قانون العمل', text});
@@ -3092,6 +3144,7 @@
       state = {
         name,
         mode:selectedMode,
+        level:selectedLevel,
         questions:selectedQuestions,
         index:0,
         score:0,
@@ -3124,6 +3177,11 @@
       $('fiftyLeft').textContent = safeNumber(state.fifty);
       $('playerName').value = state.name;
       $('questionCount').value = saved.countMode || '20';
+      selectedLevel = saved.level || 'mixed';
+      document.querySelectorAll('.level-option').forEach(x=>{
+        x.classList.toggle('selected', x.dataset.level===selectedLevel);
+        x.setAttribute('aria-checked', x.dataset.level===selectedLevel ? 'true' : 'false');
+      });
       showScreen('quiz');
       renderTopicFilter();
       toast('كمّلنا من سؤال ' + safeNumber(state.index+1) + ' 🎯');
@@ -3407,7 +3465,7 @@
       $('certificateText').innerHTML = `
         <div class="cert-logo">🏆</div>
         <h2>شهادة اجتياز تدريبية</h2>
-        <p>تشهد لعبة مغامرة قانون العمل المصري أن <b>${escapeHtml(state.name)}</b> حصل/ت على نتيجة <b>${percent}%</b> في اختبار قانون العمل المصري رقم 14 لسنة 2025.</p>
+        <p>تشهد لعبة قانون العمل مع حازم موسى أن <b>${escapeHtml(state.name)}</b> اجتاز/ت اختبار المستوى <b>${levelName(state.level)}</b> بنتيجة <b>${percent}%</b> في قانون العمل المصري رقم 14 لسنة 2025.</p>
         <p>عدد الإجابات الصحيحة: ${state.correct} من ${total} — النقاط: ${state.score}</p>
         <p>تاريخ الطباعة: ${new Date().toLocaleDateString('ar-EG')}</p>
       `;
@@ -3421,6 +3479,7 @@
       if(state.bestStreak>=5) badges.push('🔥 سلسلة خمس نجوم');
       if(state.wrong===0) badges.push('💎 بلا أخطاء');
       if(state.mode==='challenge') badges.push('⏱️ بطل السرعة');
+      badges.push('📊 ' + levelName(state.level));
       if(state.hints>0) badges.push('🧠 ذاكرة حديدية');
       if(!badges.length) badges.push('🌱 بداية موفقة');
       $('badges').innerHTML = badges.map(b=>`<span class="badge">${b}</span>`).join('');
