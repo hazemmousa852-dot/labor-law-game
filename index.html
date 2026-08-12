@@ -2988,8 +2988,13 @@
       try{
         const raw = localStorage.getItem(PROGRESS_KEY);
         if(!raw) return null;
-        return JSON.parse(raw);
-      }catch(e){return null}
+        const data = JSON.parse(raw);
+        // فحص صيغة البيانات: لو كانت صيغة قديمة من نسخة سابقة من اللعبة، نمسحها لمنع أي خلل
+        const REQUIRED = ['name','mode','countMode','index','qTexts','savedAt'];
+        const ok = REQUIRED.every(k => data && Object.prototype.hasOwnProperty.call(data, k));
+        if(!ok){ try{localStorage.removeItem(PROGRESS_KEY)}catch(e){} return null; }
+        return data;
+      }catch(e){try{localStorage.removeItem(PROGRESS_KEY)}catch(e2){} return null}
     }
     function clearProgress(){
       try{localStorage.removeItem(PROGRESS_KEY)}catch(e){}
@@ -3119,7 +3124,7 @@
       const total = state.questions.length || 1;
       const percent = Math.round((state.correct/total)*100);
       const emoji = percent>=90 ? '👑' : percent>=75 ? '🏆' : percent>=55 ? '🌟' : '🌱';
-      const text = `${emoji} حصلت على ${safeNumber(percent)}% في اختبار قانون العمل المصري رقم 14 لسنة 2025!\n${safeNumber(state.correct)} من ${total} إجابة صحيحة — ${safeNumber(state.score)} نقطة\nجرب لعبة قانون العمل مع حازم موسى 🧾 لعبة قانون العمل مع حازم موسى
+      const text = `${emoji} حصلت على ${safeNumber(percent)}% في اختبار قانون العمل المصري رقم 14 لسنة 2025!\n${safeNumber(state.correct)} من ${total} إجابة صحيحة — ${safeNumber(state.score)} نقطة\nجرب لعبة قانون العمل مع حازم موسى 🧾 لعبة قانون العمل مع حازم موسى`;
       try{
         if(navigator.share){
           await navigator.share({title:'نتيجتي في اختبار قانون العمل', text});
@@ -3509,6 +3514,7 @@
     let pieces = [];
     const colors = ['#7c3aed','#2563eb','#06b6d4','#10b981','#f59e0b','#ec4899','#ef4444'];
     function resizeCanvas(){
+      if(!ctx) return;
       canvas.width = window.innerWidth * devicePixelRatio;
       canvas.height = window.innerHeight * devicePixelRatio;
       ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
@@ -3606,6 +3612,25 @@
       }
     });
 
+    /* ===== زر إعادة ضبط اللعبة: يمسح كل البيانات المحفوظة لو حصل أي خلل ===== */
+    if(typeof $ === 'function' && $('startBtn') && $('startBtn').parentElement){
+      const resetBtn = document.createElement('button');
+      resetBtn.type = 'button';
+      resetBtn.id = 'resetGameBtn';
+      resetBtn.className = 'secondary';
+      resetBtn.style.cssText = 'font-size:13px;padding:9px 12px;margin-top:6px;opacity:.85';
+      resetBtn.textContent = '🔄 إعادة ضبط اللعبة (مسح كل البيانات المحفوظة)';
+      resetBtn.addEventListener('click', ()=>{
+        if(confirm('هتتمسح كل البيانات المحفوظة في جهازك (التقدم، أعلى درجة، لوحة المتصدرين) ✅\nمتأكدة؟')){
+          try{
+            Object.keys(localStorage).filter(k=>k.startsWith('egyptLaborLaw2025')).forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+            toast('تم مسح كل البيانات ✅ الصفحة هتتحدث لوحدها…');
+            setTimeout(()=>location.reload(), 900);
+          }catch(e){toast('محصلش مسح: ' + e.message)}
+        }
+      });
+      $('startBtn').insertAdjacentElement('afterend', resetBtn);
+    }
     /* ===== التنقل بالكيبورد: أرقام 1-4 للاختيارات، N للسؤال التالي ===== */
     document.addEventListener('keydown', e=>{
       if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
@@ -3621,12 +3646,21 @@
       }
     });
 
-    /* ===== عرض skip-link و استئناف التقدم المحفوظ عند البدء ===== */
-    const skipLink = document.querySelector('.skip-link');
-    skipLink.style.display = 'inline-block';
-    renderTopicFilter();
-    renderLeaderboard();
-    offerResume();
+    /* ===== حماية: لو أي خطأ حصل أثناء التهيئة أو اللعب، نعرضه في تنبيه ظاهر على الشاشة ===== */
+    window.addEventListener('error', function(e){
+      try{ toast('⚠️ حدث خطأ: ' + (e.message || 'غير معروف') + ' — لو الأزرار مش شغالة، جربي زر إعادة ضبط اللعبة 🔄'); }catch(ex){}
+    });
+    try{
+      /* ===== عرض skip-link و استئناف التقدم المحفوظ عند البدء ===== */
+      const skipLink = document.querySelector('.skip-link');
+      if(skipLink) skipLink.style.display = 'inline-block';
+      renderTopicFilter();
+      updateTopicHint();
+      renderLeaderboard();
+      offerResume();
+    }catch(e){
+      try{ toast('⚠️ حدث خطأ أثناء بدء اللعبة: ' + (e.message||'') + ' — جربي زر إعادة ضبط اللعبة 🔄'); }catch(ex){}
+    }
   </script>
 </body>
 </html>
