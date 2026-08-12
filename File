@@ -1,0 +1,3573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مغامرة قانون العمل المصري | قانون 14 لسنة 2025</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%237c3aed'/%3E%3Ctext x='50' y='68' font-size='64' text-anchor='middle'%3E⚖️%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg1:#fff7ed;
+      --bg2:#eff6ff;
+      --bg3:#fdf2f8;
+      --ink:#1f2937;
+      --muted:#64748b;
+      --primary:#7c3aed;
+      --primary2:#2563eb;
+      --accent:#f59e0b;
+      --green:#10b981;
+      --red:#ef4444;
+      --pink:#ec4899;
+      --cyan:#06b6d4;
+      --card:rgba(255,255,255,.82);
+      --stroke:rgba(31,41,55,.12);
+      --shadow:0 22px 70px rgba(31,41,55,.14);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Tahoma, Arial, "Segoe UI", sans-serif;
+      color:var(--ink);
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(236,72,153,.18), transparent 26%),
+        radial-gradient(circle at 88% 12%, rgba(6,182,212,.18), transparent 28%),
+        radial-gradient(circle at 50% 95%, rgba(245,158,11,.18), transparent 34%),
+        linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.75;
+      background-image:
+        radial-gradient(circle at 18px 18px, rgba(124,58,237,.13) 2px, transparent 2px),
+        radial-gradient(circle at 65px 65px, rgba(245,158,11,.12) 3px, transparent 3px);
+      background-size:86px 86px;
+      z-index:-3;
+    }
+
+    .blob{
+      position:fixed;
+      width:220px;height:220px;
+      border-radius:45% 55% 62% 38% / 51% 41% 59% 49%;
+      filter:blur(.2px);
+      opacity:.35;
+      z-index:-2;
+      animation:float 10s ease-in-out infinite;
+    }
+    .blob.one{background:#a78bfa; top:9%; right:-70px; animation-delay:-1s}
+    .blob.two{background:#67e8f9; bottom:6%; left:-80px; animation-delay:-5s}
+    .blob.three{background:#fbbf24; top:42%; left:6%; width:120px;height:120px; animation-delay:-2s}
+    @keyframes float{
+      0%,100%{transform:translate3d(0,0,0) rotate(0deg)}
+      50%{transform:translate3d(0,-28px,0) rotate(10deg)}
+    }
+
+    .app{
+      width:min(1120px, 94vw);
+      margin:0 auto;
+      padding:28px 0 44px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      width:58px;height:58px;
+      border-radius:21px;
+      display:grid;
+      place-items:center;
+      font-size:30px;
+      background:linear-gradient(135deg,#fde68a,#f9a8d4 48%,#93c5fd);
+      box-shadow:0 15px 35px rgba(124,58,237,.18);
+      border:2px solid rgba(255,255,255,.8);
+      transform:rotate(-5deg);
+    }
+    .brand h1{
+      margin:0;
+      font-size:clamp(20px, 3vw, 34px);
+      letter-spacing:-.5px;
+      line-height:1.15;
+    }
+    .brand small{display:block;color:var(--muted);margin-top:4px;line-height:1.6}
+
+    .pill{
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      border-radius:999px;
+      padding:10px 14px;
+      color:#475569;
+      font-size:14px;
+      box-shadow:0 10px 30px rgba(15,23,42,.06);
+      white-space:nowrap;
+    }
+
+    .screen{display:none}
+    .screen.active{display:block; animation:pop .35s ease both}
+    @keyframes pop{
+      from{opacity:0; transform:translateY(12px) scale(.99)}
+      to{opacity:1; transform:translateY(0) scale(1)}
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.85);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      backdrop-filter:blur(18px);
+      position:relative;
+      overflow:hidden;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:inherit;
+      background:linear-gradient(135deg,rgba(255,255,255,.55),transparent 36%,rgba(255,255,255,.35));
+    }
+    .card > *{position:relative;z-index:1}
+    .intro{padding:34px}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(124,58,237,.10);
+      color:#5b21b6;
+      font-weight:700;
+      font-size:14px;
+      margin-bottom:14px;
+    }
+    .intro h2{
+      margin:0 0 12px;
+      font-size:clamp(30px,5vw,58px);
+      line-height:1.08;
+      letter-spacing:-1px;
+    }
+    .gradient-text{
+      background:linear-gradient(90deg,#7c3aed,#2563eb,#ec4899);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .intro p{
+      color:#475569;
+      line-height:1.95;
+      font-size:17px;
+      margin:0 0 18px;
+    }
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 22px}
+    .chip{
+      display:inline-flex;align-items:center;gap:7px;
+      padding:9px 12px;
+      border-radius:16px;
+      background:rgba(255,255,255,.74);
+      border:1px solid var(--stroke);
+      color:#334155;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .setup{
+      display:grid;
+      gap:14px;
+      grid-template-columns:1fr 1fr;
+      margin-top:18px;
+    }
+    .field{display:flex;flex-direction:column;gap:7px}
+    label{font-weight:800;color:#334155;font-size:14px}
+    input,select{
+      width:100%;
+      border:1px solid rgba(100,116,139,.25);
+      background:rgba(255,255,255,.82);
+      border-radius:18px;
+      padding:14px 15px;
+      font:inherit;
+      color:var(--ink);
+      outline:none;
+      transition:.2s;
+    }
+    input:focus, select:focus{border-color:rgba(124,58,237,.65); box-shadow:0 0 0 4px rgba(124,58,237,.12)}
+    .mode-grid{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mode-option{
+      cursor:pointer;
+      border:2px solid transparent;
+      background:rgba(255,255,255,.7);
+      border-radius:22px;
+      padding:15px;
+      transition:.2s;
+      position:relative;
+      min-height:96px;
+    }
+    .mode-option:hover{transform:translateY(-2px); box-shadow:0 12px 25px rgba(15,23,42,.09)}
+    .mode-option.selected{border-color:rgba(124,58,237,.65); background:rgba(124,58,237,.08)}
+    .mode-option b{display:block;font-size:18px;margin-bottom:6px}
+    .mode-option span{display:block;color:#64748b;line-height:1.6;font-size:13px}
+    .mode-option .mark{position:absolute;left:14px;top:14px;font-size:20px;opacity:.4}
+    .mode-option.selected .mark{opacity:1}
+
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    button,.btn{
+      border:0;
+      cursor:pointer;
+      font:inherit;
+      font-weight:900;
+      border-radius:18px;
+      padding:13px 18px;
+      transition: transform .16s, box-shadow .16s, filter .16s, opacity .16s;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      user-select:none;
+    }
+    button:hover,.btn:hover{transform:translateY(-2px)}
+    button:active,.btn:active{transform:translateY(0)}
+    .primary{
+      color:white;
+      background:linear-gradient(135deg,#7c3aed,#2563eb);
+      box-shadow:0 16px 34px rgba(37,99,235,.25);
+    }
+    .secondary{
+      color:#334155;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--stroke);
+      box-shadow:0 12px 25px rgba(15,23,42,.08);
+    }
+    .warning{background:linear-gradient(135deg,#f59e0b,#f97316);color:white;box-shadow:0 14px 30px rgba(245,158,11,.25)}
+    .green{background:linear-gradient(135deg,#10b981,#059669);color:white;box-shadow:0 14px 30px rgba(16,185,129,.23)}
+    button:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+
+    .side{padding:24px;display:flex;flex-direction:column;gap:16px}
+    .mascot{
+      min-height:250px;
+      display:grid;
+      place-items:center;
+      border-radius:27px;
+      background:
+        radial-gradient(circle at 30% 24%,rgba(255,255,255,.86),transparent 35%),
+        linear-gradient(135deg,rgba(254,240,138,.75),rgba(191,219,254,.75),rgba(251,207,232,.85));
+      border:1px solid rgba(255,255,255,.75);
+      overflow:hidden;
+      position:relative;
+    }
+    .mascot-face{
+      width:170px;height:170px;
+      border-radius:46% 54% 48% 52% / 52% 45% 55% 48%;
+      background:linear-gradient(145deg,#fff,#fde68a);
+      border:6px solid rgba(255,255,255,.85);
+      box-shadow:0 18px 40px rgba(124,58,237,.16);
+      display:grid;
+      place-items:center;
+      font-size:78px;
+      animation:wobble 3.2s ease-in-out infinite;
+    }
+    @keyframes wobble{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-8px)}}
+    .mini-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mini-stat{
+      background:rgba(255,255,255,.73);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:14px;
+      min-height:92px;
+    }
+    .mini-stat .num{font-size:26px;font-weight:900;color:#6d28d9;display:block;margin-bottom:5px}
+    .mini-stat .txt{font-size:13px;color:#64748b;line-height:1.55}
+
+    .note{
+      border-radius:22px;
+      padding:15px;
+      border:1px dashed rgba(124,58,237,.35);
+      background:rgba(124,58,237,.07);
+      color:#475569;
+      line-height:1.85;
+      font-size:14px;
+    }
+
+    .law-sheet{
+      margin-top:24px;
+      padding:24px;
+    }
+    .law-sheet h3{margin:0 0 12px;font-size:26px}
+    .law-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}
+    .law-point{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:15px;
+      line-height:1.65;
+      color:#475569;
+      font-size:14px;
+    }
+    .law-point b{display:block;color:#111827;margin-bottom:5px;font-size:15px}
+
+    .hud{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:14px;
+      align-items:center;
+      margin-bottom:16px;
+    }
+    .hud-card{
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.78);
+      box-shadow:0 12px 35px rgba(15,23,42,.08);
+      backdrop-filter:blur(16px);
+      border-radius:24px;
+      padding:14px;
+    }
+    .status-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .status-badge{
+      display:inline-flex;align-items:center;gap:7px;
+      background:rgba(255,255,255,.76);
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      padding:8px 11px;
+      color:#334155;
+      font-weight:800;
+      font-size:13px;
+    }
+    .progress-wrap{
+      margin-top:12px;
+      height:14px;
+      border-radius:999px;
+      background:rgba(148,163,184,.24);
+      overflow:hidden;
+    }
+    .progress-bar{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background:linear-gradient(90deg,#7c3aed,#06b6d4,#10b981);
+      transition:width .35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .progress-bar::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+      transform:translateX(-100%);
+      animation:shine 1.7s linear infinite;
+    }
+    @keyframes shine{to{transform:translateX(100%)}}
+
+    .timer-ring{
+      width:88px;height:88px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:conic-gradient(var(--green) var(--deg,360deg), rgba(148,163,184,.25) 0);
+      box-shadow:0 14px 34px rgba(15,23,42,.10);
+      position:relative;
+    }
+    .timer-ring::before{
+      content:"";position:absolute;inset:9px;border-radius:50%;background:rgba(255,255,255,.92)
+    }
+    .timer-ring span{position:relative;z-index:1;font-size:22px;font-weight:900;color:#334155}
+    .timer-ring.danger{background:conic-gradient(var(--red) var(--deg,360deg), rgba(148,163,184,.25) 0); animation:pulse .8s ease-in-out infinite}
+    @keyframes pulse{50%{transform:scale(1.04)}}
+
+    .quiz-card{padding:24px 24px 20px}
+    .q-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+    .level-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(245,158,11,.13);
+      color:#92400e;
+      border:1px solid rgba(245,158,11,.28);
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:900;
+      font-size:13px;
+    }
+    .q-number{color:#64748b;font-weight:900;font-size:14px;padding:8px 0}
+    .question{
+      margin:10px 0 18px;
+      font-size:clamp(22px,3.2vw,34px);
+      line-height:1.55;
+      letter-spacing:-.35px;
+    }
+    .options{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .option{
+      width:100%;
+      text-align:right;
+      justify-content:flex-start;
+      min-height:74px;
+      padding:15px 16px;
+      background:rgba(255,255,255,.82);
+      color:#1f2937;
+      border:2px solid rgba(100,116,139,.14);
+      box-shadow:0 12px 25px rgba(15,23,42,.06);
+      border-radius:22px;
+      font-weight:800;
+      line-height:1.65;
+    }
+    .option:hover{border-color:rgba(124,58,237,.35); background:white}
+    .option .letter{
+      flex:0 0 auto;
+      width:33px;height:33px;
+      display:grid;place-items:center;
+      border-radius:12px;
+      background:rgba(124,58,237,.10);
+      color:#6d28d9;
+      font-weight:900;
+    }
+    .option.correct{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.8);color:#065f46}
+    .option.wrong{background:rgba(239,68,68,.10);border-color:rgba(239,68,68,.75);color:#991b1b}
+    .option.hidden-choice{visibility:hidden;pointer-events:none}
+    .option.locked{pointer-events:none}
+
+    .powerups{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:16px;
+    }
+    .powerups .left,.powerups .right{display:flex;gap:10px;flex-wrap:wrap}
+    .tiny{padding:10px 12px;border-radius:15px;font-size:13px}
+    .feedback{
+      margin-top:16px;
+      display:none;
+      border-radius:22px;
+      padding:15px;
+      line-height:1.85;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.78);
+    }
+    .feedback.show{display:block;animation:pop .25s ease both}
+    .feedback.good{border-color:rgba(16,185,129,.35);background:rgba(16,185,129,.09)}
+    .feedback.bad{border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08)}
+    .feedback .title{font-size:20px;font-weight:900;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+    .feedback .ref{font-size:13px;color:#64748b;margin-top:8px}
+    .feedback .hintText{font-size:14px;color:#7c2d12;background:rgba(245,158,11,.12);padding:9px 12px;border-radius:14px;margin-top:8px;display:none}
+
+    .result-card{padding:30px;text-align:center}
+    .result-hero{
+      width:min(680px,100%);
+      margin:0 auto;
+      border-radius:32px;
+      padding:28px;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.85),transparent 32%),
+        linear-gradient(135deg,rgba(124,58,237,.12),rgba(6,182,212,.13),rgba(245,158,11,.16));
+      border:1px solid rgba(255,255,255,.75);
+    }
+    .trophy{font-size:86px;line-height:1;filter:drop-shadow(0 12px 12px rgba(245,158,11,.25));animation:wobble 3s ease-in-out infinite}
+    .result-card h2{font-size:clamp(32px,5vw,56px);margin:12px 0 8px}
+    .result-card p{color:#475569;line-height:1.9;font-size:17px;margin:8px auto;max-width:760px}
+    .score-big{font-size:54px;font-weight:1000;color:#6d28d9;margin:10px 0;letter-spacing:-1px}
+    .scoreline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0;text-align:center}
+    .score-box{
+      background:rgba(255,255,255,.76);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:16px 10px;
+    }
+    .score-box b{display:block;font-size:26px;color:#111827;margin-bottom:4px}
+    .score-box span{display:block;color:#64748b;font-size:13px;font-weight:800}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0}
+    .badge{
+      background:rgba(255,255,255,.84);
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      padding:10px 13px;
+      font-weight:900;
+      color:#334155;
+    }
+    .review{
+      margin-top:22px;
+      text-align:right;
+      display:none;
+    }
+    .review.show{display:block}
+    .review h3{font-size:24px;margin:0 0 12px}
+    .review-item{
+      background:rgba(255,255,255,.74);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:15px;
+      margin-bottom:10px;
+      line-height:1.8;
+    }
+    .review-item b{color:#111827}
+    .review-item .ok{color:#047857;font-weight:900}
+    .review-item .no{color:#dc2626;font-weight:900}
+
+    .toast{
+      position:fixed;
+      bottom:22px;
+      right:50%;
+      transform:translateX(50%) translateY(20px);
+      opacity:0;
+      pointer-events:none;
+      background:rgba(17,24,39,.92);
+      color:white;
+      border-radius:999px;
+      padding:12px 18px;
+      font-weight:900;
+      box-shadow:0 16px 40px rgba(15,23,42,.2);
+      transition:.25s;
+      z-index:20;
+      text-align:center;
+      max-width:min(92vw,780px);
+    }
+    .toast.show{opacity:1;transform:translateX(50%) translateY(0)}
+
+    canvas#confetti{
+      position:fixed;
+      inset:0;
+      width:100%;height:100%;
+      pointer-events:none;
+      z-index:15;
+    }
+
+    .certificate{
+      display:none;
+    }
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .law-grid{grid-template-columns:1fr 1fr}
+      .hud{grid-template-columns:1fr}
+      .timer-ring{width:74px;height:74px;justify-self:end}
+      .options{grid-template-columns:1fr}
+      .scoreline{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:620px){
+      .topbar{align-items:flex-start;flex-direction:column}
+      .pill{white-space:normal}
+      .intro,.side,.quiz-card,.result-card{padding:18px}
+      .setup,.mode-grid,.law-grid{grid-template-columns:1fr}
+      .brand h1{font-size:22px}
+      .logo{width:50px;height:50px;font-size:26px}
+      .question{font-size:22px}
+      .scoreline{grid-template-columns:1fr}
+    }
+
+    @media print{
+      body{background:white!important}
+      .topbar,.screen:not(#resultScreen),.toast,canvas,.blob{display:none!important}
+      .app{width:100%;padding:0;margin:0}
+      #resultScreen{display:block!important}
+      .result-card{box-shadow:none;border:4px double #7c3aed;background:white!important;padding:24px}
+      .result-hero{background:white!important;border:0}
+      @page{size:A4;margin:10mm}
+      html,body{height:auto!important;overflow:visible!important}
+      /* طباعة الشهادة في صفحة واحدة */
+      body.certificate-page .review,body.certificate-page .scoreline,body.certificate-page .badges{display:none!important}
+      body.certificate-page .btn-row{display:none!important}
+      .certificate{display:block;text-align:center;margin:0 auto;max-width:860px;padding:34px 40px;border:5px double #7c3aed;border-radius:14px;background:white;font-size:18px;line-height:2.1;position:relative}
+      .certificate h2{font-size:30px;color:#6d28d9;margin:0 0 14px}
+      .certificate .cert-logo{font-size:44px;margin-bottom:8px}
+      .certificate::before{content:'⚖';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:220px;opacity:.05;pointer-events:none}
+      /* التقرير المفصل: النتيجة + المراجعة + الشهادة */
+      body.report-page .review,body.report-page .scoreline,body.report-page .badges{display:block!important}
+      body.report-page .review{display:block!important;page-break-before:always}
+      body.report-page .review h3{page-break-after:avoid}
+      body.report-page .review-item{page-break-inside:avoid}
+    }
+
+    /* ===== الوضع الليلي ===== */
+    body.dark{
+      --bg1:#1e1b2e;--bg2:#172035;--bg3:#231a2a;
+      --ink:#e9e9f2;--muted:#9aa3b5;
+      --card:rgba(35,30,52,.85);--stroke:rgba(255,255,255,.12);
+      --shadow:0 22px 70px rgba(0,0,0,.45);
+    }
+    body.dark .option{background:rgba(45,38,66,.85);color:#ececf5;border-color:rgba(255,255,255,.1)}
+    body.dark .option:hover{background:rgba(55,46,84,.95)}
+    body.dark input,body.dark select{background:rgba(45,38,66,.85);color:#ececf5;border-color:rgba(255,255,255,.12)}
+    body.dark .pill,body.dark .chip,body.dark .mode-option,body.dark .mini-stat,body.dark .hud-card,body.dark .note,body.dark .status-badge,body.dark .law-point,body.dark .feedback{background:rgba(45,38,66,.75);color:#d9dcf0}
+    body.dark .brand h1,body.dark .result-card h2,body.dark h2{color:#ececf5}
+    body.dark .card::after{background:linear-gradient(135deg,rgba(255,255,255,.12),transparent 36%,rgba(255,255,255,.06))}
+    body.dark .certificate{border-color:#a78bfa}
+    body.dark body.certificate-page .certificate{background:#fff;color:#1f2937}
+    body.dark body.report-page .review{background:#fff;color:#1f2937}
+    body.dark #confetti{display:none}
+
+    /* ===== شارة الوقت المتبقي في شريط التقدم ===== */
+    .eta-badge{
+      font-size:12px;font-weight:800;color:#5b21b6;background:rgba(124,58,237,.1);
+      border-radius:999px;padding:4px 10px;margin-right:8px;white-space:nowrap
+    }
+    body.dark .eta-badge{color:#c4b5fd;background:rgba(167,139,250,.15)}
+
+    /* ===== لوحة الشرف ===== */
+    .leaderboard{margin-top:16px;text-align:right}
+    .leaderboard h4{margin:0 0 8px;font-size:16px;color:#475569}
+    body.dark .leaderboard h4{color:#b8c0d8}
+    .lb-row{
+      display:flex;justify-content:space-between;gap:10px;align-items:center;
+      background:rgba(255,255,255,.6);border:1px solid var(--stroke);border-radius:14px;
+      padding:8px 12px;font-size:13px;margin-bottom:6px
+    }
+    body.dark .lb-row{background:rgba(45,38,66,.7)}
+    .lb-row b{color:#6d28d9}
+
+    /* ===== زر اقرأ المادة كاملة ===== */
+    .law-link{
+      display:inline-block;margin-top:8px;color:#7c3aed;font-weight:800;font-size:13px;
+      cursor:pointer;border:1px solid rgba(124,58,237,.3);border-radius:999px;padding:6px 13px;
+      background:rgba(124,58,237,.06);transition:.15s
+    }
+    .law-link:hover{background:rgba(124,58,237,.14)}
+    body.dark .law-link{color:#a78bfa;border-color:rgba(167,139,250,.35)}
+    .law-link:visited{color:#7c3aed}
+
+    /* ===== فلترة المواضيع في شاشة البداية ===== */
+    .topic-filter{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:6px
+    }
+    .topic-chip{
+      cursor:pointer;border:1.5px solid rgba(124,58,237,.25);background:rgba(255,255,255,.7);
+      border-radius:999px;padding:6px 11px;font-size:12.5px;font-weight:700;color:#475569;
+      transition:.15s;user-select:none
+    }
+    .topic-chip:hover{border-color:rgba(124,58,237,.55)}
+    .topic-chip.on{background:rgba(124,58,237,.12);border-color:#7c3aed;color:#5b21b6}
+    body.dark .topic-chip{background:rgba(45,38,66,.8);color:#cfd4ea}
+    body.dark .topic-chip.on{background:rgba(124,58,237,.25);color:#e0d7fa}
+
+    /* ===== شاشة المراجعة السريعة (Flashcards) ===== */
+    .fc-card{min-height:220px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:28px;text-align:center}
+    .fc-q{font-size:21px;line-height:1.7;font-weight:800}
+    .fc-a{font-size:16px;color:#475569;line-height:1.9;display:none;padding-top:14px;border-top:1px dashed var(--stroke)}
+    .fc-card.show-a .fc-a{display:block}
+    body.dark .fc-a{color:#b8c0d8}
+    .fc-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+    /* ===== زر وضع ليلي ===== */
+    #themeToggle{background:rgba(255,255,255,.72);border:1px solid var(--stroke);color:#475569;border-radius:15px;padding:8px 13px;font-size:13px;font-weight:800}
+    body.dark #themeToggle{background:rgba(45,38,66,.8);color:#d9dcf0}
+
+    /* ===== وصولية: تخطي إلى المحتوى ===== */
+    .skip-link{
+      position:absolute;top:-60px;right:12px;z-index:50;
+      background:#7c3aed;color:#fff;padding:12px 18px;border-radius:12px;font-weight:800
+    }
+    .skip-link:focus{top:12px}
+
+    /* توقف مؤقت مرئي */
+    .paused-overlay{
+      position:fixed;inset:0;background:rgba(31,41,55,.6);backdrop-filter:blur(6px);
+      display:none;z-index:40;place-items:center;flex-direction:column;gap:16px;color:#fff
+    }
+    .paused-overlay.show{display:flex}
+    .paused-overlay b{font-size:26px}
+    .paused-overlay p{opacity:.85}
+  </style>
+</head>
+<body>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+  <div class="blob three"></div>
+  <canvas id="confetti"></canvas>
+
+  <main class="app">
+    <a class="skip-link" href="#startScreen" style="display:none">تخطي إلى المحتوى</a>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🧾</div>
+        <div>
+          <h1>مغامرة قانون العمل المصري</h1>
+          <small>اختبار مستوى مرح في قانون العمل المصري رقم 14 لسنة 2025</small>
+        </div>
+      </div>
+      <div class="pill">✨ نسخة تدريبية تفاعلية من ملف القانون المرفق</div>
+    </header>
+
+    <section id="startScreen" class="screen active">
+      <div class="hero">
+        <div class="card intro">
+          <div class="eyebrow">🎮 جاهز للتحدي؟</div>
+          <h2>قانون العمل… <span class="gradient-text">بس بروح لعبة!</span></h2>
+          <p>
+            ادخل مغامرة خفيفة ولطيفة لاختبار فهمك لأهم أحكام قانون العمل المصري الجديد: علاقات العمل، الأجور، الإجازات، تشغيل النساء والأطفال، انتهاء الخدمة، والسلامة والصحة المهنية.
+            اجمع النقاط، اكسب شارات، واكتشف مستواك في شئون العاملين.
+          </p>
+          <div class="chips" aria-label="مميزات اللعبة">
+            <span class="chip">🌈 تصميم مبهج</span>
+            <span class="chip">⚡ نقاط وسلاسل إجابات</span>
+            <span class="chip">💡 تلميحات</span>
+            <span class="chip">🎓 شهادة قابلة للطباعة</span>
+          </div>
+
+          <div class="setup" aria-label="إعدادات الاختبار">
+            <div class="field">
+              <label for="playerName">اسم اللاعب</label>
+              <input id="playerName" type="text" placeholder="مثلاً: أستاذة/ مريم" maxlength="32" />
+            </div>
+            <div class="field">
+              <label for="questionCount">عدد الأسئلة</label>
+              <select id="questionCount">
+                <option value="10">10 أسئلة سريعة</option>
+                <option value="15">15 سؤال تدريب</option>
+                <option value="20" selected>20 سؤال اختبار مستوى</option>
+                <option value="all">كل بنك الأسئلة</option>
+              </select>
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="questionCount">فلترة المواضيع (اختياري)</label>
+              <div class="topic-filter" id="topicFilter" role="group" aria-label="فلترة المواضيع (اختياري)" style="margin-bottom:10px"></div>
+            </div>
+            <div class="mode-grid" role="radiogroup" aria-label="نمط اللعب">
+              <div class="mode-option selected" data-mode="training" role="radio" aria-checked="true" tabindex="0">
+                <span class="mark">✅</span>
+                <b>وضع التدريب الهادي</b>
+                <span>بدون مؤقت. مناسب للمراجعة والتعليم وفيه تلميحات براحتك.</span>
+              </div>
+              <div class="mode-option" data-mode="challenge" role="radio" aria-checked="false" tabindex="0">
+                <span class="mark">⏱️</span>
+                <b>وضع التحدي السريع</b>
+                <span>25 ثانية لكل سؤال. مناسب لاختبار المستوى الحقيقي.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button class="primary" id="startBtn">ابدأ المغامرة 🚀</button>
+            <button class="secondary" id="scrollLawBtn">راجع الملخص السريع 📚</button>
+            <button class="secondary" id="flashcardsBtn">🗂️ وضع المراجعة السريعة</button>
+            <button class="secondary" id="soundBtn" aria-pressed="true">الصوت: تشغيل 🔊</button>
+            <button id="themeToggle" aria-label="الوضع الليلي">🌙 الوضع الليلي</button>
+          </div>
+        </div>
+
+        <aside class="card side">
+          <div class="mascot" aria-hidden="true">
+            <div class="mascot-face">🤓</div>
+          </div>
+          <div class="mini-stat-grid">
+            <div class="mini-stat"><span class="num" id="bankCount">30</span><span class="txt">سؤال من ملف القانون</span></div>
+            <div class="mini-stat"><span class="num">4</span><span class="txt">مستويات تقييم مرحة</span></div>
+            <div class="mini-stat"><span class="num">2</span><span class="txt">مساعدات أثناء اللعب</span></div>
+            <div class="mini-stat"><span class="num" id="bestScoreMini">—</span><span class="txt">أفضل نتيجة محفوظة</span></div>
+          </div>
+          <div class="leaderboard" id="leaderboardSection" style="display:none">
+            <h4>🏅 لوحة الشرف</h4>
+            <div id="leaderboardList"></div>
+          </div>
+          <div class="note">
+            💬 نصيحة لطيفة: ركّز في الأرقام والمدد القانونية؛ دي مفاتيح شغل شئون العاملين والموارد البشرية.
+          </div>
+        </aside>
+      </div>
+
+      <section id="lawSheet" class="card law-sheet">
+        <h3>📌 ملخص سريع قبل اللعب</h3>
+        <p style="color:#64748b;line-height:1.9;margin:0">
+          الملخص التالي مبني على ملف قانون العمل المصري رقم 14 لسنة 2025 المرفق، ويغطي أهم النقاط العملية لشئون العاملين والموارد البشرية.
+        </p>
+        <div class="law-grid">
+          <div class="law-point"><b>نطاق التطبيق</b>يسري القانون على علاقات العمل، ولا يسري - فيما عدا النص الخاص - على العاملين بأجهزة الدولة وعمال الخدمة المنزلية ومن في حكمهم.</div>
+          <div class="law-point"><b>حقوق أساسية</b>حظر السخرة والتحرش والتنمر والعنف والتمييز، وبطلان أي شرط ينتقص من حقوق العامل.</div>
+          <div class="law-point"><b>العلاوة السنوية</b>لا تقل العلاوة الدورية السنوية عن 3% من الأجر التأميني، والمجلس القومي للأجور يختص بالحدود الدنيا.</div>
+          <div class="law-point"><b>عقد العمل</b>يحرر عقد العمل باللغة العربية من 4 نسخ، وفترة الاختبار لا تزيد على 3 أشهر ولمرة واحدة.</div>
+          <div class="law-point"><b>ساعات العمل</b>الحد الأقصى 8 ساعات يومياً أو 48 ساعة أسبوعياً، وراحة أسبوعية 24 ساعة مدفوعة الأجر.</div>
+          <div class="law-point"><b>الإجازات</b>15 يوماً في السنة الأولى، 21 من السنة الثانية، 30 بعد عشر سنوات أو لمن تجاوز 50 عاماً، و45 لذوي الإعاقة والأقزام.</div>
+          <div class="law-point"><b>تشغيل النساء والأطفال</b>إجازة الوضع 4 أشهر، وفترات رضاعة، وحظر تشغيل الأطفال قبل 15 سنة مع جواز التدريب من 14 سنة.</div>
+          <div class="law-point"><b>انتهاء الخدمة</b>إخطار إنهاء العقد غير محدد المدة 3 أشهر، والتعويض عن الإنهاء غير المشروع لا يقل عن أجر شهرين عن كل سنة خدمة.</div>
+          <div class="law-point"><b>السلامة المهنية</b>التزام ببيئة عمل آمنة خالية من التحرش والتنمر والعنف، وبوسائل الوقاية والتدريب دون تحميل العامل تكلفتها.</div>
+        </div>
+      </section>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="hud">
+        <div class="hud-card">
+          <div class="status-row">
+            <span class="status-badge">👤 <span id="hudName">لاعب</span></span>
+            <span class="status-badge">⭐ النقاط: <span id="hudScore">0</span></span>
+            <span class="status-badge">🔥 السلسلة: <span id="hudStreak">0</span></span>
+            <span class="status-badge">🏅 المستوى الحالي: <span id="hudLevel">بداية لطيفة</span></span>
+          </div>
+          <div class="progress-wrap" aria-label="تقدم الاختبار"><div class="progress-bar" id="progressBar"></div></div>
+          <div style="margin-top:8px"><span class="eta-badge" id="etaBadge">⏳ متبقي تقريباً — دقيقة</span></div>
+        </div>
+        <div class="timer-ring" id="timerRing" title="المؤقت"><span id="timerText">∞</span></div>
+      </div>
+
+      <article class="card quiz-card">
+        <div class="q-head">
+          <div>
+            <span class="level-tag" id="difficultyTag">🌱 سؤال تمهيدي</span>
+          </div>
+          <div class="q-number" id="qNumber">سؤال 1 من 20</div>
+        </div>
+        <h2 class="question" id="questionText">...</h2>
+        <div class="options" id="options"></div>
+
+        <div class="feedback" id="feedback">
+          <div class="title" id="feedbackTitle"></div>
+          <div id="feedbackBody"></div>
+          <div class="hintText" id="hintText"></div>
+          <div class="ref" id="feedbackRef"></div>
+        </div>
+
+        <div class="powerups">
+          <div class="left">
+            <button class="secondary tiny" id="hintBtn">تلميح 💡 <span id="hintLeft">3</span></button>
+            <button class="secondary tiny" id="fiftyBtn">احذف اختيارين 🪄 <span id="fiftyLeft">1</span></button>
+          </div>
+          <div class="right">
+            <button class="secondary tiny" id="quitBtn">إنهاء الاختبار 🚪</button>
+            <button class="primary tiny" id="nextBtn" disabled>السؤال التالي ➜</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="card result-card">
+        <div class="result-hero">
+          <div class="trophy" id="resultEmoji">🏆</div>
+          <h2 id="resultTitle">نتيجتك جاهزة!</h2>
+          <div class="score-big" id="resultPercent">0%</div>
+          <p id="resultMessage">...</p>
+          <div class="badges" id="badges"></div>
+        </div>
+
+        <div class="scoreline">
+          <div class="score-box"><b id="finalCorrect">0</b><span>إجابات صحيحة</span></div>
+          <div class="score-box"><b id="finalWrong">0</b><span>إجابات تحتاج مراجعة</span></div>
+          <div class="score-box"><b id="finalScore">0</b><span>إجمالي النقاط</span></div>
+          <div class="score-box"><b id="finalBest">—</b><span>أفضل نتيجة</span></div>
+        </div>
+
+        <div class="btn-row" style="justify-content:center">
+          <button class="green" id="restartBtn">العب مرة أخرى 🔁</button>
+          <button class="secondary" id="reviewBtn">مراجعة الإجابات 🧠</button>
+          <button class="secondary" id="shareBtn" aria-label="شارك نتيجتك">📤 شارك النتيجة</button>
+          <button class="secondary" id="reportBtn" aria-label="تقرير مفصل">📄 تقرير مفصل</button>
+          <button class="warning" id="printBtn">اطبع الشهادة في صفحة واحدة 🖨️</button>
+        </div>
+
+        <div class="certificate" id="certificateText"></div>
+        <div class="review" id="review"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">رسالة</div>
+
+  <section id="fcScreen" class="screen">
+    <div class="card fc-card" id="fcCard" role="region" aria-live="polite">
+      <div class="q-head"><div class="q-number" id="fcCount">بطاقة 1</div></div>
+      <div class="fc-q" id="fcQuestion"></div>
+      <div class="fc-a" id="fcAnswer"></div>
+      <div class="fc-actions">
+        <button class="secondary tiny" id="fcRevealBtn">اظهر الإجابة 👁️</button>
+        <button class="secondary tiny" id="fcPrevBtn">← السابقة</button>
+        <button class="primary tiny" id="fcNextBtn">التالية →</button>
+        <button class="secondary tiny" id="fcExitBtn">رجوع للعب 🚪</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="paused-overlay" id="pausedOverlay">
+    <b>⏸️ وقّفت الاختبار موقتاً</b>
+    <p>مضيتلك وقت بعيد عن الصفحة… رجّعت المؤقت وأكملت من حيث ما توقفت.</p>
+    <button class="primary tiny" onclick="document.getElementById('pausedOverlay').classList.remove('show')">كمّل اللعب ▶️</button>
+  </div>
+
+  <script>
+    const questionBank = [
+      {
+            "q": "ما رقم القانون محل اللعبة؟",
+            "options": [
+                  "قانون رقم 14 لسنة 2025 بإصدار قانون العمل",
+                  "قانون رقم 12 لسنة 2003",
+                  "قانون رقم 148 لسنة 2019",
+                  "قانون رقم 10 لسنة 2018"
+            ],
+            "answer": 0,
+            "hint": "العنوان في أول صفحات الملف يقول: قانون رقم 14 لسنة 2025.",
+            "explanation": "القانون المرفق هو قانون رقم 14 لسنة 2025 بإصدار قانون العمل.",
+            "ref": "مواد الإصدار: عنوان القانون.",
+            "diff": "تمهيدي"
+      },
+      {
+            "q": "متى نُشر قانون العمل رقم 14 لسنة 2025 في الجريدة الرسمية؟",
+            "options": [
+                  "3 مايو 2025",
+                  "1 يناير 2025",
+                  "1 أكتوبر 2025",
+                  "3 مايو 2026"
+            ],
+            "answer": 0,
+            "hint": "التاريخ ظاهر في غلاف الجريدة الرسمية: العدد 18 تابع.",
+            "explanation": "ورد في الملف أن القانون صدر/نُشر في العدد 18 تابع بتاريخ 3 مايو سنة 2025.",
+            "ref": "غلاف الجريدة الرسمية ومواد الإصدار.",
+            "diff": "تواريخ"
+      },
+      {
+            "q": "وفق المادة الأولى من مواد الإصدار، أي فئتين لا تسري عليهما أحكام القانون فيما عدا النصوص الخاصة؟",
+            "options": [
+                  "العاملون بأجهزة الدولة وعمال الخدمة المنزلية ومن في حكمهم",
+                  "عمال القطاع الخاص فقط",
+                  "العمالة غير المنتظمة والأجانب فقط",
+                  "أصحاب الأعمال ومديرو الموارد البشرية"
+            ],
+            "answer": 0,
+            "hint": "المادة الأولى تستثني فئتين صراحة.",
+            "explanation": "لا تسري الأحكام، فيما عدا النص الخاص، على العاملين بأجهزة الدولة بما في ذلك وحدات الإدارة المحلية والهيئات العامة، وعلى عمال الخدمة المنزلية ومن في حكمهم.",
+            "ref": "مواد الإصدار: المادة الأولى.",
+            "diff": "نطاق التطبيق"
+      },
+      {
+            "q": "فيما لم يرد بشأنه نص خاص، تسري أحكام قانون العمل على العاملين الأجانب داخل مصر في أي إطار؟",
+            "options": [
+                  "عقود العمل الفردية أو اتفاقيات العمل الجماعية",
+                  "العقود المدنية فقط",
+                  "أعمال الخدمة المنزلية فقط",
+                  "الوظائف الحكومية فقط"
+            ],
+            "answer": 0,
+            "hint": "النص يذكر العقود الفردية والجماعية.",
+            "explanation": "تسري أحكام القانون فيما لم يرد بشأنه نص خاص في عقود العمل الفردية أو اتفاقيات العمل الجماعية على العاملين الأجانب داخل جمهورية مصر العربية.",
+            "ref": "مواد الإصدار: المادة الأولى.",
+            "diff": "نطاق التطبيق"
+      },
+      {
+            "q": "متى يعمل بالقانون وفق المادة الثالثة عشرة من مواد الإصدار؟",
+            "options": [
+                  "من أول الشهر التالي لانقضاء 90 يوماً من تاريخ نشره",
+                  "من اليوم التالي للنشر مباشرة",
+                  "بعد عام كامل من نشره",
+                  "من أول أكتوبر فقط لكل أحكامه"
+            ],
+            "answer": 0,
+            "hint": "ابحث عن عبارة: أول الشهر التالي لانقضاء تسعين يوماً.",
+            "explanation": "ينشر القانون في الجريدة الرسمية ويعمل به من أول الشهر التالي لانقضاء تسعين يوماً من تاريخ نشره، مع حكم خاص للمحاكم العمالية المتخصصة.",
+            "ref": "مواد الإصدار: المادة الثالثة عشرة.",
+            "diff": "تواريخ"
+      },
+      {
+            "q": "متى يُعمل بنظام المحاكم العمالية المتخصصة وفق مواد الإصدار؟",
+            "options": [
+                  "اعتباراً من أول أكتوبر التالي للعمل بالقانون المرافق",
+                  "من تاريخ نشر القانون مباشرة",
+                  "بعد ستة أشهر من صدور اللائحة فقط",
+                  "من أول يناير 2026 فقط"
+            ],
+            "answer": 0,
+            "hint": "العبارة الختامية في مواد الإصدار تتكلم عن أول أكتوبر.",
+            "explanation": "يعمل بنظام المحاكم العمالية المتخصصة اعتباراً من أول أكتوبر التالي للعمل بالقانون المرافق.",
+            "ref": "مواد الإصدار: المادة الثالثة عشرة.",
+            "diff": "محاكم"
+      },
+      {
+            "q": "أي قانون أُلغي بموجب المادة الثانية عشرة من مواد الإصدار؟",
+            "options": [
+                  "قانون العمل رقم 12 لسنة 2003",
+                  "قانون التأمينات رقم 148 لسنة 2019",
+                  "قانون الطفل رقم 12 لسنة 1996",
+                  "قانون الاستثمار رقم 72 لسنة 2017"
+            ],
+            "answer": 0,
+            "hint": "هو قانون العمل القديم.",
+            "explanation": "ألغت المادة الثانية عشرة قانون العمل الصادر بالقانون رقم 12 لسنة 2003، كما ألغت القانون رقم 125 لسنة 2010 بشأن مرتبة امتياز حقوق العمال.",
+            "ref": "مواد الإصدار: المادة الثانية عشرة.",
+            "diff": "تمهيدي"
+      },
+      {
+            "q": "من هو العامل في تعريف المادة 1؟",
+            "options": [
+                  "كل شخص طبيعي يعمل لقاء أجر لدى صاحب عمل تحت إدارته أو إشرافه",
+                  "كل شخص يملك منشأة",
+                  "كل متطوع يعمل دون أجر",
+                  "كل موظف حكومي فقط"
+            ],
+            "answer": 0,
+            "hint": "ثلاث كلمات مفتاحية: أجر، صاحب عمل، إدارة أو إشراف.",
+            "explanation": "العامل هو كل شخص طبيعي يعمل لقاء أجر لدى صاحب عمل تحت إدارته أو إشرافه.",
+            "ref": "المادة 1: تعريف العامل.",
+            "diff": "تعريفات"
+      },
+      {
+            "q": "ما المقصود بصاحب العمل في المادة 1؟",
+            "options": [
+                  "كل شخص طبيعي أو اعتباري يستخدم عاملاً أو أكثر لقاء أجر",
+                  "العامل الأعلى أجراً فقط",
+                  "الوزارة المختصة فقط",
+                  "المفوض العمالي"
+            ],
+            "answer": 0,
+            "hint": "قد يكون شخصاً طبيعياً أو اعتبارياً.",
+            "explanation": "صاحب العمل هو كل شخص طبيعي أو اعتباري يستخدم عاملاً أو أكثر لقاء أجر.",
+            "ref": "المادة 1: تعريف صاحب العمل.",
+            "diff": "تعريفات"
+      },
+      {
+            "q": "وفق المادة 1، العمل العرضي هو العمل الذي لا يدخل بطبيعته في نشاط صاحب العمل ولا يستغرق إنجازه أكثر من…",
+            "options": [
+                  "ستة أشهر",
+                  "شهر واحد",
+                  "سنة كاملة",
+                  "ثلاث سنوات"
+            ],
+            "answer": 0,
+            "hint": "المدة نصف سنة.",
+            "explanation": "العمل العرضي لا يدخل بطبيعته فيما يزاوله صاحب العمل من نشاط ولا يستغرق إنجازه أكثر من ستة أشهر.",
+            "ref": "المادة 1: تعريف العمل العرضي.",
+            "diff": "تعريفات"
+      },
+      {
+            "q": "في تطبيق القانون، تعتبر السنة والشهر كم يوماً ما لم يتم الاتفاق على خلاف ذلك؟",
+            "options": [
+                  "السنة 365 يوماً والشهر 30 يوماً",
+                  "السنة 360 يوماً والشهر 28 يوماً",
+                  "السنة 366 يوماً والشهر 31 يوماً",
+                  "السنة 300 يوم والشهر 25 يوماً"
+            ],
+            "answer": 0,
+            "hint": "نص قصير جداً في المادة 2.",
+            "explanation": "تعتبر السنة 365 يوماً والشهر 30 يوماً ما لم يتم الاتفاق على خلاف ذلك.",
+            "ref": "المادة 2.",
+            "diff": "أرقام"
+      },
+      {
+            "q": "أي مما يلي محظور صراحة في المادة 4؟",
+            "options": [
+                  "تشغيل العامل سخرة أو جبراً والتحرش والتنمر والعنف",
+                  "منح العامل إجازة سنوية",
+                  "تدريب العامل",
+                  "العمل عن بعد"
+            ],
+            "answer": 0,
+            "hint": "المادة 4 من أهم مواد بيئة العمل الآمنة.",
+            "explanation": "تحظر المادة 4 تشغيل العامل سخرة أو جبراً، كما تحظر التحرش أو التنمر أو ممارسة أي عنف لفظي أو جسدي أو نفسي على العامل.",
+            "ref": "المادة 4.",
+            "diff": "حقوق"
+      },
+      {
+            "q": "هل تعد المزايا أو الحماية المقررة للمرأة أو الطفل أو ذوي الإعاقة تمييزاً محظوراً؟",
+            "options": [
+                  "لا، إذا كانت بالقدر اللازم لتحقيق هدف الحماية",
+                  "نعم دائماً",
+                  "نعم إذا كانت مكتوبة فقط",
+                  "الأمر متروك لصاحب العمل"
+            ],
+            "answer": 0,
+            "hint": "المادة 5 تفرق بين التمييز والحماية الإيجابية.",
+            "explanation": "لا يعد تمييزاً محظوراً كل ميزة أو حماية تقرر للمرأة أو الطفل أو ذوي الإعاقة والأقزام متى كانت بالقدر اللازم لتحقيق الهدف الذي تقررت من أجله.",
+            "ref": "المادة 5.",
+            "diff": "حقوق"
+      },
+      {
+            "q": "ما حكم أي شرط أو اتفاق ينتقص من حقوق العامل المقررة في القانون؟",
+            "options": [
+                  "يقع باطلاً",
+                  "يصبح صحيحاً إذا وقعه العامل",
+                  "يصح بعد مرور سنة",
+                  "يصح إذا وافق المدير المباشر"
+            ],
+            "answer": 0,
+            "hint": "قاعدة حماية العامل في المادة 6.",
+            "explanation": "يقع باطلاً كل شرط أو اتفاق يخالف أحكام القانون إذا تضمن انتقاصاً من حقوق العامل أو إبراء من حقوقه خلال سريان العقد أو خلال ثلاثة أشهر من انتهائه.",
+            "ref": "المادة 6.",
+            "diff": "حقوق"
+      },
+      {
+            "q": "ما الحد الأدنى للعلاوة السنوية الدورية وفق المادة 12؟",
+            "options": [
+                  "3% من الأجر التأميني",
+                  "1% من الأجر الأساسي",
+                  "10% من صافي الربح",
+                  "لا يوجد حد أدنى"
+            ],
+            "answer": 0,
+            "hint": "النسبة مذكورة بوضوح في المادة 12.",
+            "explanation": "يستحق العاملون علاوة سنوية دورية لا تقل عن 3% من الأجر التأميني، وتستحق بانقضاء سنة من التعيين أو من تاريخ استحقاق العلاوة السابقة.",
+            "ref": "المادة 12.",
+            "diff": "أجور"
+      },
+      {
+            "q": "إذا تعذّر صرف العلاوة الدورية لظروف اقتصادية بالمنشأة، من يبت في تخفيضها أو الإعفاء منها؟",
+            "options": [
+                  "المجلس القومي للأجور",
+                  "العامل منفرداً",
+                  "مكتب التأمينات فقط",
+                  "البنك المركزي"
+            ],
+            "answer": 0,
+            "hint": "جهة مرتبطة بالحد الأدنى للأجور.",
+            "explanation": "يعرض الأمر على المجلس القومي للأجور للبت في تخفيض العلاوة أو الإعفاء منها خلال ثلاثين يوماً من تاريخ العرض.",
+            "ref": "المادة 12.",
+            "diff": "أجور"
+      },
+      {
+            "q": "كم نسبة مورد صندوق تمويل التدريب والتأهيل من الحد الأدنى للأجر التأميني للمنشآت التي يعمل بها 30 عاملاً فأكثر؟",
+            "options": [
+                  "0.25% بحد أدنى 10 جنيهات وحد أقصى 30 جنيهاً عن كل عامل سنوياً",
+                  "1% من الأجر الأساسي دون حد أقصى",
+                  "3% من صافي الربح",
+                  "10 جنيهات فقط لكل منشأة"
+            ],
+            "answer": 0,
+            "hint": "هي ربع في المائة، وليست 1%.",
+            "explanation": "من موارد صندوق تمويل التدريب والتأهيل نسبة 0.25% من الحد الأدنى للأجر التأميني، بحد أدنى 10 جنيهات وبحد أقصى 30 جنيهاً عن كل عامل سنوياً، للمنشآت التي يعمل بها 30 عاملاً فأكثر.",
+            "ref": "المادة 21.",
+            "diff": "تدريب"
+      },
+      {
+            "q": "ما الحد الأقصى لرسم ترخيص مزاولة عمليات التدريب وفق المادة 23؟",
+            "options": [
+                  "100 ألف جنيه",
+                  "5 آلاف جنيه",
+                  "500 جنيه",
+                  "مليون جنيه"
+            ],
+            "answer": 0,
+            "hint": "مبلغ كبير خاص بالجهات التي تزاول التدريب.",
+            "explanation": "يصدر الوزير المختص قراراً بشروط وإجراءات منح ترخيص مزاولة التدريب ورسومه بما لا يزيد على مائة ألف جنيه.",
+            "ref": "المادة 23.",
+            "diff": "تدريب"
+      },
+      {
+            "q": "ما الحد الأقصى لرسم ترخيص المدربين وفق المادة 25؟",
+            "options": [
+                  "5 آلاف جنيه",
+                  "100 ألف جنيه",
+                  "500 ألف جنيه",
+                  "30 جنيهاً"
+            ],
+            "answer": 0,
+            "hint": "أقل من رسم جهة التدريب نفسها.",
+            "explanation": "يشترط في المدربين الترخيص لهم، وتحدد الرسوم بما لا يجاوز خمسة آلاف جنيه.",
+            "ref": "المادة 25.",
+            "diff": "تدريب"
+      },
+      {
+            "q": "ما سن المتدرج الأدنى وفق المادة 28؟",
+            "options": [
+                  "14 عاماً",
+                  "15 عاماً",
+                  "16 عاماً",
+                  "18 عاماً"
+            ],
+            "answer": 0,
+            "hint": "يتقاطع مع سن تدريب الأطفال.",
+            "explanation": "يشترط في المتدرج ألا يقل سنه عن أربعة عشر عاماً.",
+            "ref": "المادة 28.",
+            "diff": "تدريب"
+      },
+      {
+            "q": "إذا أراد أحد طرفي اتفاق التدرج إنهاءه، يجب إخطار الطرف الآخر قبل الإنهاء بمدة لا تقل عن…",
+            "options": [
+                  "3 أيام",
+                  "15 يوماً",
+                  "شهر",
+                  "90 يوماً"
+            ],
+            "answer": 0,
+            "hint": "مدة قصيرة جداً.",
+            "explanation": "يشترط أن يخطر الطرف الراغب في إنهاء اتفاق التدرج الطرف الآخر قبل الإنهاء بثلاثة أيام على الأقل.",
+            "ref": "المادة 30.",
+            "diff": "تدريب"
+      },
+      {
+            "q": "وفق المادة 33، إذا عيّن صاحب العمل عاملاً غير حاصل على شهادة القيد، فعليه قيد اسمه خلال…",
+            "options": [
+                  "30 يوماً من تاريخ تسلمه العمل",
+                  "7 أيام",
+                  "6 أشهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "المدة شهر تقريباً.",
+            "explanation": "استثناءً يجوز لصاحب العمل تعيين غير الحاصل على شهادة القيد بشرط قيد اسم العامل بالجهة الإدارية المختصة خلال ثلاثين يوماً من تاريخ تسلمه العمل.",
+            "ref": "المادة 33.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "متى ترسل المنشأة بياناً مفصلاً بعدد العمال إلى الجهة الإدارية المختصة من تاريخ بدء العمل بالمنشأة؟",
+            "options": [
+                  "خلال 30 يوماً",
+                  "خلال 3 أيام",
+                  "خلال سنة",
+                  "في شهر يناير فقط"
+            ],
+            "answer": 0,
+            "hint": "هذه مدة الإخطار الأولي في المادة 36.",
+            "explanation": "تلتزم المنشآت بإرسال بيان مفصل بعدد العمال خلال ثلاثين يوماً من تاريخ بدء العمل بالمنشأة، ثم ترسل تحديثات خلال شهر يناير من كل عام.",
+            "ref": "المادة 36.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "من يزاول إلحاق المصريين للعمل بالداخل أو الخارج؟",
+            "options": [
+                  "الوزارة المختصة والجهات المحددة قانوناً ومنها وكالات التشغيل الخاصة المرخصة",
+                  "أي شخص لديه صفحة على الإنترنت",
+                  "المفوض العمالي فقط",
+                  "صاحب العامل السابق"
+            ],
+            "answer": 0,
+            "hint": "المادة 40 تعدد الجهات.",
+            "explanation": "تكون مزاولة عمليات إلحاق المصريين للعمل بالداخل أو الخارج عن طريق الوزارة المختصة أو الجهات المحددة ومنها وكالات التشغيل الخاصة المرخصة.",
+            "ref": "المادة 40.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "ما رأس المال الأدنى لوكالة التشغيل الخاصة إذا كانت تزاول التشغيل بالداخل فقط؟",
+            "options": [
+                  "250 ألف جنيه",
+                  "50 ألف جنيه",
+                  "مليون جنيه",
+                  "10 آلاف جنيه"
+            ],
+            "answer": 0,
+            "hint": "التشغيل بالخارج له حد أعلى.",
+            "explanation": "يشترط ألا يقل رأسمال الشركة عن 250 ألف جنيه إذا كانت تزاول عمليات التشغيل بالداخل.",
+            "ref": "المادة 41.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "ما رأس المال الأدنى لوكالة التشغيل الخاصة إذا كانت تزاول تشغيل المصريين بالخارج أو بالداخل والخارج معاً؟",
+            "options": [
+                  "500 ألف جنيه",
+                  "250 ألف جنيه",
+                  "100 ألف جنيه",
+                  "30 ألف جنيه"
+            ],
+            "answer": 0,
+            "hint": "ضعف الحد الخاص بالداخل فقط.",
+            "explanation": "يشترط ألا يقل رأسمال الشركة عن 500 ألف جنيه إذا كانت تزاول عمليات تشغيل المصريين بالخارج أو بالداخل والخارج معاً.",
+            "ref": "المادة 41.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "ما قيمة التأمين الذي تقدمه وكالة التشغيل الخاصة لصالح الوزارة المختصة؟",
+            "options": [
+                  "لا يقل عن مليون جنيه",
+                  "لا يقل عن 10 آلاف جنيه",
+                  "500 جنيه",
+                  "لا يوجد تأمين"
+            ],
+            "answer": 0,
+            "hint": "مبلغ ضمان كبير لضمان الالتزامات.",
+            "explanation": "تقدم الشركة تأميناً لا يقل عن مليون جنيه نقداً أو بخطاب ضمان غير مشروط وغير قابل للإلغاء.",
+            "ref": "المادة 41.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "ما أقصى ما يجوز لوكالة التشغيل الخاصة تقاضيه من العامل كمصروفات إدارية؟",
+            "options": [
+                  "1% من أجر السنة الأولى فقط",
+                  "5% من كل سنة",
+                  "نصف شهر من كل سنة",
+                  "لا حد أقصى"
+            ],
+            "answer": 0,
+            "hint": "الاستثناء الوحيد في المادة 43.",
+            "explanation": "الأصل حظر تقاضي أي مبالغ من العامل، واستثناءً يجوز لوكالات التشغيل الخاصة تقاضي مبلغ لا يجاوز 1% من أجر العامل عن السنة الأولى فقط كمصروفات إدارية.",
+            "ref": "المادة 43.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "هل يجوز للمنشآت تشغيل عمال عن طريق متعهد أو مقاول توريد عمال؟",
+            "options": [
+                  "لا يجوز",
+                  "يجوز دائماً",
+                  "يجوز بشرط موافقة العامل فقط",
+                  "يجوز إذا كان الأجر أعلى"
+            ],
+            "answer": 0,
+            "hint": "نص قصير حاسم في المادة 45.",
+            "explanation": "لا يجوز للمنشآت تشغيل عمال عن طريق متعهد أو مقاول توريد عمال، مع مراعاة حكم المادة 40.",
+            "ref": "المادة 45.",
+            "diff": "تشغيل"
+      },
+      {
+            "q": "وفق المادة 53، يستحق العاملون من الذكور والإناث أجراً متساوياً عن…",
+            "options": [
+                  "العمل ذي القيمة المتساوية",
+                  "أي عمل ولو مختلف تماماً",
+                  "العمل الليلي فقط",
+                  "العمل الموسمي فقط"
+            ],
+            "answer": 0,
+            "hint": "النص يتكلم عن قيمة العمل لا عن مسمى الوظيفة فقط.",
+            "explanation": "يستحق جميع العاملين من الذكور والإناث أجراً متساوياً عن العمل ذي القيمة المتساوية، ويشمل ذلك كل صور الأجر وعناصره.",
+            "ref": "المادة 53.",
+            "diff": "نساء"
+      },
+      {
+            "q": "مدة إجازة الوضع للعاملة وفق المادة 54 هي…",
+            "options": [
+                  "4 أشهر مدفوعة الأجر",
+                  "45 يوماً فقط",
+                  "سنة دون أجر",
+                  "شهران فقط"
+            ],
+            "answer": 0,
+            "hint": "النص الجديد يعطي مدة أربعة أشهر.",
+            "explanation": "للعاملة الحق في إجازة وضع لمدة أربعة أشهر تشمل ما قبل الوضع وما بعده، وتكون مدفوعة الأجر.",
+            "ref": "المادة 54.",
+            "diff": "نساء"
+      },
+      {
+            "q": "ما الحد الأدنى لمدة إجازة الوضع بعد الولادة؟",
+            "options": [
+                  "45 يوماً",
+                  "15 يوماً",
+                  "شهران كاملان",
+                  "7 أيام"
+            ],
+            "answer": 0,
+            "hint": "رقم يظهر داخل المادة 54.",
+            "explanation": "يجب ألا تقل مدة إجازة الوضع بعد الوضع عن خمسة وأربعين يوماً.",
+            "ref": "المادة 54.",
+            "diff": "نساء"
+      },
+      {
+            "q": "كم مرة تستحق العاملة إجازة الوضع طوال مدة خدمتها؟",
+            "options": [
+                  "ثلاث مرات كحد أقصى",
+                  "مرة واحدة فقط",
+                  "مرتين فقط",
+                  "بلا حد أقصى"
+            ],
+            "answer": 0,
+            "hint": "القانون وضع سقفاً عددياً.",
+            "explanation": "لا تستحق العاملة إجازة الوضع لأكثر من ثلاث مرات طوال مدة خدمتها.",
+            "ref": "المادة 54.",
+            "diff": "نساء"
+      },
+      {
+            "q": "متى تخفض ساعات العمل اليومية للمرأة الحامل ساعة على الأقل؟",
+            "options": [
+                  "اعتباراً من الشهر السادس من الحمل",
+                  "من أول يوم في الحمل",
+                  "بعد الولادة فقط",
+                  "في الشهر التاسع فقط"
+            ],
+            "answer": 0,
+            "hint": "النص يحدد الشهر السادس.",
+            "explanation": "تخفض ساعات العمل اليومية للمرأة الحامل ساعة على الأقل اعتباراً من الشهر السادس من الحمل، ولا يجوز إلزامها بعمل إضافي طوال الحمل وحتى نهاية ستة أشهر من تاريخ الوضع.",
+            "ref": "المادة 54.",
+            "diff": "نساء"
+      },
+      {
+            "q": "للعاملة المرضعة خلال السنتين التاليتين للوضع الحق في…",
+            "options": [
+                  "فترتين للرضاعة لا تقل كل منهما عن نصف ساعة وتحسبان من ساعات العمل",
+                  "فترة واحدة لا تحسب من الأجر",
+                  "إجازة شهرية دون أجر",
+                  "خفض دائم في الأجر"
+            ],
+            "answer": 0,
+            "hint": "يمكن ضم الفترتين.",
+            "explanation": "للعاملة خلال السنتين التاليتين للوضع فترتان للرضاعة لا تقل كل منهما عن نصف ساعة، ولها ضمهما، وتحسبان من ساعات العمل دون تخفيض الأجر.",
+            "ref": "المادة 56.",
+            "diff": "نساء"
+      },
+      {
+            "q": "إجازة رعاية الطفل دون أجر للعاملة في منشأة تستخدم 50 عاملاً فأكثر لا تجاوز…",
+            "options": [
+                  "سنتين",
+                  "ثلاثة أشهر",
+                  "45 يوماً",
+                  "خمسة أعوام"
+            ],
+            "answer": 0,
+            "hint": "إجازة طويلة لكنها محددة بسنتين.",
+            "explanation": "للعاملة في المنشأة التي تستخدم خمسين عاملاً فأكثر الحق في إجازة دون أجر لمدة لا تجاوز سنتين لرعاية طفلها.",
+            "ref": "المادة 57.",
+            "diff": "نساء"
+      },
+      {
+            "q": "ما شرط المدة قبل حصول العاملة على إجازة رعاية الطفل وفق المادة 57؟",
+            "options": [
+                  "أن تكون قد مر على وجودها في المنشأة سنة على الأقل",
+                  "أن تكون أمضت خمس سنوات",
+                  "لا يوجد أي شرط مدة",
+                  "أن تكون في فترة اختبار"
+            ],
+            "answer": 0,
+            "hint": "شرط سنة واحدة.",
+            "explanation": "يشترط لحصول العاملة على إجازة رعاية الطفل أن يكون قد مر على وجودها في المنشأة سنة على الأقل، وألا تقل المدة بين الإجازة الأولى والثانية عن سنتين.",
+            "ref": "المادة 57.",
+            "diff": "نساء"
+      },
+      {
+            "q": "إذا أرادت العاملة إنهاء عقدها بسبب الزواج أو الحمل أو الإنجاب، فيجب إخطار صاحب العمل كتابة خلال…",
+            "options": [
+                  "3 أشهر",
+                  "10 أيام",
+                  "سنة",
+                  "24 ساعة"
+            ],
+            "answer": 0,
+            "hint": "المهلة واحدة في الحالات الثلاث.",
+            "explanation": "للعاملة إنهاء عقد العمل بسبب زواجها أو حملها أو إنجابها على أن تخطر صاحب العمل كتابة خلال ثلاثة أشهر من تاريخ الواقعة بحسب الأحوال.",
+            "ref": "المادة 58.",
+            "diff": "نساء"
+      },
+      {
+            "q": "صاحب العمل الذي يستخدم 100 عاملة فأكثر في مكان واحد يلتزم بإنشاء أو توفير…",
+            "options": [
+                  "دار حضانة أو رعاية أطفال العاملات",
+                  "مكتب تشغيل بالخارج",
+                  "مدرسة صناعية",
+                  "سكن للعمال الذكور فقط"
+            ],
+            "answer": 0,
+            "hint": "التزام مرتبط برعاية أطفال العاملات.",
+            "explanation": "على صاحب العمل الذي يستخدم مائة عاملة فأكثر في مكان واحد أن ينشئ دار حضانة أو يعهد إلى دار حضانة برعاية أطفال العاملات، ويجوز أن يتحمل تكاليف الرعاية.",
+            "ref": "المادة 60.",
+            "diff": "نساء"
+      },
+      {
+            "q": "من يعتبر طفلاً في تطبيق أحكام تشغيل وتدريب الأطفال؟",
+            "options": [
+                  "كل من لم يبلغ 18 سنة",
+                  "كل من لم يبلغ 16 سنة",
+                  "كل من لم يبلغ 21 سنة",
+                  "كل متدرج فقط"
+            ],
+            "answer": 0,
+            "hint": "سن الرشد العملي هنا 18.",
+            "explanation": "يعتبر طفلاً في تطبيق أحكام القانون كل من لم يبلغ ثماني عشرة سنة.",
+            "ref": "المادة 61.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "يحظر تشغيل الأطفال قبل بلوغهم أي سن؟",
+            "options": [
+                  "15 سنة",
+                  "14 سنة",
+                  "18 سنة",
+                  "12 سنة"
+            ],
+            "answer": 0,
+            "hint": "يجوز التدريب من 14 لكن التشغيل من 15.",
+            "explanation": "يحظر تشغيل الأطفال قبل بلوغهم خمس عشرة سنة، مع جواز تدريبهم متى بلغت سنهم أربع عشرة سنة بما لا يعوق التعليم.",
+            "ref": "المادة 62.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "ما الحد الأقصى لتشغيل الطفل يومياً؟",
+            "options": [
+                  "6 ساعات",
+                  "8 ساعات",
+                  "12 ساعة",
+                  "4 ساعات فقط في كل الأحوال"
+            ],
+            "answer": 0,
+            "hint": "عدد ساعات الطفل أقل من البالغ.",
+            "explanation": "يحظر تشغيل الطفل أكثر من ست ساعات يومياً.",
+            "ref": "المادة 65.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "لا يجوز أن يعمل الطفل أكثر من كم ساعة متصلة؟",
+            "options": [
+                  "4 ساعات",
+                  "5 ساعات",
+                  "6 ساعات",
+                  "8 ساعات"
+            ],
+            "answer": 0,
+            "hint": "يجب أن تتخلل ساعات عمل الطفل فترات طعام وراحة.",
+            "explanation": "تحدد فترات الطعام والراحة بحيث لا يعمل الطفل أكثر من أربع ساعات متصلة.",
+            "ref": "المادة 65.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "في أي فترة زمنية يحظر تشغيل الطفل؟",
+            "options": [
+                  "من 7 مساءً إلى 7 صباحاً",
+                  "من 12 ظهراً إلى 2 مساءً",
+                  "من 9 صباحاً إلى 5 مساءً",
+                  "من 5 صباحاً إلى 7 صباحاً فقط"
+            ],
+            "answer": 0,
+            "hint": "الحظر يغطي الليل كله تقريباً.",
+            "explanation": "يحظر تشغيل الطفل فيما بين الساعة السابعة مساءً والسابعة صباحاً.",
+            "ref": "المادة 65.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "هل يجوز مبيت الطفل في مكان العمل؟",
+            "options": [
+                  "لا، يحظر في جميع الأحوال",
+                  "نعم إذا وافق ولي الأمر",
+                  "نعم في الأعمال الموسمية",
+                  "نعم إذا كان هناك سكن منفصل"
+            ],
+            "answer": 0,
+            "hint": "نص المادة 66 واضح جداً.",
+            "explanation": "يحظر في جميع الأحوال مبيت الطفل في مكان العمل، مع توفير سكن منفصل للأطفال عن غيرهم من البالغين وفق الضوابط.",
+            "ref": "المادة 66.",
+            "diff": "أطفال"
+      },
+      {
+            "q": "لا يجوز للأجنبي العمل داخل البلاد إلا بعد الحصول على…",
+            "options": [
+                  "ترخيص من الوزارة المختصة مع تصريح الدخول والإقامة بقصد العمل",
+                  "شهادة ميلاد مصرية",
+                  "موافقة العاملين بالمنشأة",
+                  "ترخيص تدريب فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 71 خاصة بتنظيم عمل الأجانب.",
+            "explanation": "لا يجوز للأجنبي العمل داخل البلاد إلا بعد الحصول على ترخيص من الوزارة المختصة وأن يكون مصرحاً له بدخول البلاد والإقامة بها بقصد العمل.",
+            "ref": "المادة 71.",
+            "diff": "أجانب"
+      },
+      {
+            "q": "ما نطاق رسم ترخيص عمل الأجنبي وفق المادة 71؟",
+            "options": [
+                  "لا يقل عن 5 آلاف ولا يزيد على 150 ألف جنيه",
+                  "من 100 إلى 500 جنيه",
+                  "10 جنيهات فقط",
+                  "لا توجد رسوم"
+            ],
+            "answer": 0,
+            "hint": "الحد الأعلى كبير جداً.",
+            "explanation": "يحدد الوزير المختص الرسم الذي يحصل عن ترخيص عمل الأجنبي بما لا يقل عن خمسة آلاف جنيه ولا يزيد على مائة وخمسين ألف جنيه.",
+            "ref": "المادة 71.",
+            "diff": "أجانب"
+      },
+      {
+            "q": "إذا غاب العامل الأجنبي عن العمل دون مسوغ قانوني مدة متصلة قدرها… يجب الإبلاغ.",
+            "options": [
+                  "15 يوماً",
+                  "3 أيام",
+                  "شهرين",
+                  "90 يوماً"
+            ],
+            "answer": 0,
+            "hint": "نصف شهر.",
+            "explanation": "يلتزم صاحب العمل بإبلاغ الجهة الإدارية والسلطات المختصة عن غياب العامل الأجنبي لمدة خمسة عشر يوماً متصلة دون مسوغ قانوني.",
+            "ref": "المادة 72.",
+            "diff": "أجانب"
+      },
+      {
+            "q": "عند انتهاء علاقة العمل مع الأجنبي المستقدم، من يتحمل إعادته إلى الدولة التي استُقدم منها؟",
+            "options": [
+                  "صاحب العمل على نفقته الخاصة ما لم ينص العقد على خلاف ذلك",
+                  "العامل دائماً",
+                  "الوزارة المختصة دائماً",
+                  "وكالة السفر"
+            ],
+            "answer": 0,
+            "hint": "المادة 74 تربط الالتزام بصاحب العمل.",
+            "explanation": "يلتزم صاحب العمل الذي يعمل لديه الأجنبي بإعادته إلى الدولة التي تم استقدامه منها على نفقته الخاصة حال انتهاء علاقة العمل، ما لم ينص عقد العمل على خلاف ذلك.",
+            "ref": "المادة 74.",
+            "diff": "أجانب"
+      },
+      {
+            "q": "ما اسم الصندوق المنشأ لحماية وتشغيل العمالة غير المنتظمة؟",
+            "options": [
+                  "صندوق إعانات الطوارئ والخدمات الاجتماعية والصحية للعمالة غير المنتظمة",
+                  "صندوق تمويل التدريب فقط",
+                  "صندوق التأمين الاجتماعي",
+                  "صندوق الجزاءات المالية"
+            ],
+            "answer": 0,
+            "hint": "الاسم طويل ويبدأ بإعانات الطوارئ.",
+            "explanation": "ينشأ صندوق يسمى صندوق إعانات الطوارئ والخدمات الاجتماعية والصحية للعمالة غير المنتظمة، له الشخصية الاعتبارية العامة ويتبع الوزير المختص.",
+            "ref": "المادة 78.",
+            "diff": "عمالة غير منتظمة"
+      },
+      {
+            "q": "اشتراك قيد فئات العمالة غير المنتظمة الأخرى يكون شهرياً في حدود…",
+            "options": [
+                  "لا يقل عن 20 جنيهاً ولا يزيد على 200 جنيه",
+                  "1 إلى 3 جنيهات",
+                  "1000 إلى 5000 جنيه",
+                  "لا يوجد اشتراك"
+            ],
+            "answer": 0,
+            "hint": "المادة 82 تذكر 20 و200.",
+            "explanation": "من موارد الصندوق اشتراك قيد لفئات العمالة غير المنتظمة الأخرى لا يقل عن 20 جنيهاً ولا يزيد على 200 جنيه شهرياً.",
+            "ref": "المادة 82.",
+            "diff": "عمالة غير منتظمة"
+      },
+      {
+            "q": "عقد العمل الفردي يبرم أصلاً…",
+            "options": [
+                  "لمدة غير محددة أو لمدة محددة إذا كانت طبيعة العمل تقتضي ذلك",
+                  "شفاهة فقط",
+                  "لمدة لا تزيد على ثلاثة أشهر دائماً",
+                  "لمدة خمسين سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 87 تنظم مدة العقد.",
+            "explanation": "يبرم عقد العمل الفردي لمدة غير محددة، أو لمدة محددة إذا كانت طبيعة العمل تقتضي ذلك، ويجوز باتفاق الطرفين تجديده لمدد أخرى مماثلة.",
+            "ref": "المادة 87.",
+            "diff": "عقود"
+      },
+      {
+            "q": "متى يعتبر عقد العمل غير محدد المدة منذ إبرامه؟",
+            "options": [
+                  "إذا كان غير مكتوب أو لم ينص على مدته",
+                  "إذا كان مكتوباً باللغة العربية",
+                  "إذا كان أجره شهرياً فقط",
+                  "إذا كان العمل خارج المنشأة"
+            ],
+            "answer": 0,
+            "hint": "المادة 88 تضع حالات منها عدم الكتابة وعدم ذكر المدة.",
+            "explanation": "يعتبر العقد غير محدد المدة منذ إبرامه إذا كان غير مكتوب، أو لم ينص على مدته، أو استمر تنفيذه بعد مدة محددة دون اتفاق مكتوب.",
+            "ref": "المادة 88.",
+            "diff": "عقود"
+      },
+      {
+            "q": "كم نسخة يجب تحريرها من عقد العمل الفردي؟",
+            "options": [
+                  "4 نسخ",
+                  "نسخة واحدة",
+                  "نسختان فقط",
+                  "5 نسخ"
+            ],
+            "answer": 0,
+            "hint": "نسخة للعامل، لصاحب العمل، للتأمين الاجتماعي، وللجهة الإدارية.",
+            "explanation": "يلتزم صاحب العمل بتحرير عقد العمل كتابة باللغة العربية من أربع نسخ.",
+            "ref": "المادة 89.",
+            "diff": "عقود"
+      },
+      {
+            "q": "إذا كان العامل أجنبياً ولا يجيد العربية، ما العقد الذي يعمل به عند اختلاف التفسير؟",
+            "options": [
+                  "العقد المحرر باللغة العربية",
+                  "العقد بلغة العامل دائماً",
+                  "أي ترجمة غير معتمدة",
+                  "لا يعمل بأي عقد"
+            ],
+            "answer": 0,
+            "hint": "العربية هي المرجع عند الاختلاف.",
+            "explanation": "يجوز تحرير عقد العمل باللغة العربية ولغة العامل، وفي حالة الاختلاف في التفسير يعمل بعقد العمل المحرر باللغة العربية.",
+            "ref": "المادة 89.",
+            "diff": "عقود"
+      },
+      {
+            "q": "ما الحد الأقصى لفترة الاختبار في عقد العمل؟",
+            "options": [
+                  "3 أشهر",
+                  "6 أشهر",
+                  "سنة",
+                  "شهر واحد فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 90 قصيرة ومباشرة.",
+            "explanation": "تحدد فترة الاختبار في عقد العمل لمدة لا تزيد على ثلاثة أشهر، ولا يجوز تعيين العامل تحت الاختبار أكثر من مرة واحدة لدى صاحب عمل واحد.",
+            "ref": "المادة 90.",
+            "diff": "عقود"
+      },
+      {
+            "q": "كم مدة احتفاظ صاحب العمل بملف العامل بعد انتهاء علاقة العمل على الأقل؟",
+            "options": [
+                  "5 سنوات",
+                  "سنة واحدة",
+                  "3 أشهر",
+                  "20 سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 92 عن ملف العامل.",
+            "explanation": "يحتفظ صاحب العمل بملف العامل ورقياً أو إلكترونياً لمدة خمس سنوات على الأقل تبدأ من تاريخ انتهاء علاقة العمل، ومع النزاع القضائي حتى الحكم البات.",
+            "ref": "المادة 92.",
+            "diff": "عقود"
+      },
+      {
+            "q": "بعد انتهاء عقد العمل، يلتزم صاحب العمل بإعادة العامل إلى الجهة التي تم التعاقد معه فيها خلال…",
+            "options": [
+                  "3 أيام",
+                  "7 أيام",
+                  "شهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "مدة قصيرة في المادة 93.",
+            "explanation": "يلتزم صاحب العمل بإعادة العامل إلى الجهة التي تم التعاقد معه فيها خلال ثلاثة أيام من تاريخ انتهاء عقد العمل، إلا إذا رفض العامل كتابة العودة.",
+            "ref": "المادة 93.",
+            "diff": "عقود"
+      },
+      {
+            "q": "من أنماط العمل الجديدة في القانون…",
+            "options": [
+                  "العمل عن بعد والعمل بعض الوقت والعمل المرن وتقاسم العمل",
+                  "السخرة والعمل الجبري",
+                  "الجزاءات التأديبية فقط",
+                  "الإجازات المرضية فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 96 تعدد أنماطاً حديثة.",
+            "explanation": "تعتبر من أنماط العمل الجديدة: العمل عن بعد، والعمل بعض الوقت أو جزء منه، والعمل المرن، وتقاسم العمل، وأي صور أخرى يحددها الوزير المختص.",
+            "ref": "المادة 96.",
+            "diff": "أنماط عمل"
+      },
+      {
+            "q": "هل تسري على العاملين في أنماط العمل الجديدة الحقوق والواجبات ذاتها المقررة للأنماط التقليدية؟",
+            "options": [
+                  "نعم مع مراعاة طبيعة كل عمل وطريقة أدائه",
+                  "لا، لا حقوق لهم",
+                  "تسري الأجور فقط دون الحماية الاجتماعية",
+                  "الأمر متروك لصاحب العمل بالكامل"
+            ],
+            "answer": 0,
+            "hint": "المادة 97 تحافظ على الحقوق.",
+            "explanation": "تسري على علاقات العمل في أنماط العمل الجديدة ما يسري على العلاقات التقليدية، وعلى الأخص الحماية الاجتماعية والحد الأدنى للأجر والتدريب والمفاوضة الجماعية والحرية النقابية.",
+            "ref": "المادة 97.",
+            "diff": "أنماط عمل"
+      },
+      {
+            "q": "كم مرة يجتمع المجلس القومي للأجور على الأقل؟",
+            "options": [
+                  "كل 6 أشهر",
+                  "كل أسبوع",
+                  "مرة كل خمس سنوات",
+                  "عند طلب صاحب العمل فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 103.",
+            "explanation": "يجتمع المجلس القومي للأجور بدعوة من رئيسه كل ستة أشهر على الأقل أو كلما دعت الحاجة.",
+            "ref": "المادة 103.",
+            "diff": "أجور"
+      },
+      {
+            "q": "العمال المعينون بأجر شهري تؤدى أجورهم على الأقل…",
+            "options": [
+                  "مرة في الشهر",
+                  "مرة كل يوم",
+                  "مرة كل سنة",
+                  "بعد انتهاء المشروع فقط"
+            ],
+            "answer": 0,
+            "hint": "نظام الأجر الشهري في المادة 108.",
+            "explanation": "العمال المعينون بأجر شهري تؤدى أجورهم مرة على الأقل في الشهر.",
+            "ref": "المادة 108.",
+            "diff": "أجور"
+      },
+      {
+            "q": "إذا انتهت علاقة العمل لأي سبب، متى يؤدي صاحب العمل أجر العامل وجميع مستحقاته من تاريخ مطالبة العامل؟",
+            "options": [
+                  "خلال 7 أيام",
+                  "خلال 30 يوماً",
+                  "خلال 90 يوماً",
+                  "لا يوجد ميعاد"
+            ],
+            "answer": 0,
+            "hint": "مهلة قصيرة لحسم المستحقات.",
+            "explanation": "إذا انتهت علاقة العمل لأي سبب يؤدي صاحب العمل للعامل أجره وجميع المبالغ المستحقة له في مدة لا تجاوز سبعة أيام من تاريخ مطالبة العامل بهذه المستحقات.",
+            "ref": "المادة 108.",
+            "diff": "أجور"
+      },
+      {
+            "q": "إذا حضر العامل في موعده وكان مستعداً للعمل وحالت أسباب ترجع لصاحب العمل دون العمل، يستحق…",
+            "options": [
+                  "أجره كاملاً",
+                  "نصف أجره فقط",
+                  "لا شيء",
+                  "أجر ساعة واحدة"
+            ],
+            "answer": 0,
+            "hint": "القانون يعتبره كأنه أدى عمله فعلاً.",
+            "explanation": "إذا حضر العامل لمقر عمله وكان مستعداً لمباشرة عمله وحالت أسباب ترجع إلى صاحب العمل دون ذلك، اعتبر كأنه أدى عمله فعلاً واستحق أجره كاملاً.",
+            "ref": "المادة 111.",
+            "diff": "أجور"
+      },
+      {
+            "q": "إذا حالت أسباب قهرية خارجة عن إرادة صاحب العمل دون مباشرة العامل عمله بعد حضوره، يستحق العامل…",
+            "options": [
+                  "نصف أجره",
+                  "أجره كاملاً",
+                  "لا شيء",
+                  "ضعف الأجر"
+            ],
+            "answer": 0,
+            "hint": "نفس المادة تفرق بين سبب صاحب العمل والقوة القاهرة.",
+            "explanation": "إذا حضر العامل وحالت بينه وبين مباشرة عمله أسباب قهرية خارجة عن إرادة صاحب العمل، استحق نصف أجره.",
+            "ref": "المادة 111.",
+            "diff": "أجور"
+      },
+      {
+            "q": "لا يجوز لصاحب العمل أن يقتطع من أجر العامل وفاءً لقرض أثناء العقد أكثر من…",
+            "options": [
+                  "10%",
+                  "25%",
+                  "50%",
+                  "70%"
+            ],
+            "answer": 0,
+            "hint": "نسبة القروض أقل من نسبة الحجز العام.",
+            "explanation": "لا يجوز لصاحب العمل أن يقتطع من أجر العامل أكثر من 10% وفاء لما أقرضه من مال أثناء سريان العقد، ولا أن يتقاضى فائدة عن هذه القروض.",
+            "ref": "المادة 113.",
+            "diff": "أجور"
+      },
+      {
+            "q": "حد الاستقطاع أو الحجز أو النزول عن الأجر لأداء دين هو غالباً…",
+            "options": [
+                  "25% من الأجر، وترتفع إلى 50% في دين النفقة",
+                  "10% دائماً",
+                  "100% إذا وافق العامل",
+                  "لا يوجد حد"
+            ],
+            "answer": 0,
+            "hint": "دين النفقة له حد أعلى.",
+            "explanation": "لا يجوز الاستقطاع أو الحجز أو النزول عن الأجر لأداء دين إلا في حدود 25% من الأجر، ويجوز رفع النسبة إلى 50% في حالة دين النفقة.",
+            "ref": "المادة 114.",
+            "diff": "أجور"
+      },
+      {
+            "q": "الحد الأقصى للتشغيل الفعلي للعامل هو…",
+            "options": [
+                  "8 ساعات يومياً أو 48 ساعة أسبوعياً",
+                  "12 ساعة يومياً دائماً",
+                  "6 ساعات يومياً فقط",
+                  "60 ساعة أسبوعياً"
+            ],
+            "answer": 0,
+            "hint": "قاعدة ساعات العمل الأساسية.",
+            "explanation": "لا يجوز تشغيل العامل تشغيلاً فعلياً أكثر من ثماني ساعات في اليوم أو ثمان وأربعين ساعة في الأسبوع، ولا تدخل فترات الطعام والراحة.",
+            "ref": "المادة 117.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "يجب أن تتخلل ساعات العمل فترة أو أكثر للطعام والراحة لا تقل في مجموعها عن…",
+            "options": [
+                  "ساعة واحدة",
+                  "ربع ساعة",
+                  "ساعتين دائماً",
+                  "لا يوجد حد أدنى"
+            ],
+            "answer": 0,
+            "hint": "المادة 118.",
+            "explanation": "يجب أن تتخلل ساعات العمل فترة أو أكثر لتناول الطعام والراحة لا تقل في مجموعها عن ساعة، وألا يعمل العامل أكثر من خمس ساعات متصلة.",
+            "ref": "المادة 118.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "لا يجوز أن يعمل العامل أكثر من كم ساعة متصلة دون فترة راحة وفق المادة 118؟",
+            "options": [
+                  "5 ساعات",
+                  "8 ساعات",
+                  "10 ساعات",
+                  "12 ساعة"
+            ],
+            "answer": 0,
+            "hint": "الرقم أقل من يوم العمل المعتاد.",
+            "explanation": "يراعى في تحديد فترة الطعام والراحة ألا يعمل العامل أكثر من خمس ساعات متصلة.",
+            "ref": "المادة 118.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "ينظم العمل بحيث لا تتجاوز الفترة بين بداية ساعات العمل ونهايتها في اليوم الواحد…",
+            "options": [
+                  "10 ساعات",
+                  "8 ساعات دائماً",
+                  "24 ساعة",
+                  "5 ساعات"
+            ],
+            "answer": 0,
+            "hint": "هذا هو مدى التواجد اليومي العادي.",
+            "explanation": "يجب تنظيم ساعات العمل وفترات الراحة بحيث لا تجاوز الفترة بين بداية ساعات العمل ونهايتها أكثر من عشر ساعات في اليوم الواحد.",
+            "ref": "المادة 119.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "الراحة الأسبوعية للعامل لا تقل عن…",
+            "options": [
+                  "24 ساعة كاملة مدفوعة الأجر بعد 6 أيام عمل متصلة على الأكثر",
+                  "12 ساعة دون أجر",
+                  "48 ساعة دائماً",
+                  "يومين بعد كل يوم عمل"
+            ],
+            "answer": 0,
+            "hint": "أصل الراحة الأسبوعية في المادة 120.",
+            "explanation": "يجب تنظيم العمل بحيث يحصل كل عامل على راحة أسبوعية لا تقل عن 24 ساعة كاملة بعد ستة أيام عمل متصلة على الأكثر، وتكون مدفوعة الأجر.",
+            "ref": "المادة 120.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "في التشغيل الإضافي، لا يقل الأجر الإضافي عن أجر ساعة العمل مضافاً إليه… للساعة النهارية.",
+            "options": [
+                  "35%",
+                  "70%",
+                  "10%",
+                  "100%"
+            ],
+            "answer": 0,
+            "hint": "الليل له نسبة أعلى.",
+            "explanation": "في حالات التشغيل الإضافي، لا يقل الأجر عن أجر ساعة العمل الأصلية مضافاً إليه 35% عن ساعة العمل النهارية.",
+            "ref": "المادة 121.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "في التشغيل الإضافي الليلي، لا يقل الأجر عن أجر ساعة العمل مضافاً إليه…",
+            "options": [
+                  "70%",
+                  "35%",
+                  "5%",
+                  "25%"
+            ],
+            "answer": 0,
+            "hint": "ضعف نسبة النهار تقريباً.",
+            "explanation": "في التشغيل الإضافي الليلي لا يقل الأجر عن أجر ساعة العمل الأصلية مضافاً إليه 70% عن ساعة العمل الليلية.",
+            "ref": "المادة 121.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "في جميع أحوال التشغيل الإضافي، لا يجوز أن تزيد ساعات وجود العامل بالمنشأة على…",
+            "options": [
+                  "12 ساعة",
+                  "8 ساعات",
+                  "10 ساعات",
+                  "24 ساعة"
+            ],
+            "answer": 0,
+            "hint": "سقف التواجد في المادة 121.",
+            "explanation": "في جميع الأحوال، لا يجوز أن تزيد ساعات وجود العامل بالمنشأة على اثنتي عشرة ساعة.",
+            "ref": "المادة 121.",
+            "diff": "ساعات"
+      },
+      {
+            "q": "الإجازة السنوية في السنة الأولى تكون…",
+            "options": [
+                  "15 يوماً",
+                  "21 يوماً",
+                  "30 يوماً",
+                  "45 يوماً"
+            ],
+            "answer": 0,
+            "hint": "تزيد من السنة الثانية.",
+            "explanation": "يستحق العامل إجازة سنوية بأجر قدرها خمسة عشر يوماً في السنة الأولى.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "الإجازة السنوية اعتباراً من السنة الثانية تكون…",
+            "options": [
+                  "21 يوماً",
+                  "15 يوماً",
+                  "30 يوماً",
+                  "45 يوماً"
+            ],
+            "answer": 0,
+            "hint": "الرقم الشائع بعد السنة الأولى.",
+            "explanation": "يستحق العامل إجازة سنوية قدرها واحد وعشرون يوماً اعتباراً من السنة الثانية.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "من أمضى 10 سنوات كاملة لدى صاحب عمل أو أكثر، أو تجاوز سنه 50 عاماً، يستحق إجازة سنوية قدرها…",
+            "options": [
+                  "30 يوماً",
+                  "21 يوماً",
+                  "15 يوماً",
+                  "7 أيام"
+            ],
+            "answer": 0,
+            "hint": "الإجازة الأكبر للعامل ذي الخدمة الطويلة أو فوق الخمسين.",
+            "explanation": "تكون الإجازة السنوية ثلاثين يوماً لمن أمضى عشر سنوات كاملة لدى صاحب عمل أو أكثر، أو لمن تجاوزت سنه خمسين عاماً.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "الإجازة السنوية للأشخاص ذوي الإعاقة والأقزام هي…",
+            "options": [
+                  "45 يوماً",
+                  "30 يوماً",
+                  "21 يوماً",
+                  "15 يوماً"
+            ],
+            "answer": 0,
+            "hint": "أطول مدة في جدول الإجازات السنوية.",
+            "explanation": "يستحق الأشخاص ذوو الإعاقة والأقزام إجازة سنوية مقدارها خمسة وأربعون يوماً.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "إذا قلت مدة خدمة العامل عن سنة، يستحق إجازة بنسبة المدة بشرط أن يكون قد أمضى في خدمة صاحب العمل على الأقل…",
+            "options": [
+                  "6 أشهر",
+                  "3 أشهر",
+                  "شهر واحد",
+                  "سنة كاملة"
+            ],
+            "answer": 0,
+            "hint": "نصف سنة.",
+            "explanation": "إذا قلت مدة خدمة العامل عن سنة تكون إجازته بنسبة المدة التي قضاها في العمل بشرط أن يكون قد أمضى ستة أشهر على الأقل في خدمة صاحب العمل.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "كم يوماً تزيد الإجازة السنوية للعاملين في الأعمال الخطرة أو المضرة بالصحة أو المناطق النائية؟",
+            "options": [
+                  "7 أيام",
+                  "3 أيام",
+                  "15 يوماً",
+                  "لا تزيد"
+            ],
+            "answer": 0,
+            "hint": "أسبوع إضافي.",
+            "explanation": "تزاد مدة الإجازة السنوية بمقدار سبعة أيام للعمال في الأعمال الخطرة أو المضرة بالصحة أو المناطق النائية التي يحددها الوزير المختص.",
+            "ref": "المادة 124.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "يجب أن يحصل العامل على إجازة سنوية مدتها 15 يوماً، منها على الأقل… متصلة.",
+            "options": [
+                  "6 أيام",
+                  "3 أيام",
+                  "10 أيام",
+                  "15 يوماً كلها متصلة دائماً"
+            ],
+            "answer": 0,
+            "hint": "المادة 125 تذكر ستة أيام متصلة.",
+            "explanation": "يجب أن يحصل العامل على إجازة سنوية مدتها خمسة عشر يوماً، منها ستة أيام متصلة على الأقل.",
+            "ref": "المادة 125.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "يلتزم صاحب العمل بتسوية رصيد الإجازات أو الأجر المقابل له كل… على الأكثر.",
+            "options": [
+                  "3 سنوات",
+                  "سنة",
+                  "5 سنوات",
+                  "شهر"
+            ],
+            "answer": 0,
+            "hint": "مدة تسوية دورية للرصد المتراكم.",
+            "explanation": "يلتزم صاحب العمل بتسوية رصيد الإجازات أو الأجر المقابل له كل ثلاث سنوات على الأكثر.",
+            "ref": "المادة 125.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "العامل المتقدم للامتحان له تحديد موعد إجازته السنوية بشرط إخطار صاحب العمل قبلها بـ…",
+            "options": [
+                  "15 يوماً على الأقل",
+                  "10 أيام",
+                  "3 أيام",
+                  "شهرين"
+            ],
+            "answer": 0,
+            "hint": "هذه تخص اختيار موعد الإجازة السنوية للامتحان.",
+            "explanation": "للعامل الحق في تحديد موعد إجازته السنوية إذا كان متقدماً لأداء الامتحان بشرط إخطار صاحب العمل قبل قيامه بالإجازة بخمسة عشر يوماً على الأقل.",
+            "ref": "المادة 126.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "الإجازة الدراسية بأجر عن أيام الامتحان الفعلية تشترط إخطار صاحب العمل قبلها بـ…",
+            "options": [
+                  "10 أيام على الأقل",
+                  "15 يوماً",
+                  "شهر",
+                  "90 يوماً"
+            ],
+            "answer": 0,
+            "hint": "أقل من إخطار تحديد الإجازة السنوية للامتحان.",
+            "explanation": "للعامل الحق في إجازة دراسية بأجر عن أيام الامتحان الفعلية لا تحتسب من رصيد إجازاته السنوية، ويشترط إخطار صاحب العمل قبلها بعشرة أيام وإثبات دخول الامتحان فعلياً.",
+            "ref": "المادة 126.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "الإجازة العارضة لا تجاوز خلال السنة…",
+            "options": [
+                  "7 أيام وبحد أقصى يومان في المرة الواحدة",
+                  "15 يوماً متصلة",
+                  "شهر كامل",
+                  "3 أيام فقط في السنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 128.",
+            "explanation": "للعامل أن ينقطع عن العمل لسبب عارض لمدة لا تجاوز سبعة أيام خلال السنة وبحد أقصى يومان في المرة الواحدة، وتحسب من الإجازة السنوية.",
+            "ref": "المادة 128.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "العامل الذي يولد له مولود له حق في إجازة طارئة مدفوعة الأجر يوم الولادة بحد أقصى…",
+            "options": [
+                  "3 مرات طوال مدة الخدمة",
+                  "مرة واحدة فقط",
+                  "كل شهر",
+                  "10 مرات"
+            ],
+            "answer": 0,
+            "hint": "نص جديد لطيف في الإجازات.",
+            "explanation": "للعامل الذي يولد له مولود الحق في إجازة طارئة مدفوعة الأجر يوم الولادة لا تحسب من رصيد إجازاته السنوية، بحد أقصى ثلاث مرات طوال مدة الخدمة.",
+            "ref": "المادة 128.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "إجازة الحج أو زيارة بيت المقدس تكون لمدة شهر بأجر لمن أمضى في خدمة صاحب عمل…",
+            "options": [
+                  "5 سنوات متصلة",
+                  "سنة واحدة",
+                  "10 سنوات حتماً",
+                  "6 أشهر"
+            ],
+            "answer": 0,
+            "hint": "شرط الخدمة خمس سنوات.",
+            "explanation": "للعامل الذي أمضى في خدمة صاحب عمل خمس سنوات متصلة الحق في إجازة بأجر لمدة شهر لأداء فريضة الحج أو زيارة بيت المقدس، مرة واحدة طوال الخدمة.",
+            "ref": "المادة 130.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "في المنشآت الصناعية، تكون الإجازة المرضية كل 3 سنوات خدمة على أساس…",
+            "options": [
+                  "3 أشهر بأجر، ثم 6 أشهر بـ85%، ثم 3 أشهر بـ75% إذا قررت الجهة الطبية احتمال الشفاء",
+                  "شهر واحد فقط بأجر",
+                  "سنة كاملة بأجر كامل دائماً",
+                  "لا توجد إجازة مرضية"
+            ],
+            "answer": 0,
+            "hint": "تدرج: 3 ثم 6 ثم 3 أشهر.",
+            "explanation": "للعامل المريض في المنشآت الصناعية حق إجازة مرضية كل ثلاث سنوات خدمة: ثلاثة أشهر بأجر، ثم ستة أشهر بأجر 85%، ثم ثلاثة أشهر بأجر 75% إذا قررت الجهة الطبية احتمال شفائه.",
+            "ref": "المادة 131.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "يجوز منع العامل المخالط لمريض بمرض معدٍ من مزاولة العمل مدة لا تجاوز…",
+            "options": [
+                  "3 أشهر",
+                  "10 أيام",
+                  "سنة",
+                  "أسبوع"
+            ],
+            "answer": 0,
+            "hint": "المادة 132.",
+            "explanation": "للجهة الطبية المختصة منع العامل المخالط لمريض بمرض معدٍ من أحد أفراد أسرته من مزاولة عمله المدة المناسبة بما لا يجاوز ثلاثة أشهر.",
+            "ref": "المادة 132.",
+            "diff": "إجازات"
+      },
+      {
+            "q": "على كل صاحب عمل يستخدم 10 عمال فأكثر أن يعد لائحة تنظيم العمل خلال…",
+            "options": [
+                  "60 يوماً",
+                  "10 أيام",
+                  "سنة",
+                  "3 أشهر من كل مخالفة"
+            ],
+            "answer": 0,
+            "hint": "النصاب 10 عمال والمدة 60 يوماً.",
+            "explanation": "على كل صاحب عمل يستخدم عشرة عمال فأكثر أن يعد لائحة بقواعد تنظيم العمل خلال ستين يوماً من بداية عمل المنشأة أو توافر النصاب أو نفاذ القانون بحسب الأحوال.",
+            "ref": "المادة 137.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "إذا لم تصدق الجهة الإدارية أو تعترض على لائحة تنظيم العمل خلال 30 يوماً من استلامها، فإن اللائحة…",
+            "options": [
+                  "تعتبر نافذة",
+                  "تعتبر باطلة",
+                  "تعاد للعاملين للتصويت",
+                  "توقف المنشأة"
+            ],
+            "answer": 0,
+            "hint": "السكوت هنا بمثابة نفاذ.",
+            "explanation": "إذا لم تقم الجهة الإدارية المختصة بالتصديق أو الاعتراض على اللائحة خلال ثلاثين يوماً من تاريخ استلامها اعتبرت اللائحة نافذة.",
+            "ref": "المادة 137.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "لا يجوز توقيع جزاء تأديبي على العامل بعد مضي… من تاريخ الانتهاء من التحقيق في المخالفة.",
+            "options": [
+                  "30 يوماً",
+                  "7 أيام",
+                  "3 أشهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "نص المادة 138.",
+            "explanation": "لا يجوز توقيع جزاء تأديبي على العامل بعد مضي ثلاثين يوماً من تاريخ الانتهاء من التحقيق في المخالفة.",
+            "ref": "المادة 138.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "أي من الجزاءات التالية لا يوقعه صاحب العمل مباشرة ويختص به القضاء؟",
+            "options": [
+                  "الفصل من الخدمة",
+                  "الإنذار الكتابي",
+                  "الخصم من الأجر الأساسي",
+                  "تأجيل الترقية"
+            ],
+            "answer": 0,
+            "hint": "الفصل له جهة خاصة في المادة 148.",
+            "explanation": "تختص المحكمة العمالية المختصة بتوقيع جزاء الفصل من العمل، أما باقي الجزاءات التأديبية فتكون لصاحب العمل أو من يفوضه.",
+            "ref": "المادتان 139 و148.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "لا يجوز توقيع أكثر من جزاء عن المخالفة الواحدة. هذا صحيح؟",
+            "options": [
+                  "صحيح",
+                  "خطأ، يجوز جمع جزاءات بلا حد",
+                  "صحيح فقط في الأجور",
+                  "خطأ في أول سنة عمل"
+            ],
+            "answer": 0,
+            "hint": "المادة 140.",
+            "explanation": "لا يجوز لصاحب العمل توقيع أكثر من جزاء عن المخالفة الواحدة، كما لا يجوز الجمع بين اقتطاع جزء من الأجر وجزاء مالي إذا زاد المقتطع على أجر خمسة أيام في الشهر.",
+            "ref": "المادة 140.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "يبدأ التحقيق في مخالفة العامل خلال كم يوم على الأكثر من تاريخ اكتشاف المخالفة؟",
+            "options": [
+                  "7 أيام",
+                  "30 يوماً",
+                  "3 أشهر",
+                  "يوم واحد"
+            ],
+            "answer": 0,
+            "hint": "رقم صغير في المادة 141.",
+            "explanation": "يجب أن يبدأ التحقيق خلال سبعة أيام على الأكثر من تاريخ اكتشاف المخالفة، ولا يتجاوز ثلاثة أشهر من تاريخ بداية التحقيق ويجوز زيادتها ثلاثة أشهر أخرى في حالات محددة.",
+            "ref": "المادة 141.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "جزاء الخصم عن المخالفة الواحدة لا يجوز أن يزيد على… من الأجر الأساسي.",
+            "options": [
+                  "5 أيام",
+                  "15 يوماً",
+                  "شهر كامل",
+                  "يوم واحد دائماً"
+            ],
+            "answer": 0,
+            "hint": "المادة 143.",
+            "explanation": "لا يجوز لصاحب العمل أن يوقع جزاء الخصم على العامل عن المخالفة الواحدة بما يزيد على خمسة أيام من الأجر الأساسي.",
+            "ref": "المادة 143.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "إجمالي ما يقتطع للجزاءات من الأجر الأساسي لا يجوز أن يزيد في الشهر الواحد على…",
+            "options": [
+                  "أجر 5 أيام",
+                  "أجر شهر",
+                  "أجر 10 أيام",
+                  "نصف الأجر دائماً"
+            ],
+            "answer": 0,
+            "hint": "نفس سقف الخصم تقريباً.",
+            "explanation": "لا يجوز أن يقتطع من الأجر الأساسي وفاء للجزاءات أكثر من أجر خمسة أيام في الشهر الواحد.",
+            "ref": "المادة 143.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "يجوز وقف العامل مؤقتاً عن عمله بقرار مكتوب لمدة لا تزيد على… مع صرف أجره كاملاً.",
+            "options": [
+                  "60 يوماً",
+                  "30 يوماً",
+                  "6 أشهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 145.",
+            "explanation": "لصاحب العمل أن يوقف العامل مؤقتاً بقرار مكتوب لمدة لا تزيد على ستين يوماً مع صرف أجره كاملاً في الحالات المحددة.",
+            "ref": "المادة 145.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "التظلم من قرار وقف العامل عن العمل يقدم خلال… من تاريخ الإخطار أو العلم بالقرار.",
+            "options": [
+                  "3 أيام",
+                  "10 أيام",
+                  "30 يوماً",
+                  "60 يوماً"
+            ],
+            "answer": 0,
+            "hint": "مهلة سريعة جداً.",
+            "explanation": "للعامل التظلم من قرار الوقف أمام قاضي الأمور الوقتية بالمحكمة العمالية المختصة خلال ثلاثة أيام من تاريخ إخطاره أو علمه بالقرار.",
+            "ref": "المادة 146.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "من حالات الخطأ الجسيم التي قد تبرر الفصل…",
+            "options": [
+                  "انتحال شخصية غير صحيحة أو تقديم مستندات مزورة",
+                  "طلب إجازة سنوية",
+                  "الحصول على أجر شهري",
+                  "التسجيل في الجهة الإدارية"
+            ],
+            "answer": 0,
+            "hint": "المادة 148 تسرد الأخطاء الجسيمة.",
+            "explanation": "يعتبر من قبيل الخطأ الجسيم ثبوت انتحال العامل شخصية غير صحيحة أو تقديم مستندات مزورة، وغيرها من الحالات الواردة بالمادة 148.",
+            "ref": "المادة 148.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "إذا ارتكب العامل خطأ نشأت عنه أضرار جسيمة لصاحب العمل، يجب على صاحب العمل إبلاغ الجهات المختصة خلال… من علمه.",
+            "options": [
+                  "24 ساعة",
+                  "7 أيام",
+                  "شهر",
+                  "3 أشهر"
+            ],
+            "answer": 0,
+            "hint": "شرط مهم في الخطأ الجسيم.",
+            "explanation": "من حالات الخطأ الجسيم أن يثبت ارتكاب العامل خطأ نشأت عنه أضرار جسيمة بشرط أن يبلغ صاحب العمل الجهات المختصة بالواقعة أو الحادث خلال 24 ساعة من وقت علمه.",
+            "ref": "المادة 148.",
+            "diff": "جزاءات"
+      },
+      {
+            "q": "طلب التسوية الودية للنزاع الفردي أمام اللجنة يكون خلال كم يوم من تاريخ نشوء النزاع؟",
+            "options": [
+                  "10 أيام",
+                  "21 يوماً",
+                  "3 أشهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 149.",
+            "explanation": "إذا نشأ نزاع فردي، كان لأي من الطرفين خلال عشرة أيام من تاريخ نشوء النزاع أن يطلب تسويته ودياً بمعرفة اللجنة.",
+            "ref": "المادة 149.",
+            "diff": "منازعات"
+      },
+      {
+            "q": "يجب أن تنتهي لجنة التسوية الودية من أعمالها خلال… من تاريخ تقديم الطلب.",
+            "options": [
+                  "21 يوماً",
+                  "10 أيام",
+                  "3 أشهر",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "بعد تقديم الطلب، اللجنة لها 21 يوماً.",
+            "explanation": "يجب أن تنتهي لجنة التسوية الودية من أعمالها خلال واحد وعشرين يوماً من تاريخ تقديم الطلب.",
+            "ref": "المادة 149.",
+            "diff": "منازعات"
+      },
+      {
+            "q": "إذا كان النزاع متعلقاً بفصل العامل، تفصل المحكمة في الطلب بصفة مستعجلة خلال… من تاريخ أول جلسة.",
+            "options": [
+                  "3 أشهر",
+                  "21 يوماً",
+                  "سنة",
+                  "7 أيام"
+            ],
+            "answer": 0,
+            "hint": "المادة 150.",
+            "explanation": "إذا كان موضوع النزاع يتعلق بفصل العامل، وجب على المحكمة أن تفصل فيه بصفة مستعجلة خلال ثلاثة أشهر من تاريخ أول جلسة.",
+            "ref": "المادة 150.",
+            "diff": "منازعات"
+      },
+      {
+            "q": "إذا كان فصل العامل بسبب النشاط النقابي وطلب العامل العودة، تقضي المحكمة بـ…",
+            "options": [
+                  "إعادته إلى عمله",
+                  "تعويض رمزي فقط",
+                  "إيقافه ستين يوماً",
+                  "رفض الدعوى دائماً"
+            ],
+            "answer": 0,
+            "hint": "حماية خاصة للنشاط النقابي.",
+            "explanation": "إذا كان فصل العامل بسبب النشاط النقابي، قضت المحكمة بإعادته إلى عمله إذا طلب ذلك.",
+            "ref": "المادة 150.",
+            "diff": "منازعات"
+      },
+      {
+            "q": "العقد محدد المدة الذي تزيد مدته على 5 سنوات يجوز للعامل إنهاؤه دون تعويض بعد انقضاء 5 سنوات بشرط إخطار صاحب العمل قبل الإنهاء بـ…",
+            "options": [
+                  "3 أشهر",
+                  "شهر",
+                  "7 أيام",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "نفس مهلة الإخطار في غير محدد المدة.",
+            "explanation": "إذا أبرم العقد أو جدد لمدة تزيد على خمس سنوات جاز للعامل إنهاؤه دون تعويض عند انقضاء خمس سنوات بعد إخطار صاحب العمل قبل الإنهاء بثلاثة أشهر.",
+            "ref": "المادة 154.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "إذا أنهى صاحب العمل العقد المحدد المدة في الحالة المشار إليها بالمادة 154، يستحق العامل مكافأة تعادل…",
+            "options": [
+                  "أجر شهر عن كل سنة من سنوات الخدمة",
+                  "أجر أسبوع عن كل سنة",
+                  "لا شيء",
+                  "أجر يوم واحد"
+            ],
+            "answer": 0,
+            "hint": "مكافأة مرتبطة بكل سنة خدمة.",
+            "explanation": "إذا كان الإنهاء من جانب صاحب العمل استحق العامل مكافأة تعادل أجر شهر عن كل سنة من سنوات الخدمة.",
+            "ref": "المادة 154.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "مهلة إخطار إنهاء عقد العمل غير محدد المدة هي…",
+            "options": [
+                  "3 أشهر كتابة",
+                  "7 أيام شفاهة",
+                  "شهر واحد فقط",
+                  "لا يشترط إخطار"
+            ],
+            "answer": 0,
+            "hint": "المادة 156.",
+            "explanation": "إذا كان عقد العمل غير محدد المدة، جاز لأي من طرفيه إنهاؤه بشرط إخطار الطرف الآخر كتابة قبل الإنهاء بثلاثة أشهر.",
+            "ref": "المادة 156.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "هل يجوز توجيه إخطار إنهاء العقد للعامل خلال إجازاته؟",
+            "options": [
+                  "لا يجوز",
+                  "يجوز دائماً",
+                  "يجوز فقط في الإجازة السنوية",
+                  "يجوز إذا كانت الإجازة يومين"
+            ],
+            "answer": 0,
+            "hint": "المادة 159 تحمي الإجازة من الإخطار.",
+            "explanation": "لا يجوز توجيه الإخطار للعامل خلال إجازاته، ولا تحتسب مهلة الإخطار إلا من اليوم التالي لانتهاء الإجازة.",
+            "ref": "المادة 159.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "إذا كان الإخطار بالإنهاء من جانب صاحب العمل، يحق للعامل أثناء المهلة أن يتغيب للبحث عن عمل آخر بمقدار…",
+            "options": [
+                  "يوم كامل في الأسبوع أو 8 ساعات أثناء الأسبوع مع الأجر",
+                  "نصف ساعة يومياً دون أجر",
+                  "شهر كامل بأجر",
+                  "لا يحق له الغياب"
+            ],
+            "answer": 0,
+            "hint": "المادة 162.",
+            "explanation": "إذا كان الإخطار من جانب صاحب العمل، يحق للعامل أن يتغيب يوماً كاملاً في الأسبوع أو ثماني ساعات أثناء الأسبوع للبحث عن عمل آخر مع استحقاق أجره.",
+            "ref": "المادة 162.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "التعويض عن إنهاء العقد غير محدد المدة لسبب غير مشروع لا يقل عن…",
+            "options": [
+                  "أجر شهرين عن كل سنة من سنوات الخدمة",
+                  "أجر أسبوع عن كل سنة",
+                  "أجر يوم عن كل سنة",
+                  "لا يوجد تعويض"
+            ],
+            "answer": 0,
+            "hint": "قاعدة مهمة جداً للموارد البشرية.",
+            "explanation": "إذا أنهى صاحب العمل العقد غير محدد المدة لسبب غير مشروع، كان للعامل الحق في تعويض لا يقل عن أجر شهرين عن كل سنة من سنوات الخدمة.",
+            "ref": "المادة 165.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "يعتبر العامل مستقيلاً إذا تغيب بدون مبرر مشروع أكثر من…",
+            "options": [
+                  "20 يوماً متقطعة خلال السنة أو أكثر من 10 أيام متتالية بعد الإنذار",
+                  "7 أيام متقطعة فقط",
+                  "شهر واحد متصل دون إنذار",
+                  "3 أيام فقط"
+            ],
+            "answer": 0,
+            "hint": "تذكر 20 و10، مع إنذار بعد 10 أو 5.",
+            "explanation": "يعتبر العامل مستقيلاً إذا تغيب دون مبرر أكثر من عشرين يوماً متقطعة خلال السنة أو أكثر من عشرة أيام متتالية، بشرط سبق الإنذار بخطاب موصى عليه.",
+            "ref": "المادة 166.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "استقالة العامل يجب أن تكون…",
+            "options": [
+                  "كتابية وموقعة من العامل أو وكيله الخاص ومعتمدة من الجهة الإدارية المختصة",
+                  "شفوية فقط",
+                  "برسالة غير موقعة",
+                  "بموافقة الزملاء"
+            ],
+            "answer": 0,
+            "hint": "المادة 167 تشدد على الكتابة والاعتماد.",
+            "explanation": "للعامل أن يقدم استقالته كتابة لصاحب العمل بشرط أن تكون موقعة من العامل أو من وكيله الخاص ومعتمدة من الجهة الإدارية المختصة.",
+            "ref": "المادة 167.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "على جهة العمل البت في الاستقالة خلال… وإلا اعتبرت مقبولة بفوات هذه المدة.",
+            "options": [
+                  "10 أيام",
+                  "3 أيام",
+                  "30 يوماً",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "نفس مدة العدول تقريباً.",
+            "explanation": "على العامل أن يستمر في العمل إلى أن تبت جهة العمل في الاستقالة خلال عشرة أيام من تاريخ تقديمها، وإلا اعتبرت مقبولة بفوات هذه المدة.",
+            "ref": "المادة 167.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "عند وفاة العامل في الخدمة، يصرف صاحب العمل لأسرته نفقات جنازة تعادل… بحد أدنى 1000 جنيه.",
+            "options": [
+                  "أجر شهرين طبقاً لآخر أجر",
+                  "أجر أسبوع",
+                  "أجر سنة",
+                  "لا شيء"
+            ],
+            "answer": 0,
+            "hint": "المادة 169.",
+            "explanation": "إذا توفي العامل وهو في الخدمة يصرف صاحب العمل لأسرته ما يعادل أجر شهرين طبقاً لآخر أجر لمواجهة نفقات الجنازة، بحد أدنى ألف جنيه.",
+            "ref": "المادة 169.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "لا يجوز تحديد سن للتقاعد تقل عن…",
+            "options": [
+                  "60 سنة",
+                  "55 سنة",
+                  "50 سنة",
+                  "65 سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 171.",
+            "explanation": "لا يجوز تحديد سن للتقاعد تقل عن ستين سنة، مع تطبيق أحكام قانون التأمينات الاجتماعية والمعاشات في سن استحقاق المعاش.",
+            "ref": "المادة 171.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "مكافأة العامل عن مدة عمله بعد سن الستين، إذا لم تكن له حقوق تأمينية عن هذه المدة، تكون…",
+            "options": [
+                  "نصف شهر عن كل سنة من السنوات الخمس الأولى وشهر عن كل سنة تالية",
+                  "شهر عن كل السنوات دون تمييز",
+                  "أسبوع عن كل سنة",
+                  "لا يستحق شيئاً"
+            ],
+            "answer": 0,
+            "hint": "تدرج نصف شهر ثم شهر.",
+            "explanation": "يستحق العامل عن مدة عمله بعد سن الستين مكافأة بواقع أجر نصف شهر عن كل سنة من السنوات الخمس الأولى، وأجر شهر عن كل سنة من السنوات التالية إذا لم تكن له حقوق تأمينية عن هذه المدة.",
+            "ref": "المادة 172.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "هل يجوز لصاحب العمل إنهاء عقد العامل لمرضه قبل استنفاد إجازاته المرضية ومتجمد إجازاته السنوية؟",
+            "options": [
+                  "لا يجوز",
+                  "يجوز فور المرض",
+                  "يجوز بعد أسبوع فقط",
+                  "يجوز إذا طلب زميله ذلك"
+            ],
+            "answer": 0,
+            "hint": "المادة 173.",
+            "explanation": "يحظر إنهاء عقد العامل لمرضه إلا إذا استنفد إجازاته المرضية وما تبقى من متجمد إجازاته السنوية، مع إخطار العامل قبل 15 يوماً من الاستنفاد.",
+            "ref": "المادة 173.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "يلتزم صاحب العمل بمنح العامل عند انتهاء العلاقة شهادة خبرة/عمل خلال… من تاريخ طلبها.",
+            "options": [
+                  "15 يوماً",
+                  "3 أيام",
+                  "شهرين",
+                  "سنة"
+            ],
+            "answer": 0,
+            "hint": "المادة 175.",
+            "explanation": "يلتزم صاحب العمل بمنح العامل شهادة تبين تاريخ الالتحاق والانتهاء ونوع العمل والمزايا، خلال خمسة عشر يوماً من تاريخ طلبها.",
+            "ref": "المادة 175.",
+            "diff": "إنهاء"
+      },
+      {
+            "q": "تنشأ بدائرة اختصاص كل محكمة ابتدائية محكمة تسمى…",
+            "options": [
+                  "المحكمة العمالية",
+                  "محكمة الأسرة العمالية",
+                  "محكمة التأمينات فقط",
+                  "لجنة الجزاءات"
+            ],
+            "answer": 0,
+            "hint": "الباب الثاني من الكتاب الثالث.",
+            "explanation": "تنشأ بدائرة اختصاص كل محكمة ابتدائية محكمة تسمى المحكمة العمالية، وتنشأ بدائرة كل محكمة استئناف دوائر استئنافية متخصصة.",
+            "ref": "المادة 176.",
+            "diff": "محاكم"
+      },
+      {
+            "q": "تشكل كل دائرة من دوائر المحكمة العمالية من…",
+            "options": [
+                  "3 قضاة",
+                  "قاض واحد فقط",
+                  "5 قضاة",
+                  "محكمين من العمال وأصحاب الأعمال فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 178.",
+            "explanation": "تشكل كل دائرة من دوائر المحكمة العمالية من ثلاثة من القضاة بالمحاكم الابتدائية، ويكون أحدهم على الأقل بدرجة رئيس من الفئة أ.",
+            "ref": "المادة 178.",
+            "diff": "محاكم"
+      },
+      {
+            "q": "مكتب المساعدة القانونية العمالية يقدم خدماته للمتقاضين…",
+            "options": [
+                  "اختيارياً ودون مقابل",
+                  "إجبارياً برسوم عالية",
+                  "لأصحاب الأعمال فقط",
+                  "في الطعون الجنائية فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 185.",
+            "explanation": "ينشأ مكتب للمساعدة القانونية العمالية بكل مقر محكمة ابتدائية، وخدماته للمتقاضين اختيارية ودون مقابل.",
+            "ref": "المادة 185.",
+            "diff": "محاكم"
+      },
+      {
+            "q": "كتاب السلامة والصحة المهنية يسري على…",
+            "options": [
+                  "جميع مواقع العمل والمنشآت وفروعها أياً كان نوعها أو تبعيتها",
+                  "المصانع الحكومية فقط",
+                  "المكاتب الإدارية دون المصانع",
+                  "العمل البحري فقط"
+            ],
+            "answer": 0,
+            "hint": "المادة 244 توسع نطاق السلامة.",
+            "explanation": "تسري أحكام كتاب السلامة والصحة المهنية على جميع مواقع العمل والمنشآت وفروعها أياً كان نوعها أو تبعيتها، وكذلك المسطحات المائية ووسائل النقل المختلفة.",
+            "ref": "المادة 244.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "من المخاطر الفيزيائية التي تلتزم المنشأة بالوقاية منها…",
+            "options": [
+                  "الوطأة الحرارية والبرودة والضوضاء والاهتزازات والإشعاعات",
+                  "النزاع الجماعي فقط",
+                  "التدرج المهني",
+                  "إجازة الحج"
+            ],
+            "answer": 0,
+            "hint": "المادة 246.",
+            "explanation": "تلتزم المنشأة بتوفير وسائل السلامة للوقاية من المخاطر الفيزيائية مثل الوطأة الحرارية والبرودة والضوضاء والاهتزازات وشدة الاستضاءة والإشعاعات وتغيرات الضغط ومخاطر الانفجار.",
+            "ref": "المادة 246.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "عند التعامل مع المواد الكيميائية الخطرة، تلتزم المنشأة بـ…",
+            "options": [
+                  "بطاقات تعريف وسجلات وتدريب العمال واحتياطات الوقاية",
+                  "إخفاء أسماء المواد عن العمال",
+                  "منع أي تدريب",
+                  "تحميل العامل تكلفة الوقاية"
+            ],
+            "answer": 0,
+            "hint": "المادة 249.",
+            "explanation": "تلتزم المنشأة بحصر المواد الكيميائية الخطرة، ووضع بطاقات تعريف موضحاً بها الاسم والتركيب ودرجة الخطورة واحتياطات السلامة، وتدريب العمال على طرق التعامل والوقاية.",
+            "ref": "المادة 249.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "إذا وجد تهديد وشيك وخطير على صحة العمال أو حياتهم، يجوز للعامل…",
+            "options": [
+                  "مغادرة مكان العمل إلى مكان آمن دون إذن ودون مساءلة تأديبية",
+                  "البقاء إجبارياً مهما كان الخطر",
+                  "الاستقالة فقط",
+                  "العمل ساعات إضافية"
+            ],
+            "answer": 0,
+            "hint": "من أجمل أحكام المادة 253 لحماية الحياة.",
+            "explanation": "في حالة التنبؤ بوقوع حادث أو خطر وشيك وخطير، يجوز للعامل مغادرة مكان العمل إلى مكان آمن دون إذن، ولا يترتب على ذلك أي عواقب أو مساءلة تأديبية.",
+            "ref": "المادة 253.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "بيئة العمل الآمنة وفق المادة 254 يجب أن تكون خالية من…",
+            "options": [
+                  "التحرش والتنمر والعنف",
+                  "الإجازات السنوية",
+                  "التدريب المهني",
+                  "المفاوضة الجماعية"
+            ],
+            "answer": 0,
+            "hint": "المادة 254 تكمل الحظر العام في المادة 4.",
+            "explanation": "تلتزم المنشآت بتوفير بيئة عمل آمنة وغير عدائية خالية من التحرش والتنمر والعنف وتوفير الوسائل الكفيلة بالوقاية منها.",
+            "ref": "المادة 254.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "كل منشأة يعمل بها 30 عاملاً فأكثر توافي الجهة الإدارية بإحصائية نصف سنوية خلال النصف الأول من شهري…",
+            "options": [
+                  "يوليو ويناير",
+                  "مارس وسبتمبر",
+                  "مايو وديسمبر",
+                  "أبريل وأكتوبر"
+            ],
+            "answer": 0,
+            "hint": "نصف سنوية: منتصف العام وبداية العام.",
+            "explanation": "تلتزم كل منشأة يعمل بها ثلاثون عاملاً فأكثر بموافاة الجهة الإدارية بإحصائية نصف سنوية خلال النصف الأول من شهري يوليو ويناير على الأكثر.",
+            "ref": "المادة 260.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "يجب إخطار الجهة الإدارية بكل حادث جسيم أو ظهور أعراض مرض مهني خلال…",
+            "options": [
+                  "24 ساعة",
+                  "7 أيام",
+                  "شهر",
+                  "نصف سنة"
+            ],
+            "answer": 0,
+            "hint": "التوقيت سريع بسبب الخطورة.",
+            "explanation": "تلتزم المنشآت بإخطار الجهة الإدارية المختصة بكل حادث جسيم أو عند ظهور أعراض مرض مهني خلال أربع وعشرين ساعة من وقوعه.",
+            "ref": "المادة 260.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "هل يجوز للمنشأة تحميل العامل نفقات أدوات الوقاية الشخصية؟",
+            "options": [
+                  "لا يجوز",
+                  "يجوز بحد أقصى 10%",
+                  "يجوز إذا كانت الأدوات مستوردة",
+                  "يجوز في فترة الاختبار"
+            ],
+            "answer": 0,
+            "hint": "المادة 267 تحظر تحميل التكلفة للعامل.",
+            "explanation": "تلتزم المنشأة بتوفير أدوات الوقاية الشخصية المناسبة وتدريب العامل على استخدامها، ولا يجوز تحميل العامل أية نفقات أو اقتطاع مبالغ من أجره مقابل وسائل الحماية.",
+            "ref": "المادة 267.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "إذا زاد عدد العمال في مكان واحد أو بلد واحد أو دائرة نصف قطرها 15 كم على 50 عاملاً، تلتزم المنشأة بـ…",
+            "options": [
+                  "ممرض مؤهل أو أكثر بكل وردية وطبيب وأدوية بالمجان",
+                  "دار حضانة فقط",
+                  "خفض الأجر",
+                  "إلغاء الإسعافات الأولية"
+            ],
+            "answer": 0,
+            "hint": "المادة 270 عن الإسعاف والرعاية الطبية.",
+            "explanation": "إذا زاد عدد العمال على خمسين، تلتزم المنشأة باستخدام ممرض مؤهل أو أكثر لأعمال التمريض أو الإسعاف بكل وردية، وأن تعهد إلى طبيب لعيادتهم وتقدم الأدوية اللازمة للعلاج بالمجان.",
+            "ref": "المادة 270.",
+            "diff": "سلامة"
+      },
+      {
+            "q": "المنشأة التي يبلغ عدد عمالها 50 عاملاً فأكثر تلتزم بتقديم…",
+            "options": [
+                  "الخدمات الاجتماعية والثقافية اللازمة دون تحميل العامل أي التزامات",
+                  "قروض إجبارية للعمال",
+                  "إلغاء الإجازات",
+                  "مصاريف تدريب إجبارية"
+            ],
+            "answer": 0,
+            "hint": "المادة 272.",
+            "explanation": "تلتزم المنشأة التي يبلغ عدد عمالها خمسين عاملاً فأكثر بتقديم الخدمات الاجتماعية والثقافية اللازمة لعمالها بالاشتراك مع المنظمة النقابية دون تحميل العامل أي التزامات.",
+            "ref": "المادة 272.",
+            "diff": "خدمات"
+      },
+      {
+            "q": "اشتراك صندوق الخدمات الاجتماعية والصحية والثقافية للمنشآت التي يبلغ عدد عمالها 20 عاملاً فأكثر يكون سنوياً عن كل عامل بين…",
+            "options": [
+                  "8 و16 جنيهاً",
+                  "20 و200 جنيه",
+                  "1000 و10000 جنيه",
+                  "لا يقل عن مليون جنيه"
+            ],
+            "answer": 0,
+            "hint": "أرقام صغيرة في المادة 273.",
+            "explanation": "تلتزم المنشآت التي يبلغ عدد عمالها عشرون عاملاً فأكثر بسداد اشتراك سنوي لا يقل عن 8 جنيهات ولا يجاوز 16 جنيهاً عن كل عامل لتمويل الصندوق.",
+            "ref": "المادة 273.",
+            "diff": "خدمات"
+      },
+      {
+            "q": "ما صفة العاملين المكلفين بتنفيذ القانون والقرارات الصادرة تنفيذاً له بالنسبة للجرائم المتعلقة بوظائفهم؟",
+            "options": [
+                  "مأمورو ضبط قضائي",
+                  "محكمون دوليون",
+                  "مفوضون عماليون فقط",
+                  "أطباء تأمين صحي"
+            ],
+            "answer": 0,
+            "hint": "الباب الأول من الكتاب الخامس.",
+            "explanation": "يكون للعاملين القائمين على تنفيذ القانون والقرارات الصادرة تنفيذاً له صفة مأموري الضبط القضائي بالنسبة للجرائم التي تقع في دوائر اختصاصهم وتتعلق بأعمال وظائفهم.",
+            "ref": "المادة 275.",
+            "diff": "تفتيش"
+      },
+      {
+            "q": "لمن له صفة الضبطية القضائية حق…",
+            "options": [
+                  "دخول أماكن العمل وتفتيشها وفحص الدفاتر وطلب المستندات والبيانات",
+                  "فصل العامل مباشرة",
+                  "تحديد سن التقاعد",
+                  "إلغاء عقود العمل"
+            ],
+            "answer": 0,
+            "hint": "المادة 276.",
+            "explanation": "يحمل مأمور الضبط القضائي بطاقة تثبت صفته، وله حق دخول جميع أماكن العمل وتفتيشها وفحص الدفاتر والأوراق وطلب المستندات والبيانات اللازمة.",
+            "ref": "المادة 276.",
+            "diff": "تفتيش"
+      }
+];
+
+    const $ = (id)=>document.getElementById(id);
+    const screens = {start:$('startScreen'), quiz:$('quizScreen'), result:$('resultScreen'), fc:$('fcScreen')};
+    const letters = ['أ','ب','ج','د'];
+    let state = {};
+    let selectedMode = 'training';
+    let soundOn = true;
+    let timer = null;
+    let audioCtx = null;
+
+    function safeNumber(n){ return Number(n || 0).toLocaleString('ar-EG'); }
+
+    /* ===== عنوان التاب الديناميكي أثناء اللعب ===== */
+    const BASE_TITLE = 'مغامرة قانون العمل المصري | قانون 14 لسنة 2025';
+    function updateDocTitle(){
+      if(!state || !state.questions) return;
+      document.title = state.locked
+        ? `سؤال ${state.index+1}/${state.questions.length} — ${BASE_TITLE}`
+        : BASE_TITLE;
+    }
+    function showScreen(name){
+      Object.values(screens).forEach(s=>s.classList.remove('active'));
+      screens[name].classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function toast(msg){
+      const t = $('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(()=>t.classList.remove('show'), 2200);
+    }
+
+    function shuffle(arr){
+      const a = arr.slice();
+      for(let i=a.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [a[i],a[j]]=[a[j],a[i]];
+      }
+      return a;
+    }
+
+    /* ===== مواضيع الفلترة في شاشة البداية ===== */
+    function escapeHtml(str){
+      return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    }
+    const allTopics = Array.from(new Set(questionBank.map(q=>q.diff)));
+    let selectedTopics = new Set();
+    function renderTopicFilter(){
+      const host = $('topicFilter');
+      host.innerHTML = allTopics.map(t=>`<span class="topic-chip" data-topic="${escapeHtml(t)}" tabindex="0" role="checkbox" aria-checked="false">${diffIcon(t)} ${t}</span>`).join('')
+        + `<span class="topic-chip on" data-topic="__all__" tabindex="0" role="checkbox" aria-checked="true">✨ كل المواضيع</span>`;
+      host.querySelectorAll('.topic-chip').forEach(chip=>{
+        const pick = ()=>{
+          const t = chip.dataset.topic;
+          if(t==='__all__'){
+            selectedTopics.clear();
+            host.querySelectorAll('.topic-chip').forEach(c=>{c.classList.remove('on');c.setAttribute('aria-checked','false')});
+            chip.classList.add('on'); chip.setAttribute('aria-checked','true');
+          }else{
+            host.querySelector('[data-topic="__all__"]').classList.remove('on');
+            host.querySelector('[data-topic="__all__"]').setAttribute('aria-checked','false');
+            if(chip.classList.contains('on')){ chip.classList.remove('on'); chip.setAttribute('aria-checked','false'); selectedTopics.delete(t); }
+            else{ chip.classList.add('on'); chip.setAttribute('aria-checked','true'); selectedTopics.add(t); }
+            if(selectedTopics.size === allTopics.length){
+              selectedTopics.clear();
+              host.querySelector('[data-topic="__all__"]').classList.add('on');
+              host.querySelector('[data-topic="__all__"]').setAttribute('aria-checked','true');
+            }
+          }
+          $('etaBadge').textContent = '⏳ متبقي تقريباً — دقيقة';
+          updateTopicHint();
+        };
+        chip.addEventListener('click', pick);
+        chip.addEventListener('keydown', e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});
+      });
+    }
+    function updateTopicHint(){
+      const count = selectedTopics.size ? questionBank.filter(q=>selectedTopics.has(q.diff)).length : questionBank.length;
+      // نحدّث الوصف في select لو ممكن
+    }
+    function topicsToUse(){
+      return selectedTopics.size ? questionBank.filter(q=>selectedTopics.has(q.diff)) : questionBank;
+    }
+
+    /* ===== تقدير مستوى صعوبة السؤال (لترتيب متدرج) ===== */
+    function estimateLevel(q){
+      // سهل: تعريفات ونطاق التطبيق والتعديلات | متوسط: الأحكام العامة والمعاملات | صعب: الجزاءات والمحاكم والمواد المتعددة
+      const low = /تمهيدي|تعريفات|نطاق التطبيق|عقود|تعديلات/.test(q.diff);
+      const high = /منازعات|إنهاء|جزاءات|تفتيش|محاكم|خدمات|تدريب|إنهاء|سلامة/.test(q.diff);
+      if(/المادتان|المواد\s+\d/.test(q.ref)) return high ? 3 : 2;
+      const m = q.ref.match(/المادة\s+(\d+)/);
+      if(m){
+        const n = Number(m[1]);
+        if(low) return 1;
+        if(n <= 60) return high ? 3 : 2;
+        return 3;
+      }
+      if(low) return 1;
+      if(/مواد الإصدار/.test(q.ref)) return 1;
+      return high ? 3 : 2;
+    }
+
+    /* ===== ترتيب الأسئلة من السهل للصعب مع خلط داخل كل مستوى ===== */
+    function tieredQuestions(pool, count){
+      let sorted = [];
+      for(let level=1;level<=3;level++) sorted.push(...shuffle(pool.filter(q=>estimateLevel(q)===level)));
+      return sorted.slice(0, count);
+    }
+
+    function prepareQuestion(q){
+      const mapped = q.options.map((text,idx)=>({text, correct:idx===q.answer}));
+      const shuffled = shuffle(mapped);
+      return {...q, shuffled, answerIndex: shuffled.findIndex(o=>o.correct)};
+    }
+
+    function getBest(){
+      try{return JSON.parse(localStorage.getItem('egyptLaborLaw2025GameBest') || 'null')}catch(e){return null}
+    }
+    function setBest(data){
+      try{localStorage.setItem('egyptLaborLaw2025GameBest', JSON.stringify(data))}catch(e){}
+    }
+
+    /* ===== حفظ واسترجاع التقدم أثناء اللعب ===== */
+    const PROGRESS_KEY = 'egyptLaborLaw2025Progress';
+    function saveProgress(){
+      try{
+        const snap = {
+          name:state.name, mode:state.mode, selectedTopics:[...selectedTopics],
+          countMode:$('questionCount').value,
+          index:state.index, score:state.score, correct:state.correct, wrong:state.wrong,
+          streak:state.streak, bestStreak:state.bestStreak, hints:state.hints, fifty:state.fifty,
+          answers:state.answers, hintsLeft:state.hints, fiftyLeft:state.fifty,
+          qTexts: state.questions.map(q=>q.q), savedAt:Date.now()
+        };
+        localStorage.setItem(PROGRESS_KEY, JSON.stringify(snap));
+      }catch(e){}
+    }
+    function loadProgress(){
+      try{
+        const raw = localStorage.getItem(PROGRESS_KEY);
+        if(!raw) return null;
+        return JSON.parse(raw);
+      }catch(e){return null}
+    }
+    function clearProgress(){
+      try{localStorage.removeItem(PROGRESS_KEY)}catch(e){}
+    }
+    function tryResume(saved){
+      if(!saved) return false;
+      // إذا مر أكثر من 24 ساعة على الحفظ، تجاهل
+      if(Date.now() - saved.savedAt > 86400000){ clearProgress(); return false; }
+      const pool = saved.selectedTopics && saved.selectedTopics.length
+        ? questionBank.filter(q=>saved.selectedTopics.includes(q.diff))
+        : questionBank;
+      const byText = new Map(pool.map(q=>[q.q,q]));
+      const questions = saved.qTexts.map(t=>byText.get(t)).filter(Boolean).map(prepareQuestion);
+      if(!questions.length) return false;
+      state = {
+        name:saved.name, mode:saved.mode, questions, index:saved.index,
+        score:saved.score, correct:saved.correct, wrong:saved.wrong,
+        streak:0, bestStreak:saved.bestStreak, hints:saved.hints, fifty:saved.fifty,
+        locked:false, answers:saved.answers||[], usedHintThisQuestion:false,
+        timeLeft: saved.mode==='challenge' ? 25 : Infinity,
+        questionStart: Date.now()
+      };
+      selectedTopics = new Set(saved.selectedTopics||[]);
+      return true;
+    }
+
+    /* ===== لوحة الشرف: أفضل 5 نتائج ===== */
+    function getLeaderboard(){
+      try{return JSON.parse(localStorage.getItem('egyptLaborLaw2025Leaderboard') || '[]')}catch(e){return []}
+    }
+    function setLeaderboard(arr){
+      try{localStorage.setItem('egyptLaborLaw2025Leaderboard', JSON.stringify(arr))}catch(e){}
+    }
+    function pushLeaderboard(entry){
+      const lb = getLeaderboard();
+      lb.push(entry);
+      lb.sort((a,b)=> b.percent-a.percent || b.score-a.score);
+      setLeaderboard(lb.slice(0,5));
+    }
+    function renderLeaderboard(){
+      const lb = getLeaderboard();
+      if(!lb.length){ $('leaderboardSection').style.display='none'; return; }
+      $('leaderboardSection').style.display='block';
+      $('leaderboardList').innerHTML = lb.map((e,i)=>`
+        <div class="lb-row"><span>${['🥇','🥈','🥉','4️⃣','5️⃣'][i]} ${escapeHtml(e.name)}</span><span>${e.date}</span><b>${safeNumber(e.percent)}%</b><span>${safeNumber(e.score)} نقطة</span></div>
+      `).join('');
+    }
+    function updateBestMini(){
+      const best = getBest();
+      $('bestScoreMini').textContent = best ? `${best.percent}%` : '—';
+      $('bankCount').textContent = safeNumber(questionBank.length);
+    }
+
+    function beep(type='good'){
+      if(!soundOn) return;
+      try{
+        audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.connect(g); g.connect(audioCtx.destination);
+        const now = audioCtx.currentTime;
+        const freq = type==='good' ? 720 : type==='bad' ? 190 : type==='tick' ? 520 : 360;
+        o.frequency.setValueAtTime(freq, now);
+        if(type==='good') o.frequency.exponentialRampToValueAtTime(980, now+.12);
+        if(type==='bad') o.frequency.exponentialRampToValueAtTime(120, now+.16);
+        g.gain.setValueAtTime(.0001, now);
+        g.gain.exponentialRampToValueAtTime(.055, now+.025);
+        g.gain.exponentialRampToValueAtTime(.0001, now+(type==='bad'?.22:.16));
+        o.start(now); o.stop(now+(type==='bad'?.24:.18));
+      }catch(e){}
+    }
+
+    document.querySelectorAll('.mode-option').forEach(el=>{
+      const choose = ()=>{
+        document.querySelectorAll('.mode-option').forEach(x=>{x.classList.remove('selected');x.setAttribute('aria-checked','false')});
+        el.classList.add('selected'); el.setAttribute('aria-checked','true');
+        selectedMode = el.dataset.mode;
+      };
+      el.addEventListener('click', choose);
+      el.addEventListener('keydown', e=>{if(e.key==='Enter' || e.key===' '){e.preventDefault();choose();}});
+    });
+
+    $('scrollLawBtn').addEventListener('click', ()=>$('lawSheet').scrollIntoView({behavior:'smooth',block:'start'}));
+    $('soundBtn').addEventListener('click', ()=>{
+      soundOn = !soundOn;
+      $('soundBtn').textContent = soundOn ? 'الصوت: تشغيل 🔊' : 'الصوت: إيقاف 🔇';
+      $('soundBtn').setAttribute('aria-pressed', String(soundOn));
+      toast(soundOn ? 'الصوت اشتغل… جاهزين للبهجة! 🔊' : 'تم إيقاف الصوت 🔇');
+    });
+
+    $('startBtn').addEventListener('click', startGame);
+    $('nextBtn').addEventListener('click', nextQuestion);
+    $('hintBtn').addEventListener('click', showHint);
+    $('fiftyBtn').addEventListener('click', fiftyFifty);
+    $('quitBtn').addEventListener('click', ()=>{
+      if(confirm('تحب تنهي الاختبار وتشوف نتيجتك الحالية؟')) finishGame();
+    });
+    $('restartBtn').addEventListener('click', ()=>showScreen('start'));
+    $('reviewBtn').addEventListener('click', ()=>{
+      $('review').classList.toggle('show');
+      $('reviewBtn').textContent = $('review').classList.contains('show') ? 'إخفاء المراجعة 🙈' : 'مراجعة الإجابات 🧠';
+    });
+    $('printBtn').addEventListener('click', ()=>{
+      document.body.classList.add('certificate-page');
+      window.addEventListener('afterprint', ()=>document.body.classList.remove('certificate-page'), {once:true});
+      window.print();
+    });
+
+    /* ===== التقرير المفصل: النتيجة + المراجعة + الشهادة (PDF) ===== */
+    $('reportBtn').addEventListener('click', ()=>{
+      $('review').classList.add('show');
+      $('reviewBtn').textContent = 'إخفاء المراجعة 🙈';
+      document.body.classList.add('report-page');
+      window.addEventListener('afterprint', ()=>document.body.classList.remove('report-page'), {once:true});
+      window.print();
+    });
+
+    /* ===== مشاركة النتيجة ===== */
+    $('shareBtn').addEventListener('click', async ()=>{
+      const total = state.questions.length || 1;
+      const percent = Math.round((state.correct/total)*100);
+      const emoji = percent>=90 ? '👑' : percent>=75 ? '🏆' : percent>=55 ? '🌟' : '🌱';
+      const text = `${emoji} حصلت على ${safeNumber(percent)}% في اختبار قانون العمل المصري رقم 14 لسنة 2025!\n${safeNumber(state.correct)} من ${total} إجابة صحيحة — ${safeNumber(state.score)} نقطة\nجرب اللعبة دي: مغامرة قانون العمل 🧾`;
+      try{
+        if(navigator.share){
+          await navigator.share({title:'نتيجتي في اختبار قانون العمل', text});
+          return;
+        }
+      }catch(e){}
+      try{
+        await navigator.clipboard.writeText(text);
+        toast('📋 تم نسخ النتيجة! الصقها في أي مكان');
+      }catch(e){
+        toast('شارك يدوي: ' + percent + '% 📤');
+      }
+    });
+
+    function startGame(){
+      const name = $('playerName').value.trim() || 'بطل شئون العاملين';
+      const countValue = $('questionCount').value;
+      const pool = topicsToUse();
+      const count = (!countValue || countValue === 'all') ? pool.length : Math.min(Number(countValue), pool.length);
+      if(!count){ toast('لا توجد أسئلة بالفلتر المختار 😅'); showScreen('start'); renderTopicFilter(); return; }
+      const selectedQuestions = tieredQuestions(pool, count).map(prepareQuestion);
+      state = {
+        name,
+        mode:selectedMode,
+        questions:selectedQuestions,
+        index:0,
+        score:0,
+        correct:0,
+        wrong:0,
+        streak:0,
+        bestStreak:0,
+        hints: selectedMode === 'challenge' ? 2 : 3,
+        fifty: 1,
+        locked:false,
+        answers:[],
+        usedHintThisQuestion:false,
+        timeLeft: selectedMode === 'challenge' ? 25 : Infinity,
+        questionStart: Date.now()
+      };
+      $('hudName').textContent = name;
+      $('hintLeft').textContent = safeNumber(state.hints);
+      $('fiftyLeft').textContent = safeNumber(state.fifty);
+      showScreen('quiz');
+      clearProgress();
+      toast('يلا بينا! أول سؤال وصل مكتب شئون العاملين 📨');
+      renderQuestion();
+      updateDocTitle();
+    }
+
+    function resumeGame(saved){
+      if(!tryResume(saved)) return;
+      $('hudName').textContent = state.name;
+      $('hintLeft').textContent = safeNumber(state.hints);
+      $('fiftyLeft').textContent = safeNumber(state.fifty);
+      $('playerName').value = state.name;
+      $('questionCount').value = saved.countMode || '20';
+      showScreen('quiz');
+      renderTopicFilter();
+      toast('كمّلنا من سؤال ' + safeNumber(state.index+1) + ' 🎯');
+      renderQuestion();
+      updateDocTitle();
+    }
+
+    function offerResume(){
+      const saved = loadProgress();
+      if(!saved) return;
+      const go = confirm(`عندك اختبار محفوض (سؤال ${saved.index+1}/${saved.qTexts.length}) 📥\n\nتحب تكمل من حيث ما وقفت؟\n(اضغط إلغاء لبدء اختبار جديد)`);
+      if(go) resumeGame(saved);
+      else clearProgress();
+    }
+
+    function levelByScore(){
+      const p = state.questions.length ? Math.round((state.correct / Math.max(1,state.index || 1))*100) : 0;
+      if(p>=90) return 'أسطورة قانون العمل';
+      if(p>=75) return 'خبير موارد بشرية';
+      if(p>=55) return 'موظف واعي';
+      return 'بداية لطيفة';
+    }
+
+    function diffIcon(diff){
+      if(diff==='أرقام') return '🔢';
+      if(diff==='تواريخ') return '📅';
+      if(diff==='نطاق التطبيق') return '🧭';
+      if(diff==='تعريفات') return '📖';
+      if(diff==='حقوق') return '⚖️';
+      if(diff==='تدريب') return '🎓';
+      if(diff==='تشغيل') return '🧑‍💼';
+      if(diff==='نساء') return '🌷';
+      if(diff==='أطفال') return '🧸';
+      if(diff==='أجانب') return '🌍';
+      if(diff==='عمالة غير منتظمة') return '🛠️';
+      if(diff==='عقود') return '📄';
+      if(diff==='أنماط عمل') return '💻';
+      if(diff==='أجور') return '💰';
+      if(diff==='ساعات') return '⏰';
+      if(diff==='إجازات') return '🏖️';
+      if(diff==='جزاءات') return '📝';
+      if(diff==='منازعات') return '🤝';
+      if(diff==='إنهاء') return '🚪';
+      if(diff==='محاكم') return '🏛️';
+      if(diff==='سلامة') return '🦺';
+      if(diff==='خدمات') return '🤲';
+      if(diff==='تفتيش') return '🔎';
+      return '🌱';
+    }
+
+    function renderQuestion(){
+      clearInterval(timer);
+      const q = state.questions[state.index];
+      state.locked = false;
+      state.usedHintThisQuestion = false;
+      state.questionStart = Date.now();
+      state.timeLeft = state.mode === 'challenge' ? 25 : Infinity;
+      $('nextBtn').disabled = true;
+      $('feedback').className = 'feedback';
+      $('feedbackTitle').textContent = '';
+      $('feedbackBody').textContent = '';
+      $('feedbackRef').textContent = '';
+      $('hintText').style.display = 'none';
+      $('hintText').textContent = '';
+      $('hintBtn').disabled = state.hints <= 0;
+      $('fiftyBtn').disabled = state.fifty <= 0;
+
+      $('qNumber').textContent = `سؤال ${safeNumber(state.index+1)} من ${safeNumber(state.questions.length)}`;
+      $('difficultyTag').textContent = `${diffIcon(q.diff)} ${q.diff}`;
+      $('questionText').textContent = q.q;
+      $('hudScore').textContent = safeNumber(state.score);
+      $('hudStreak').textContent = safeNumber(state.streak);
+      $('hudLevel').textContent = levelByScore();
+      $('progressBar').style.width = `${(state.index/state.questions.length)*100}%`;
+
+      const optionsEl = $('options');
+      optionsEl.innerHTML = '';
+      q.shuffled.forEach((op, idx)=>{
+        const btn = document.createElement('button');
+        btn.className = 'option';
+        btn.innerHTML = `<span class="letter">${letters[idx]}</span><span>${op.text}</span>`;
+        btn.addEventListener('click', ()=>answerQuestion(idx));
+        optionsEl.appendChild(btn);
+      });
+      updateTimerVisual();
+      updateEta();
+      if(state.mode === 'challenge'){
+        timer = setInterval(()=>{
+          state.timeLeft -= 1;
+          updateTimerVisual();
+          if(state.timeLeft <= 5 && state.timeLeft > 0) beep('tick');
+          if(state.timeLeft <= 0){
+            clearInterval(timer);
+            answerQuestion(null, true);
+          }
+        },1000);
+      }
+    }
+
+    function updateTimerVisual(){
+      const ring = $('timerRing');
+      const text = $('timerText');
+      if(state.mode !== 'challenge'){
+        ring.style.setProperty('--deg','360deg');
+        ring.classList.remove('danger');
+        text.textContent = '∞';
+        return;
+      }
+      const max = 25;
+      const pct = Math.max(0, state.timeLeft/max);
+      ring.style.setProperty('--deg', `${pct*360}deg`);
+      text.textContent = safeNumber(state.timeLeft);
+      ring.classList.toggle('danger', state.timeLeft <= 6);
+    }
+
+    function updateEta(){
+      if(!state.questions) return;
+      const remaining = state.questions.length - (state.index + 1);
+      if(remaining <= 0){ $('etaBadge').textContent = '⏳ خلص الاختبار!'; return; }
+      // متوسط: تدريب ~ 45 ثانية/سؤال (قراءة + شرح)، تحدي ~ 30 ثانية/سؤال
+      const avg = state.mode === 'challenge' ? 30 : 45;
+      const mins = Math.ceil(remaining * avg / 60);
+      $('etaBadge').textContent = mins <= 1
+        ? `⏳ متبقي ${remaining} سؤال (حوالي دقيقة)`
+        : `⏳ متبقي ${remaining} سؤال (تقريباً ${mins} دقائق)`;
+    }
+
+    function showHint(){
+      if(state.locked || state.hints <= 0) return;
+      const q = state.questions[state.index];
+      state.hints--;
+      state.usedHintThisQuestion = true;
+      $('hintLeft').textContent = safeNumber(state.hints);
+      $('hintBtn').disabled = state.hints <= 0;
+      $('feedback').className = 'feedback show';
+      $('feedbackTitle').textContent = '💡 تلميح لطيف';
+      $('feedbackBody').textContent = q.hint;
+      $('feedbackRef').textContent = 'استخدم التلميح عند اللزوم… النقاط تقل قليلاً فقط.';
+      beep('tick');
+    }
+
+    function fiftyFifty(){
+      if(state.locked || state.fifty <= 0) return;
+      const q = state.questions[state.index];
+      const wrongIndexes = q.shuffled.map((o,i)=>o.correct ? null : i).filter(i=>i!==null);
+      shuffle(wrongIndexes).slice(0,2).forEach(i=>{
+        const btn = $('options').children[i];
+        if(btn) btn.classList.add('hidden-choice');
+      });
+      state.fifty--;
+      $('fiftyLeft').textContent = safeNumber(state.fifty);
+      $('fiftyBtn').disabled = true;
+      toast('اختيارين طاروا في الأرشيف 🗂️');
+      beep('tick');
+    }
+
+    function answerQuestion(choiceIndex, timedOut=false){
+      if(state.locked) return;
+      clearInterval(timer);
+      const q = state.questions[state.index];
+      state.locked = true;
+      const buttons = Array.from($('options').children);
+      buttons.forEach(b=>b.classList.add('locked'));
+      const isCorrect = choiceIndex === q.answerIndex;
+      buttons.forEach((btn,idx)=>{
+        if(idx === q.answerIndex) btn.classList.add('correct');
+        if(choiceIndex !== null && idx === choiceIndex && !isCorrect) btn.classList.add('wrong');
+      });
+
+      let gained = 0;
+      if(isCorrect){
+        state.correct++;
+        state.streak++;
+        state.bestStreak = Math.max(state.bestStreak, state.streak);
+        const timeBonus = state.mode === 'challenge' ? Math.max(0, state.timeLeft * 2) : 0;
+        const streakBonus = Math.min(40, state.streak * 8);
+        const hintPenalty = state.usedHintThisQuestion ? 25 : 0;
+        gained = Math.max(50, 100 + timeBonus + streakBonus - hintPenalty);
+        state.score += gained;
+        $('feedback').className = 'feedback show good';
+        $('feedbackTitle').textContent = state.streak >= 3 ? '🔥 ممتاز! سلسلة رائعة' : '✅ إجابة صحيحة!';
+        $('feedbackBody').textContent = `${q.explanation} +${safeNumber(gained)} نقطة`;
+        confettiBurst(state.streak >= 3 ? 100 : 55);
+        beep('good');
+      }else{
+        state.wrong++;
+        state.streak = 0;
+        $('feedback').className = 'feedback show bad';
+        $('feedbackTitle').textContent = timedOut ? '⏰ الوقت خلص!' : '❌ قريبة… نراجعها معاً';
+        const chosenText = choiceIndex === null ? 'لم يتم اختيار إجابة' : q.shuffled[choiceIndex].text;
+        $('feedbackBody').textContent = `${timedOut ? 'انتهى المؤقت قبل الإجابة.' : 'اختيارك: ' + chosenText + '.'} الإجابة الصحيحة: ${q.shuffled[q.answerIndex].text}. ${q.explanation}`;
+        beep('bad');
+      }
+      $('feedbackRef').innerHTML = `مرجع السؤال: ${escapeHtml(q.ref)}` + buildLawLink(q.ref);
+      $('nextBtn').disabled = false;
+      $('hudScore').textContent = safeNumber(state.score);
+      $('hudStreak').textContent = safeNumber(state.streak);
+      $('hudLevel').textContent = levelByScore();
+      state.answers.push({
+        q:q.q,
+        correct:isCorrect,
+        chosen: choiceIndex === null ? 'بدون إجابة' : q.shuffled[choiceIndex].text,
+        answer:q.shuffled[q.answerIndex].text,
+        explanation:q.explanation,
+        ref:q.ref
+      });
+      $('progressBar').style.width = `${((state.index+1)/state.questions.length)*100}%`;
+      saveProgress();
+      updateDocTitle();
+    }
+
+    /* ===== تحذير عند إغلاق الصفحة أثناء الاختبار ===== */
+    window.addEventListener('beforeunload', e=>{
+      if(screens.quiz.classList.contains('active')){
+        saveProgress();
+        e.preventDefault();
+        e.returnValue = 'عندك اختبار غير مكتمل. هل أنت متأكد من المغادرة؟';
+      }
+    });
+
+    function buildLawLink(ref){
+      // زر "اقرأ المادة كاملة" للسؤال مع رقم مادة محددة
+      const m = ref.match(/المادة\s+(\d+)/);
+      if(!m) return '';
+      const n = m[1];
+      const url = `https://elgafna.legal/?s=%D8%A7%D9%84%D9%85%D8%A7%D8%AF%D8%A9+${n}`;
+      return ` <a class="law-link" href="${url}" target="_blank" rel="noopener">📖 اقرأ المادة ${n} كاملة</a>`;
+    }
+
+    function nextQuestion(){
+      if(!state.locked) return;
+      if(state.index < state.questions.length-1){
+        state.index++;
+        renderQuestion();
+      }else{
+        finishGame();
+      }
+    }
+
+    function finishGame(){
+      clearInterval(timer);
+      const total = state.questions.length || 1;
+      const percent = Math.round((state.correct/total)*100);
+      let title, emoji, message;
+      if(percent>=90){
+        title = 'أسطورة شئون العاملين!'; emoji='👑';
+        message = 'أداء مبهر! واضح إن قانون العمل بقى صاحبك في مكتب شئون العاملين. استمر بهذا المستوى في مراجعة ملفات الموارد البشرية.';
+      }else if(percent>=75){
+        title = 'خبير تأمينات شاطر!'; emoji='🏆';
+        message = 'نتيجة قوية جداً. راجع فقط التفاصيل الدقيقة مثل مدد الإخطار والإجازات وساعات العمل وستصل للقب الأسطورة.';
+      }else if(percent>=55){
+        title = 'موظف واعي وفي الطريق للخبرة'; emoji='🌟';
+        message = 'عندك أساس جيد. ركّز في الأرقام المهمة: 3% علاوة، 8 ساعات، 48 ساعة أسبوعياً، 4 أشهر وضع، و3 أشهر إخطار.';
+      }else{
+        title = 'بداية لطيفة… والمراجعة هتكسبك!'; emoji='🌱';
+        message = 'ولا يهمك! اللعبة للتدريب. اقرأ الملخص السريع ثم أعد المحاولة؛ قانون العمل محتاج مراجعة بالأرقام والمواعيد.';
+      }
+      $('resultEmoji').textContent = emoji;
+      $('resultTitle').textContent = title;
+      $('resultPercent').textContent = `${safeNumber(percent)}%`;
+      $('resultMessage').textContent = message;
+      $('finalCorrect').textContent = safeNumber(state.correct);
+      $('finalWrong').textContent = safeNumber(state.wrong);
+      $('finalScore').textContent = safeNumber(state.score);
+
+      const prevBest = getBest();
+      if(!prevBest || percent > prevBest.percent || (percent === prevBest.percent && state.score > prevBest.score)){
+        setBest({percent, score:state.score, name:state.name, date:new Date().toLocaleDateString('ar-EG')});
+        $('finalBest').textContent = `${safeNumber(percent)}%`;
+        toast('نتيجة قياسية جديدة! 🥳');
+        confettiBurst(180);
+      }else{
+        $('finalBest').textContent = `${safeNumber(prevBest.percent)}%`;
+      }
+      clearProgress();
+      pushLeaderboard({percent, score:state.score, name:state.name, date:new Date().toLocaleDateString('ar-EG')});
+      updateBestMini();
+      renderLeaderboard();
+      renderBadges(percent);
+      renderReview();
+      $('certificateText').innerHTML = `
+        <div class="cert-logo">🏆</div>
+        <h2>شهادة اجتياز تدريبية</h2>
+        <p>تشهد لعبة مغامرة قانون العمل المصري أن <b>${escapeHtml(state.name)}</b> حصل/ت على نتيجة <b>${percent}%</b> في اختبار قانون العمل المصري رقم 14 لسنة 2025.</p>
+        <p>عدد الإجابات الصحيحة: ${state.correct} من ${total} — النقاط: ${state.score}</p>
+        <p>تاريخ الطباعة: ${new Date().toLocaleDateString('ar-EG')}</p>
+      `;
+      showScreen('result');
+    }
+
+    function renderBadges(percent){
+      const badges = [];
+      if(percent>=90) badges.push('👑 ملك/ملكة قانون العمل');
+      if(percent>=75) badges.push('🏆 خبير قانون العمل');
+      if(state.bestStreak>=5) badges.push('🔥 سلسلة خمس نجوم');
+      if(state.wrong===0) badges.push('💎 بلا أخطاء');
+      if(state.mode==='challenge') badges.push('⏱️ بطل السرعة');
+      if(state.hints>0) badges.push('🧠 ذاكرة حديدية');
+      if(!badges.length) badges.push('🌱 بداية موفقة');
+      $('badges').innerHTML = badges.map(b=>`<span class="badge">${b}</span>`).join('');
+    }
+
+    function renderReview(){
+      const wrongs = state.answers.filter(a=>!a.correct);
+      const target = $('review');
+      if(!wrongs.length){
+        target.innerHTML = `<h3>🧠 مراجعة الإجابات</h3><div class="review-item"><span class="ok">رائع!</span> لا توجد أخطاء للمراجعة.</div>`;
+        return;
+      }
+      target.innerHTML = `<h3>🧠 مراجعة الأسئلة التي تحتاج تركيز</h3>` + wrongs.map((a,i)=>`
+        <div class="review-item">
+          <b>${i+1}. ${escapeHtml(a.q)}</b><br>
+          <span class="no">إجابتك:</span> ${escapeHtml(a.chosen)}<br>
+          <span class="ok">الصحيح:</span> ${escapeHtml(a.answer)}<br>
+          <span>${escapeHtml(a.explanation)}</span><br>
+          <small style="color:#64748b">${escapeHtml(a.ref)}</small>
+        </div>
+      `).join('');
+    }
+
+    // Simple confetti without external libraries
+    const canvas = $('confetti');
+    const ctx = canvas.getContext('2d');
+    let pieces = [];
+    const colors = ['#7c3aed','#2563eb','#06b6d4','#10b981','#f59e0b','#ec4899','#ef4444'];
+    function resizeCanvas(){
+      canvas.width = window.innerWidth * devicePixelRatio;
+      canvas.height = window.innerHeight * devicePixelRatio;
+      ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function confettiBurst(count=70){
+      for(let i=0;i<count;i++){
+        pieces.push({
+          x: window.innerWidth/2 + (Math.random()-.5)*180,
+          y: window.innerHeight*.28 + (Math.random()-.5)*70,
+          vx:(Math.random()-.5)*8,
+          vy:Math.random()*-7-2,
+          g:.12+Math.random()*.08,
+          size:6+Math.random()*8,
+          rot:Math.random()*Math.PI,
+          vr:(Math.random()-.5)*.25,
+          color:colors[Math.floor(Math.random()*colors.length)],
+          life:90+Math.random()*40
+        });
+      }
+    }
+    function drawConfetti(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      pieces = pieces.filter(p=>p.life>0 && p.y<window.innerHeight+60);
+      pieces.forEach(p=>{
+        p.vy += p.g; p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life--;
+        ctx.save();
+        ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*.65);
+        ctx.restore();
+      });
+      requestAnimationFrame(drawConfetti);
+    }
+    drawConfetti();
+
+    updateBestMini();
+
+    /* ===== شاشة المراجعة السريعة (Flashcards) ===== */
+    let fcState = {deck:[], idx:0};
+    function openFlashcards(){
+      const deck = topicsToUse();
+      fcState = {deck, idx:0};
+      showScreen('fc');
+      renderFlashcard();
+    }
+    function renderFlashcard(){
+      const q = fcState.deck[fcState.idx];
+      $('fcCard').classList.remove('show-a');
+      $('fcQuestion').textContent = q.q;
+      $('fcAnswer').innerHTML = `<b>الإجابة:</b> ${q.options[q.answer]}<br><br><b>الشرح:</b> ${q.explanation}<br><small style="color:#64748b">${q.ref}</small>`;
+      $('fcCount').textContent = `بطاقة ${fcState.idx+1} من ${fcState.deck.length} — ${diffIcon(q.diff)} ${q.diff}`;
+      $('fcPrevBtn').disabled = fcState.idx === 0;
+      $('fcNextBtn').textContent = fcState.idx === fcState.deck.length-1 ? '✨ خلصوا!' : 'التالية →';
+      $('fcNextBtn').disabled = fcState.idx === fcState.deck.length-1;
+    }
+    $('flashcardsBtn').addEventListener('click', ()=>{
+      if(!topicsToUse().length){ toast('لا توجد أسئلة بالفلتر المختار 😅'); return; }
+      openFlashcards();
+    });
+    $('fcRevealBtn').addEventListener('click', ()=>{$('fcCard').classList.toggle('show-a');});
+    $('fcPrevBtn').addEventListener('click', ()=>{if(fcState.idx>0){fcState.idx--;renderFlashcard();}});
+    $('fcNextBtn').addEventListener('click', ()=>{if(fcState.idx<fcState.deck.length-1){fcState.idx++;renderFlashcard();}});
+    $('fcExitBtn').addEventListener('click', ()=>showScreen('start'));
+
+    /* ===== الوضع الليلي (محفوظ) ===== */
+    const THEME_KEY = 'egyptLaborLaw2025Theme';
+    function applyTheme(dark){
+      document.body.classList.toggle('dark', dark);
+      $('themeToggle').textContent = dark ? '☀️ الوضع النهاري' : '🌙 الوضع الليلي';
+      try{localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light')}catch(e){}
+    }
+    applyTheme(localStorage.getItem(THEME_KEY) === 'dark');
+    $('themeToggle').addEventListener('click', ()=>applyTheme(!document.body.classList.contains('dark')));
+
+    /* ===== إيقاف الاختبار مؤقتاً عند البعد عن الصفحة ===== */
+    let pauseTimer = null;
+    document.addEventListener('visibilitychange', ()=>{
+      if(!screens.quiz.classList.contains('active')) return;
+      if(document.hidden){
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(()=>{
+          if(state && state.mode === 'challenge' && !state.locked && state.timeLeft > 0){
+            clearInterval(timer);
+            saveProgress();
+          }
+        }, 60000); // دقيقة من البعد عن الصفحة
+      }else{
+        clearTimeout(pauseTimer);
+        if(state && state.mode === 'challenge' && !state.locked && state.timeLeft > 0 && !timer){
+          document.getElementById('pausedOverlay').classList.add('show');
+        }
+      }
+    });
+
+    /* ===== التنقل بالكيبورد: أرقام 1-4 للاختيارات، N للسؤال التالي ===== */
+    document.addEventListener('keydown', e=>{
+      if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+      if(!screens.quiz.classList.contains('active')) return;
+      if(e.key >= '1' && e.key <= '4'){
+        const idx = Number(e.key) - 1;
+        const btn = $('options').children[idx];
+        if(btn && !btn.classList.contains('locked') && !btn.classList.contains('hidden-choice')){
+          btn.click();
+        }
+      }else if(e.key.toLowerCase() === 'n' && state.locked && !$('nextBtn').disabled){
+        $('nextBtn').click();
+      }
+    });
+
+    /* ===== عرض skip-link و استئناف التقدم المحفوظ عند البدء ===== */
+    const skipLink = document.querySelector('.skip-link');
+    skipLink.style.display = 'inline-block';
+    renderTopicFilter();
+    renderLeaderboard();
+    offerResume();
+  </script>
+</body>
+</html>
