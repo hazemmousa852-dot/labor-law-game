@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">RisEdge</title>
+  <desc id="desc">RisEdge for Consulting and Training</desc>
+  <rect width="240" height="240" rx="42" fill="#083f43"/>
+  <g fill="#e9ffff">
+    <path d="M52 87h38l30 24 30-24h38l-68 58z"/>
+    <path d="M109 43h22v69h-22z"/>
+    <path d="M58 58l16-16 44 60-16 16z"/>
+    <path d="M182 58l-16-16-44 60 16 16z"/>
+    <path d="M48 127h144l-8 24H56z"/>
+  </g>
+  <text x="120" y="188" text-anchor="middle" fill="#e9ffff" font-family="Arial,sans-serif" font-size="29" font-weight="700">RisEdge</text>
+  <text x="120" y="207" text-anchor="middle" fill="#bde4e5" font-family="Arial,sans-serif" font-size="8.5" letter-spacing="1">CONSULTING &amp; TRAINING</text>
+</svg>
