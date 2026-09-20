@@ -576,12 +576,32 @@
       #resultScreen{display:block!important}
       .result-card{box-shadow:none;border:4px double #7c3aed;background:white!important;padding:24px}
       .result-hero{background:white!important;border:0}
-      @page{size:A4;margin:10mm}
+      @page{size:auto;margin:8mm}
       html,body{height:auto!important;overflow:visible!important}
-      /* طباعة الشهادة في صفحة واحدة */
-      body.certificate-page .review,body.certificate-page .scoreline,body.certificate-page .badges{display:none!important}
-      body.certificate-page .btn-row{display:none!important}
-      .certificate{display:block;text-align:center;margin:0 auto;max-width:860px;padding:34px 40px;border:5px double #7c3aed;border-radius:14px;background:white;font-size:18px;line-height:2.1;position:relative}
+      /* طباعة الشهادة وحدها داخل ورقة واحدة (A4 أو Letter) */
+      body.certificate-page #resultScreen .result-card > *:not(.certificate){display:none!important}
+      body.certificate-page #resultScreen .result-card{border:0!important;padding:0!important;box-shadow:none!important}
+      body.certificate-page .certificate{
+        display:flex!important;
+        flex-direction:column;
+        justify-content:center;
+        width:100%;
+        min-height:240mm;
+        max-width:none;
+        box-sizing:border-box;
+        text-align:center;
+        margin:0 auto;
+        padding:24mm 18mm;
+        border:5px double #7c3aed;
+        border-radius:14px;
+        background:white!important;
+        color:#1f2937!important;
+        font-size:18px;
+        line-height:2.1;
+        position:relative;
+        break-inside:avoid-page;
+        page-break-inside:avoid;
+      }
       .certificate h2{font-size:30px;color:#6d28d9;margin:0 0 14px}
       .certificate .cert-logo{font-size:44px;margin-bottom:8px}
       .certificate::before{content:'⚖';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:220px;opacity:.05;pointer-events:none}
