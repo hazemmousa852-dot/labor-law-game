@@ -551,6 +551,37 @@
       display:none;
     }
 
+    /* ===== شهادة RisEdge ===== */
+    .certificate.risedge-certificate{
+      direction:rtl;
+      font-family:Tahoma,Arial,"Segoe UI",sans-serif;
+      color:#123b3e;
+    }
+    .cert-brand img,.cert-watermark{display:block}
+    .cert-brand img{width:78px;height:78px;border-radius:16px;margin:0 auto 5px}
+    .cert-brand-name{font:800 29px Georgia,"Times New Roman",serif;letter-spacing:.02em;color:#083f43}
+    .cert-brand-tag{font:600 10px Arial,sans-serif;letter-spacing:.17em;color:#7a6030;text-transform:uppercase}
+    .cert-title{font-size:31px!important;line-height:1.2!important;color:#083f43!important;margin:8px 0 4px!important}
+    .cert-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:5px auto 9px;width:45%}
+    .cert-divider::before,.cert-divider::after{content:"";height:1.5px;background:#b88a34;flex:1}
+    .cert-divider span{width:9px;height:9px;background:#b88a34;transform:rotate(45deg)}
+    .cert-awarded{font-size:15px;margin:0;color:#52686a}
+    .cert-name{font-size:38px;line-height:1.25;font-weight:900;color:#083f43;margin:3px 0 4px}
+    .cert-copy{font-size:16px;line-height:1.75;margin:0 auto 12px;max-width:88%;color:#263f41}
+    .cert-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:94%;margin:0 auto 15px}
+    .cert-metric{border:1.5px solid #b88a34;border-radius:8px;padding:8px 6px;background:rgba(255,255,255,.82);font-size:12px;color:#536466}
+    .cert-metric b{display:block;font-size:17px;color:#083f43;margin-top:2px}
+    .cert-footer{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:end;gap:18px;width:94%;margin:0 auto;text-align:center}
+    .cert-qr img{width:72px;height:72px;display:block;margin:0 auto 5px}
+    .cert-number{font:700 10px Arial,sans-serif;color:#334b4d;direction:ltr}
+    .cert-date{font-size:12px;color:#536466;padding-bottom:12px}
+    .cert-signature{padding-bottom:2px}
+    .cert-signature .sign{font:italic 27px "Segoe Script","Brush Script MT",cursive;color:#083f43;border-bottom:1.5px solid #b88a34;padding:0 22px 3px;display:inline-block;direction:ltr}
+    .cert-signature b{display:block;font:700 13px Georgia,"Times New Roman",serif;color:#083f43;margin-top:4px;direction:ltr}
+    .cert-signature small{display:block;font:10px Arial,sans-serif;color:#52686a;direction:ltr}
+    .cert-watermark{position:absolute;width:245px;height:245px;left:50%;top:51%;transform:translate(-50%,-50%);opacity:.035;z-index:0}
+    .risedge-certificate > *:not(.cert-watermark){position:relative;z-index:1}
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr}
       .law-grid{grid-template-columns:1fr 1fr}
@@ -577,7 +608,7 @@
       #resultScreen{display:block!important}
       .result-card{box-shadow:none;border:4px double #7c3aed;background:white!important;padding:24px}
       .result-hero{background:white!important;border:0}
-      @page{size:auto;margin:8mm}
+      @page{size:A4 landscape;margin:0}
       html,body{height:auto!important;overflow:visible!important}
       /* طباعة الشهادة وحدها داخل ورقة واحدة (A4 أو Letter) */
       body.certificate-page #resultScreen .result-card > *:not(.certificate){display:none!important}
@@ -586,26 +617,28 @@
         display:flex!important;
         flex-direction:column;
         justify-content:center;
-        width:100%;
-        min-height:240mm;
-        max-width:none;
+        width:277mm;
+        height:190mm;
+        min-height:0;
         box-sizing:border-box;
         text-align:center;
-        margin:0 auto;
-        padding:24mm 18mm;
-        border:5px double #7c3aed;
-        border-radius:14px;
-        background:white!important;
-        color:#1f2937!important;
-        font-size:18px;
-        line-height:2.1;
+        margin:10mm auto;
+        padding:7mm 10mm 6mm;
+        border:3px double #b88a34;
+        outline:5px solid #083f43;
+        outline-offset:-9px;
+        border-radius:2px;
+        background:#fffef9!important;
+        color:#123b3e!important;
         position:relative;
+        overflow:hidden;
         break-inside:avoid-page;
         page-break-inside:avoid;
+        page-break-after:avoid;
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
       }
-      .certificate h2{font-size:30px;color:#6d28d9;margin:0 0 14px}
-      .certificate .cert-logo{font-size:44px;margin-bottom:8px}
-      .certificate::before{content:'⚖';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:220px;opacity:.05;pointer-events:none}
+      body.certificate-page .result-card::after{display:none!important}
       /* التقرير المفصل: النتيجة + المراجعة + الشهادة */
       body.report-page .review,body.report-page .scoreline,body.report-page .badges{display:block!important}
       body.report-page .review{display:block!important;page-break-before:always}
@@ -3763,13 +3796,43 @@
       renderLeaderboard();
       renderBadges(percent);
       renderReview();
+      const certNow = new Date();
+      const certDate = certNow.toLocaleDateString('ar-EG');
+      const certId = `LL-${certNow.getFullYear()}-${String(certNow.getMonth()+1).padStart(2,'0')}${String(certNow.getDate()).padStart(2,'0')}-${String(state.score).padStart(4,'0')}`;
+      const gameUrl = 'https://hazemmousa852-dot.github.io/labor-law-game/';
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=${encodeURIComponent(gameUrl)}`;
       $('certificateText').innerHTML = `
-        <div class="cert-logo">🏆</div>
-        <h2>شهادة اجتياز تدريبية</h2>
-        <p>تشهد لعبة قانون العمل مع حازم موسى أن <b>${escapeHtml(state.name)}</b> اجتاز/ت اختبار المستوى <b>${levelName(state.level)}</b> بنتيجة <b>${percent}%</b> في قانون العمل المصري رقم 14 لسنة 2025.</p>
-        <p>عدد الإجابات الصحيحة: ${state.correct} من ${total} — النقاط: ${state.score}</p>
-        <p>تاريخ الطباعة: ${new Date().toLocaleDateString('ar-EG')}</p>
+        <img class="cert-watermark" src="risedge-logo.svg" alt="" aria-hidden="true">
+        <div class="cert-brand">
+          <img src="risedge-logo.svg" alt="RisEdge">
+          <div class="cert-brand-name">RisEdge</div>
+          <div class="cert-brand-tag">For Consulting &amp; Training</div>
+        </div>
+        <h2 class="cert-title">شهادة اجتياز</h2>
+        <div class="cert-divider"><span></span></div>
+        <p class="cert-awarded">تُمنح إلى</p>
+        <div class="cert-name">${escapeHtml(state.name)}</div>
+        <p class="cert-copy">لاجتياز تحدي قانون العمل المصري رقم 14 لسنة 2025، وإتمام اختبار المستوى المحدد بنجاح.</p>
+        <div class="cert-metrics">
+          <div class="cert-metric">المستوى<b>${escapeHtml(levelName(state.level))}</b></div>
+          <div class="cert-metric">النتيجة<b>${safeNumber(percent)}%</b></div>
+          <div class="cert-metric">الإجابات الصحيحة<b>${safeNumber(state.correct)} من ${safeNumber(total)}</b></div>
+          <div class="cert-metric">النقاط<b>${safeNumber(state.score)}</b></div>
+        </div>
+        <div class="cert-footer">
+          <div class="cert-qr">
+            <img src="${qrUrl}" alt="QR Code لرابط لعبة قانون العمل">
+            <div class="cert-number">${certId}</div>
+          </div>
+          <div class="cert-date">تاريخ الإصدار<br><b>${certDate}</b></div>
+          <div class="cert-signature">
+            <span class="sign">Hazem Moussa</span>
+            <b>Hazem Moussa</b>
+            <small>HR Consultant &amp; Trainer</small>
+          </div>
+        </div>
       `;
+      $('certificateText').className = 'certificate risedge-certificate';
       showScreen('result');
     }
 
