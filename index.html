@@ -95,12 +95,13 @@
       border-radius:21px;
       display:grid;
       place-items:center;
-      font-size:30px;
-      background:linear-gradient(135deg,#fde68a,#f9a8d4 48%,#93c5fd);
+      background:#083f43;
       box-shadow:0 15px 35px rgba(124,58,237,.18);
       border:2px solid rgba(255,255,255,.8);
-      transform:rotate(-5deg);
+      overflow:hidden;
     }
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brand-line{font-size:11px;font-weight:800;letter-spacing:.08em;color:#0f766e;margin-bottom:3px}
     .brand h1{
       margin:0;
       font-size:clamp(20px, 3vw, 34px);
@@ -783,8 +784,9 @@
     <a class="skip-link" href="#startScreen" style="display:none">تخطي إلى المحتوى</a>
     <header class="topbar">
       <div class="brand">
-        <div class="logo" aria-hidden="true">⚖️</div>
+        <div class="logo"><img src="risedge-logo.svg" alt="شعار RisEdge" /></div>
         <div>
+          <div class="brand-line">RISEDGE PRESENTS</div>
           <h1>لعبة قانون العمل مع حازم موسى</h1>
           <small>رحلتك العملية لإتقان قانون العمل المصري رقم 14 لسنة 2025</small>
         </div>
@@ -846,17 +848,17 @@
               <div class="mode-option level-option selected" data-level="beginner" role="radio" aria-checked="true" tabindex="0">
                 <span class="mark">🌱</span>
                 <b>مبتدئ</b>
-                <span>أسئلة تمهيدية وتعريفية عن القانون وأحكامه العامة. لو بتبدأي في شئون العاملين.</span>
+                <span>مناسب لمن يبدأ في مجال شئون العاملين ويريد تأسيسًا قانونيًا واضحًا.</span>
               </div>
               <div class="mode-option level-option" data-level="experienced" role="radio" aria-checked="false" tabindex="0">
                 <span class="mark">💼</span>
                 <b>متوسط الخبرة</b>
-                <span>أسئلة العقود والإجازات والساعات وتشغيل النساء والأطفال والأجور. لو شغالك اليومي في الموارد البشرية.</span>
+                <span>مناسب للممارسين في الموارد البشرية وشئون العاملين.</span>
               </div>
               <div class="mode-option level-option" data-level="expert" role="radio" aria-checked="false" tabindex="0">
                 <span class="mark">🎓</span>
                 <b>خبير شئون عاملين</b>
-                <span>أسئلة الجزاءات والمنازعات وإنهاء الخدمة والسلامة والتفتيش. لو عايزا اختبار حقيقي لعمق الخبرة.</span>
+                <span>تحديات متقدمة لاختبار المعرفة القانونية والتطبيقية.</span>
               </div>
               <div class="mode-option level-option" data-level="mixed" role="radio" aria-checked="false" tabindex="0">
                 <span class="mark">🎲</span>
@@ -880,7 +882,7 @@
             <div class="mascot-face">🤓</div>
           </div>
           <div class="mini-stat-grid">
-            <div class="mini-stat"><span class="num" id="bankCount">30</span><span class="txt">سؤال من ملف القانون</span></div>
+            <div class="mini-stat"><span class="num" id="bankCount">—</span><span class="txt">سؤال قانوني وتطبيقي</span></div>
             <div class="mini-stat"><span class="num">4</span><span class="txt">مستويات تقييم مرحة</span></div>
             <div class="mini-stat"><span class="num">2</span><span class="txt">مساعدات أثناء اللعب</span></div>
             <div class="mini-stat"><span class="num" id="bestScoreMini">—</span><span class="txt">أفضل نتيجة محفوظة</span></div>
@@ -999,6 +1001,7 @@
           <button class="green" id="restartBtn">العب مرة أخرى 🔁</button>
           <button class="secondary" id="reviewBtn">مراجعة الإجابات 🧠</button>
           <button class="secondary" id="shareBtn" aria-label="شارك نتيجتك">📤 شارك النتيجة</button>
+          <button class="secondary" id="shareImageBtn" aria-label="شارك تحديك كصورة">🖼️ شارك تحديك كصورة</button>
           <button class="secondary" id="reportBtn" aria-label="تقرير مفصل">📄 تقرير مفصل</button>
           <button class="warning" id="printBtn">اطبع الشهادة في صفحة واحدة 🖨️</button>
         </div>
@@ -2936,6 +2939,78 @@
             "explanation": "يحمل مأمور الضبط القضائي بطاقة تثبت صفته، وله حق دخول جميع أماكن العمل وتفتيشها وفحص الدفاتر والأوراق وطلب المستندات والبيانات اللازمة.",
             "ref": "المادة 276.",
             "diff": "تفتيش"
+      },
+      {
+            "q": "موقف HR: موظف التحق بالعمل ولم يوقّع عقداً مكتوباً، ثم وقع خلاف حول مدة العقد. ما التكييف الأقرب؟",
+            "options": ["يُعتبر العقد غير محدد المدة", "يُعتبر العامل تحت الاختبار دائماً", "تنتهي العلاقة تلقائياً بعد سنة", "لا توجد علاقة عمل"],
+            "answer": 0,
+            "hint": "عدم كتابة العقد لا يحرم العامل من إثبات العلاقة، ويؤثر في تحديد مدته.",
+            "explanation": "إذا لم يكن عقد العمل مكتوباً أو لم تُذكر مدته، عُدّ العقد غير محدد المدة، وللعامل إثبات حقوقه بكافة طرق الإثبات.",
+            "ref": "المادتان 87 و88.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: شركة تريد وضع موظف تحت الاختبار للمرة الثانية بعد نقله إلى إدارة أخرى. ما القرار الصحيح؟",
+            "options": ["لا يجوز تكرار الاختبار لدى صاحب العمل نفسه", "يجوز لمدة ستة أشهر", "يجوز كلما تغير المسمى الوظيفي", "يجوز بموافقة المدير فقط"],
+            "answer": 0,
+            "hint": "فترة الاختبار مرتبطة بصاحب العمل وليست بالإدارة.",
+            "explanation": "لا يجوز تعيين العامل تحت الاختبار مدة تزيد على ثلاثة أشهر أو تعيينه تحت الاختبار أكثر من مرة لدى صاحب عمل واحد.",
+            "ref": "المادة 90.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: موظف تجاوز عمره 50 سنة ويطلب تحديد رصيده السنوي. ما الاستحقاق الأساسي؟",
+            "options": ["30 يوماً", "21 يوماً", "15 يوماً", "45 يوماً في جميع الأحوال"],
+            "answer": 0,
+            "hint": "العمر هنا يرفع مدة الإجازة حتى لو لم تبلغ الخدمة عشر سنوات.",
+            "explanation": "تكون الإجازة السنوية ثلاثين يوماً لمن أمضى عشر سنوات في الخدمة أو تجاوز سن الخمسين.",
+            "ref": "المادة 124.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: صاحب العمل يريد إنهاء عقد غير محدد المدة فوراً دون مهلة إخطار. ما المدة الأصلية للإخطار؟",
+            "options": ["ثلاثة أشهر", "شهر واحد", "أسبوعان", "ستة أشهر"],
+            "answer": 0,
+            "hint": "مدة واحدة للطرفين في القانون الجديد.",
+            "explanation": "يجوز لأي من طرفي العقد غير محدد المدة إنهاؤه بشرط الإخطار الكتابي قبل الإنهاء بثلاثة أشهر.",
+            "ref": "المادة 156.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: عامل عمل 8 ساعات متصلة دون فترة راحة. ما التصرف القانوني الصحيح؟",
+            "options": ["إعادة تنظيم اليوم بحيث لا يعمل أكثر من 5 ساعات متصلة", "لا مشكلة طالما وافق العامل", "منحه راحة بعد انتهاء الوردية فقط", "خصم ساعة من أجره"],
+            "answer": 0,
+            "hint": "القانون يضع حداً لساعات العمل المتصلة.",
+            "explanation": "يجب تنظيم فترات الراحة بحيث لا يعمل العامل أكثر من خمس ساعات متصلة، مع مراعاة الاستثناءات التي يصدر بها قرار.",
+            "ref": "المادة 118.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: منشأة بها 12 عاملاً ولم تُعد لائحة تنظيم عمل. ما الإجراء الواجب؟",
+            "options": ["إعداد اللائحة خلال 60 يوماً وتقديمها للجهة المختصة", "لا تلزمها لائحة إلا عند 50 عاملاً", "الاكتفاء بتعليمات شفوية", "إعداد اللائحة عند أول نزاع فقط"],
+            "answer": 0,
+            "hint": "النصاب يبدأ من عشرة عمال.",
+            "explanation": "كل صاحب عمل يستخدم عشرة عمال فأكثر ملزم بإعداد لائحة تنظيم العمل والجزاءات خلال ستين يوماً وفق الإجراءات القانونية.",
+            "ref": "المادة 137.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: موظف طلب شهادة خبرة بعد انتهاء خدمته. خلال أي مدة يجب تسليمها؟",
+            "options": ["15 يوماً من تاريخ الطلب", "30 يوماً", "60 يوماً", "عند نهاية السنة المالية"],
+            "answer": 0,
+            "hint": "المدة نصف شهر.",
+            "explanation": "يلتزم صاحب العمل بمنح العامل، بناءً على طلبه، شهادة الخبرة خلال خمسة عشر يوماً من تاريخ الطلب.",
+            "ref": "المادة 175.",
+            "diff": "مواقف HR"
+      },
+      {
+            "q": "موقف HR: ظهر تنمر لفظي متكرر على موظف داخل مقر العمل. هل يُعد مجرد خلاف شخصي؟",
+            "options": ["لا، هو سلوك محظور قانوناً ويجب التعامل معه", "نعم إذا لم يقع اعتداء جسدي", "نعم إذا كان من المدير", "لا يُبحث إلا بعد الاستقالة"],
+            "answer": 0,
+            "hint": "الحماية تشمل العنف اللفظي والنفسي أيضاً.",
+            "explanation": "يحظر القانون التحرش والتنمر وكل عنف لفظي أو جسدي أو نفسي على العامل، ويلزم صاحب العمل ببيئة عمل آمنة.",
+            "ref": "المادة 4.",
+            "diff": "مواقف HR"
       }
 ];
 
@@ -2949,8 +3024,8 @@
     /* ===== المستويات الثلاثة للخبرة ===== */
     const LEVEL_GROUPS = {
       beginner: ['تمهيدي','تواريخ','نطاق التطبيق','تعريفات','أرقام','حقوق'],
-      experienced: ['عقود','أنماط عمل','تشغيل','ساعات','نساء','أطفال','أجانب','عمالة غير منتظمة','تدريب','أجور'],
-      expert: ['إجازات','جزاءات','منازعات','إنهاء','سلامة','خدمات','تفتيش','محاكم']
+      experienced: ['عقود','أنماط عمل','تشغيل','ساعات','نساء','أطفال','أجانب','عمالة غير منتظمة','تدريب','أجور','مواقف HR'],
+      expert: ['إجازات','جزاءات','منازعات','إنهاء','سلامة','خدمات','تفتيش','محاكم','مواقف HR']
     };
     function levelPool(level){
       const topics = LEVEL_GROUPS[level];
@@ -3283,6 +3358,39 @@
       }
     });
 
+    /* ===== بطاقة نتيجة قابلة للمشاركة كصورة ===== */
+    $('shareImageBtn').addEventListener('click', async ()=>{
+      const total = state.questions.length || 1;
+      const percent = Math.round((state.correct/total)*100);
+      const resultCanvas = document.createElement('canvas');
+      resultCanvas.width = 1080; resultCanvas.height = 1080;
+      const c = resultCanvas.getContext('2d');
+      const grad = c.createLinearGradient(0,0,1080,1080);
+      grad.addColorStop(0,'#062f33'); grad.addColorStop(.55,'#0b5960'); grad.addColorStop(1,'#071d31');
+      c.fillStyle=grad; c.fillRect(0,0,1080,1080);
+      c.strokeStyle='#d7b866'; c.lineWidth=8; c.strokeRect(44,44,992,992);
+      c.textAlign='center'; c.direction='rtl';
+      c.fillStyle='#d7f8f8'; c.font='700 42px Tahoma, Arial'; c.fillText('RisEdge Labor Law Challenge',540,130);
+      c.fillStyle='#ffffff'; c.font='700 72px Tahoma, Arial'; c.fillText(state.name,540,270);
+      c.fillStyle='#f9d978'; c.font='900 210px Tahoma, Arial'; c.fillText(`${percent}%`,540,510);
+      c.fillStyle='#ffffff'; c.font='700 45px Tahoma, Arial'; c.fillText(`${state.correct} من ${total} إجابة صحيحة`,540,620);
+      c.fillStyle='#bde4e5'; c.font='600 38px Tahoma, Arial'; c.fillText(`المستوى: ${levelName(state.level)}  •  ${state.score} XP`,540,700);
+      c.fillStyle='#ffffff'; c.font='700 43px Tahoma, Arial'; c.fillText('هل تقدر تتغلب على نتيجتي؟',540,820);
+      c.fillStyle='#bde4e5'; c.font='500 27px Tahoma, Arial'; c.fillText('hazemmousa852-dot.github.io/labor-law-game',540,925);
+      const blob = await new Promise(resolve=>resultCanvas.toBlob(resolve,'image/png'));
+      const file = new File([blob], 'risedge-labor-law-result.png', {type:'image/png'});
+      try{
+        if(navigator.canShare && navigator.canShare({files:[file]})){
+          await navigator.share({title:'تحدي قانون العمل من RisEdge', text:'هل تقدر تتغلب على نتيجتي؟', files:[file]});
+          return;
+        }
+      }catch(e){ if(e && e.name==='AbortError') return; }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download=file.name; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url),1500);
+      toast('تم تنزيل بطاقة النتيجة كصورة 🖼️');
+    });
+
     function startGame(){
       const name = $('playerName').value.trim() || 'بطل شئون العاملين';
       const countValue = $('questionCount').value;
@@ -3366,6 +3474,7 @@
       if(diff==='أطفال') return '🧸';
       if(diff==='أجانب') return '🌍';
       if(diff==='عمالة غير منتظمة') return '🛠️';
+      if(diff==='مواقف HR') return '🧩';
       if(diff==='عقود') return '📄';
       if(diff==='أنماط عمل') return '💻';
       if(diff==='أجور') return '💰';
